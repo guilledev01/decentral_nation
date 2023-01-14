@@ -1,0 +1,57 @@
+.chip {
+  border: 1px solid transparent;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  transition: 0.3s;
+
+  &.primary {
+    border-color: get-color(primary, 1);
+    color: get-color(light, 1);
+
+    &:hover {
+      background-color: #8b8b8b65;
+    }
+  }
+
+  &.secondary {
+    border-color: get-color(secondary, 1);
+    color: get-color(dark, 1);
+
+    &:hover {
+      background-color: get-color(secondary, 2);
+    }
+  }
+
+  &.dark {
+    background-color: get-color(dark, 1);
+    border-color: get-color(dark, 4);
+    color: get-color(light, 1);
+
+    &:hover {
+      background-color: get-color(dark, 2);
+    }
+  }
+
+  &.light {
+    border-color: get-color(light, 2);
+    color: get-color(dark, 1);
+
+    &:hover {
+      background-color: get-color(light, 3);
+    }
+  }
+
+  &.sm {
+    width: 130px;
+    height: 36px;
+    padding: 6px 18px;
+  }
+
+  &.md {
+    width: 160px;
+    height: 36px;
+    padding: 6px 18px;
+  }
+}

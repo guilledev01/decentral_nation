@@ -1,0 +1,61 @@
+.btn {
+  border: 0;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: get-color(light, 1);
+  max-width: 100%;
+  padding: 4px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+  width: 100%;
+
+  &:active,
+  &:hover {
+    outline: 0;
+  }
+
+  &:hover {
+    & > h4 {
+      color: get-color(dark, 1);
+      background: none;
+    }
+  }
+
+  & > h4 {
+    font-size: 16px;
+    background-color: get-color(dark, 1);
+    padding: 8px 16px;
+    border-radius: 6px;
+    width: 100%;
+    height: 100%;
+    transition: 0.3s;
+  }
+
+  &.primary {
+    background-image: linear-gradient(
+      144deg,
+      get-color(primary, 1),
+      get-color(primary, 2)
+    );
+    box-shadow: 0 0 20px rgba(0, 140, 255, 0.2);
+  }
+  &.secondary {
+    background-image: linear-gradient(
+      144deg,
+      get-color(secondary, 1),
+      get-color(secondary, 2)
+    );
+    box-shadow: 0 0 20px rgba(255, 230, 0, 0.2);
+  }
+  &.error {
+    background-image: linear-gradient(
+      144deg,
+      get-color(error, 1),
+      get-color(error, 2)
+    );
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+  }
+}

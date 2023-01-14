@@ -1,0 +1,449 @@
+.img {
+  &.of-c {
+    object-fit: contain;
+    max-width: 100%;
+    height: unset;
+  }
+
+  &.res {
+    width: 100% !important;
+    margin: 0 auto;
+    position: relative !important;
+  }
+
+  &.sm {
+    width: 64px;
+    height: 64px;
+  }
+
+  &.md {
+    width: 128px;
+    height: 128px;
+  }
+}
+
+.visible {
+  visibility: visible;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.max-width {
+  width: 100%;
+}
+
+.test {
+  color: #dbff3c;
+}
+
+.d-flex {
+  display: flex;
+
+  &.center {
+    justify-content: center;
+    align-items: center;
+  }
+
+  &.row {
+    flex-direction: row;
+  }
+
+  &.row-rev {
+    flex-direction: row-reverse;
+  }
+
+  &.col {
+    flex-direction: column;
+  }
+
+  &.col-rev {
+    flex-direction: column-reverse;
+  }
+
+  &.flex-wrap {
+    flex-wrap: wrap;
+  }
+
+  &.gp-0 {
+    gap: 0px;
+  }
+  &.gp-4 {
+    gap: 4px;
+  }
+  &.gp-8 {
+    gap: 8px;
+  }
+  &.gp-16 {
+    gap: 16px;
+  }
+  &.gp-32 {
+    gap: 32px;
+  }
+  &.gp-64 {
+    gap: 64px;
+  }
+  &.gp-128 {
+    gap: 128px;
+  }
+
+  &.jc-c {
+    justify-content: center;
+  }
+  &.jc-fs {
+    justify-content: flex-start;
+  }
+  &.jc-fe {
+    justify-content: flex-end;
+  }
+  &.jc-sb {
+    justify-content: space-between;
+  }
+  &.jc-sa {
+    justify-content: space-around;
+  }
+  &.jc-se {
+    justify-content: space-evenly;
+  }
+
+  &.ai-c {
+    align-items: center;
+  }
+  &.ai-fs {
+    align-items: flex-start;
+  }
+  &.ai-fe {
+    align-items: flex-end;
+  }
+  &.ai-sa {
+    align-items: space-around;
+  }
+  &.ai-se {
+    align-items: space-evenly;
+  }
+}
+
+.m-center {
+  margin: 0 auto;
+}
+
+.m-0 {
+  margin: 0;
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.mr-0 {
+  margin-right: 0;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.ml-0 {
+  margin-left: 0;
+}
+
+.m-4 {
+  margin: 4px;
+}
+
+.mt-4 {
+  margin-top: 4px;
+}
+
+.mr-4 {
+  margin-right: 4px;
+}
+
+.mb-4 {
+  margin-bottom: 4px;
+}
+
+.ml-4 {
+  margin-left: 4px;
+}
+
+.m-8 {
+  margin: 8px;
+}
+
+.mt-8 {
+  margin-top: 8px;
+}
+
+.mr-8 {
+  margin-right: 8px;
+}
+
+.mb-8 {
+  margin-bottom: 8px;
+}
+
+.ml-8 {
+  margin-left: 8px;
+}
+
+.m-12 {
+  margin: 12px;
+}
+
+.mt-12 {
+  margin-top: 12px;
+}
+
+.mr-12 {
+  margin-right: 12px;
+}
+
+.mb-12 {
+  margin-bottom: 12px;
+}
+
+.ml-12 {
+  margin-left: 12px;
+}
+
+.m-16 {
+  margin: 16px;
+}
+
+.mt-16 {
+  margin-top: 16px;
+}
+
+.mr-16 {
+  margin-right: 16px;
+}
+
+.mb-16 {
+  margin-bottom: 16px;
+}
+
+.ml-16 {
+  margin-left: 16px;
+}
+
+.m-24 {
+  margin: 24px;
+}
+
+.mt-24 {
+  margin-top: 24px;
+}
+
+.mr-24 {
+  margin-right: 24px;
+}
+
+.mb-24 {
+  margin-bottom: 24px;
+}
+
+.ml-24 {
+  margin-left: 24px;
+}
+
+.m-32 {
+  margin: 32px;
+}
+
+.mt-32 {
+  margin-top: 32px;
+}
+
+.mr-32 {
+  margin-right: 32px;
+}
+
+.mb-32 {
+  margin-bottom: 32px;
+}
+
+.ml-32 {
+  margin-left: 32px;
+}
+
+.m-64 {
+  margin: 64px;
+}
+
+.mt-64 {
+  margin-top: 64px;
+}
+
+.mr-64 {
+  margin-right: 64px;
+}
+
+.mb-64 {
+  margin-bottom: 64px;
+}
+
+.ml-64 {
+  margin-left: 64px;
+}
+
+.p-0 {
+  padding: 0;
+}
+
+.pt-0 {
+  padding-top: 0;
+}
+
+.pr-0 {
+  padding-right: 0;
+}
+
+.pb-0 {
+  padding-bottom: 0;
+}
+
+.pl-0 {
+  padding-left: 0;
+}
+
+.p-4 {
+  padding: 4px;
+}
+
+.pt-4 {
+  padding-top: 4px;
+}
+
+.pr-4 {
+  padding-right: 4px;
+}
+
+.pb-4 {
+  padding-bottom: 4px;
+}
+
+.pl-4 {
+  padding-left: 4px;
+}
+
+.p-8 {
+  padding: 8px;
+}
+
+.pt-8 {
+  padding-top: 8px;
+}
+
+.pr-8 {
+  padding-right: 8px;
+}
+
+.pb-8 {
+  padding-bottom: 8px;
+}
+
+.pl-8 {
+  padding-left: 8px;
+}
+
+.p-12 {
+  padding: 12px;
+}
+
+.pt-12 {
+  padding-top: 12px;
+}
+
+.pr-12 {
+  padding-right: 12px;
+}
+
+.pb-12 {
+  padding-bottom: 12px;
+}
+
+.pl-12 {
+  padding-left: 12px;
+}
+
+.p-16 {
+  padding: 16px;
+}
+
+.pt-16 {
+  padding-top: 16px;
+}
+
+.pr-16 {
+  padding-right: 16px;
+}
+
+.pb-16 {
+  padding-bottom: 16px;
+}
+
+.pl-16 {
+  padding-left: 16px;
+}
+
+.p-24 {
+  padding: 24px;
+}
+
+.pt-24 {
+  padding-top: 24px;
+}
+
+.pr-24 {
+  padding-right: 24px;
+}
+
+.pb-24 {
+  padding-bottom: 24px;
+}
+
+.pl-24 {
+  padding-left: 24px;
+}
+
+.p-32 {
+  padding: 32px;
+}
+
+.pt-32 {
+  padding-top: 32px;
+}
+
+.pr-32 {
+  padding-right: 32px;
+}
+
+.pb-32 {
+  padding-bottom: 32px;
+}
+
+.pl-32 {
+  padding-left: 32px;
+}
+
+.p-64 {
+  padding: 64px;
+}
+
+.pt-64 {
+  padding-top: 64px;
+}
+
+.pr-64 {
+  padding-right: 64px;
+}
+
+.pb-64 {
+  padding-bottom: 64px;
+}
+
+.pl-64 {
+  padding-left: 64px;
+}

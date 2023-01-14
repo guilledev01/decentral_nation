@@ -1,0 +1,195 @@
+html:focus-within {
+  --scroll-behavior: smooth !important;
+  scroll-behavior: smooth !important;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  text-align: center;
+  background-color: get-color(dark, 1);
+  text-rendering: optimizeSpeed;
+  min-height: 100vh;
+}
+
+body::-webkit-scrollbar {
+  width: 5px;
+}
+
+body::-webkit-scrollbar-track {
+  background: get-color(dark, 1);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: get-color(light, 1);
+  border-radius: 15px;
+}
+
+#tsparticles {
+  position: fixed;
+  width: 100%;
+  height: 500px;
+  z-index: -99999;
+}
+
+nav {
+  color: get-color(light, 1);
+  height: 100px;
+}
+
+header {
+  height: 100%;
+}
+
+main {
+  height: 100%;
+  color: get-color(light, 1);
+}
+
+article {
+  background-color: get-color(light, 1);
+  color: get-color(dark, 1);
+}
+
+footer {
+  height: 100%;
+}
+
+.grid-container {
+  position: relative;
+  display: grid;
+  gap: 10px;
+  grid-template:
+    "earth" 60vh
+    "right" 440px
+    "bottom" 610px
+    "video" 320px
+    "left" 440px
+    "history" 300px
+    "team" 190px;
+}
+
+@media (min-width: $mobile-resolution) {
+  .grid-container {
+    grid-template:
+      "earth" 70vh
+      "right" 450px
+      "bottom" 400px
+      "video" 560px
+      "left" 450px
+      "history" 350px
+      "team" 350px;
+  }
+}
+
+@media (min-width: $tablet-resolution) {
+  .grid-container {
+    grid-template:
+      "left center right" 80vh
+      "bottom bottom bottom" 400px
+      "video video video" 560px
+      "history history history" 350px
+      "team team team" 350px /650px auto 650px;
+  }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  width: 100%;
+}
+
+table,
+th,
+td {
+  text-align: center;
+}
+
+td h4 {
+  color: get-color(secondary, 1);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  text-align: center;
+  word-wrap: break-word;
+  font-weight: 800;
+}
+
+h1,
+h2,
+h3,
+h5,
+h6 {
+  margin: 0;
+  text-align: center;
+  word-wrap: break-word;
+  font-weight: 450;
+}
+
+h1 {
+  font-size: 52px;
+}
+
+h2 {
+  font-size: 44px;
+}
+
+h3 {
+  font-size: 32px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+p,
+span {
+  margin: 0;
+  color: get-color(light, 2);
+}
+
+span {
+  font-size: 16px;
+}
+
+p {
+  font-size: 20px;
+}
+
+@media (max-width: $mobile-resolution) {
+  h1 {
+    font-size: 44px;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
+
+  table span {
+    font-size: 14px;
+  }
+}
+
+.react-reveal {
+  animation-fill-mode: backwards !important;
+}

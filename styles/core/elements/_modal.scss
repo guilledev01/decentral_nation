@@ -1,0 +1,50 @@
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #161616a1;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.25s;
+
+  &.show {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  z-index: 9999;
+  text-align: center;
+  width: 364px;
+  padding: 18px;
+  border: 1px solid get-color(dark, 4);
+  background-color: get-color(dark, 1);
+  border-radius: 24px;
+}
+
+.close-container {
+  cursor: pointer;
+  border: 1px solid get-color(dark, 4);
+  border-radius: 12px;
+  color: get-color(light, 1);
+  background: transparent;
+  transition: 0.3s;
+
+  & > svg {
+    width: 16px;
+    height: 16px;
+    fill: get-color(light, 1);
+  }
+
+  &:hover {
+    background-color: get-color(dark, 2);
+  }
+}

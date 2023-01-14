@@ -1,0 +1,49 @@
+.bx {
+  font-size: 1.1rem;
+}
+
+.dropdown-btn-container {
+  padding: 0.8rem 0;
+}
+
+.dropdown-menu {
+  z-index: 2;
+  position: absolute;
+  width: 160px;
+  border-radius: 10px;
+  border: 1px solid get-color(dark, 4);
+  background: get-color(dark, 1);
+  color: get-color(light, 1);
+
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(0.5rem);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.5, 1);
+
+  & div {
+    margin: 4px 0px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+    padding: 0.8rem 1rem;
+    text-decoration: none;
+
+    & svg {
+      width: 20px;
+      height: 20px;
+      fill: get-color(light, 1);
+    }
+
+    &:hover {
+      background-color: var(--color);
+      background: get-color(dark, 2);
+    }
+  }
+
+  &.show {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+}

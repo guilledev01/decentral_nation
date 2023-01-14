@@ -1,0 +1,48 @@
+.card {
+  border: 1px solid transparent;
+  border-radius: 12px;
+  text-align: center;
+  min-width: 500px;
+
+  &.primary {
+    border-color: get-color(primary, 2);
+    background-color: get-color(primary, 1);
+    color: get-color(light, 1);
+  }
+
+  &.secondary {
+    border-color: get-color(secondary, 2);
+    background-color: get-color(secondary, 1);
+    color: get-color(dark, 1);
+  }
+
+  &.dark {
+    border-color: get-color(dark, 4);
+    background-color: get-color(dark, 1);
+    color: get-color(light, 1);
+  }
+
+  &.light {
+    border-color: get-color(dark, 2);
+    background-color: get-color(light, 2);
+    color: get-color(dark, 1);
+  }
+
+  &.sm {
+    max-width: 350px;
+    height: 100%;
+    padding: 0.5rem;
+  }
+
+  &.md {
+    height: 100%;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: $mobile-resolution) {
+  .card {
+    width: 364px;
+    min-width: 0;
+  }
+}

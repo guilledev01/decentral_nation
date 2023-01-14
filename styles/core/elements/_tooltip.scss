@@ -1,0 +1,17 @@
+.tooltip-mouse {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100% !important;
+  height: 2.5rem;
+  padding: 8px 16px;
+  font-size: 16px;
+  text-align: center;
+  background: get-color(dark, 2);
+  color: get-color(light, 1);
+  border: 2px solid get-color(light, 1);
+  border-radius: 50px;
+  overflow: hidden;
+  z-index: 99999;
+}

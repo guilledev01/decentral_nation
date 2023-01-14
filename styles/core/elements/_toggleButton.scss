@@ -1,0 +1,46 @@
+.btn-group {
+  border: 1px solid get-color(dark, 4);
+  border-radius: 12px;
+  transition: 0.3s;
+
+  & > button {
+    font-weight: 600;
+    box-sizing: content-box;
+    cursor: pointer;
+    border-radius: 12px;
+    padding: 8px 16px;
+    font-size: 16px;
+    border: 1px solid transparent;
+    color: get-color(light, 1);
+    width: 100%;
+    background-color: get-color(dark, 1);
+    transition: 0.3s;
+
+    & > * {
+      pointer-events: none;
+    }
+
+    & span {
+      transition: 0.3s;
+    }
+
+    &:hover {
+      color: get-color(light, 3);
+      & span {
+        color: get-color(light, 3);
+      }
+    }
+
+    &.active {
+      background-color: get-color(secondary, 1);
+      color: get-color(dark, 1);
+      & span {
+        color: get-color(dark, 1);
+      }
+    }
+  }
+}
+
+.activating {
+  background-color: get-color(dark, 2) !important;
+}
