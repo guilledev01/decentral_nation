@@ -1,25 +1,31 @@
 import { useContext } from "react";
 import { GlobalContext } from "../utils/context";
 import { Button } from "../components/elements";
+import { LightSpeedEffect, ZoomEffect } from "../components/animations";
 
 export default function HomePage() {
   const { localStorage } = useContext(GlobalContext);
 
   return (
     <>
-      <div
-        style={{ width: 800 }}
-        className="d-flex col ai-c jc-c gp-16 m-center mt-64 mb-64 p-64"
-      >
-        <div>
-          <h3>Start your decentralized project today</h3>
-          <h3>Let's build the future together!</h3>
-        </div>
+      <LightSpeedEffect left>
+        <div
+          style={{ width: 800 }}
+          className="d-flex col ai-c jc-c gp-16 m-center mt-64 mb-64 p-64"
+        >
+          <div>
+            <h3>Start your decentralized project today</h3>
+            <h3>and build the future together!</h3>
+          </div>
 
-        <div style={{ width: 200 }}>
-          <Button color="primary" titleA="DEVELOP WITH US" />
+          <ZoomEffect delay={1000}>
+            <div style={{ width: 200 }}>
+              <Button color="primary" titleA="DEVELOP WITH US" />
+            </div>
+          </ZoomEffect>
         </div>
-      </div>
+      </LightSpeedEffect>
+
       <article>
         <h4>Features</h4>
       </article>

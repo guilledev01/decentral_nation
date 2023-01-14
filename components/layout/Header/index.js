@@ -17,7 +17,7 @@ export default function Header() {
   const router = useRouter();
   const btn = useRef();
   const container = useRef();
-  const isMobileResolution = useMatchMedia("(max-width:970px)", true);
+  const isMobileResolution = useMatchMedia("(max-width:970px)", false);
   const [load, setLoad] = useState(false);
 
   useEffect(() => {
