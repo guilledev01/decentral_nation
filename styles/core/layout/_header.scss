@@ -26,6 +26,7 @@
   text-decoration: none;
   transition: 0.3s;
   text-underline-offset: 8px;
+  color: get-color(light, 1);
 
   &:hover {
     text-decoration: underline;
@@ -114,25 +115,35 @@
 }
 
 .menu-container {
-  background-color: get-color(dark, 2);
+  background-color: get-color(dark, 1);
   position: fixed;
   left: 0;
   right: 0;
   transform: translate(-0%, 65%);
   visibility: hidden;
   opacity: 0;
-  transition: 0.3s;
-  animation: fadeOut 0.3s ease-in-out;
+  transition: 0.2s;
 
   &.open {
+    position: absolute;
     opacity: 1;
     visibility: visible;
-    animation: fadeIn 0.3s ease-in-out;
   }
 
-  &.close {
-    opacity: 0;
-    visibility: hidden;
+  &.dark-1 {
+    background-color: get-color(dark, 1);
+  }
+  &.dark-2 {
+    background-color: get-color(dark, 2);
+  }
+  &.dark-3 {
+    background-color: get-color(dark, 3);
+  }
+  &.dark-4 {
+    background-color: get-color(dark, 4);
+  }
+  &.dark-5 {
+    background-color: get-color(dark, 5);
   }
 }
 
@@ -162,4 +173,12 @@
     visibility: hidden;
     transform: translate(50%, 65%);
   }
+}
+
+.hero {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 1;
 }

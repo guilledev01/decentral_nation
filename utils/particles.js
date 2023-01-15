@@ -1,5 +1,6 @@
 export const ParticleConfig = {
   fullScreen: { enable: false },
+  background: { color: "#131416" },
   fpsLimit: 120,
   particles: {
     color: { value: "#ffffff" },

@@ -1,4 +1,4 @@
-html:focus-within {
+html {
   --scroll-behavior: smooth !important;
   scroll-behavior: smooth !important;
 }
@@ -34,30 +34,68 @@ body::-webkit-scrollbar-thumb {
   border-radius: 15px;
 }
 
+header {
+  height: 500px;
+  color: get-color(light, 1);
+}
+
 #tsparticles {
   position: fixed;
   width: 100%;
   height: 500px;
-  z-index: -99999;
+  z-index: -1;
 }
 
 nav {
-  color: get-color(light, 1);
+  position: fixed;
+  top: 0;
+  width: 100%;
   height: 100px;
-}
+  transition: 0.2s;
+  z-index: 99999;
 
-header {
-  height: 100%;
+  &.dark-1 {
+    background-color: get-color(dark, 1);
+  }
+  &.dark-2 {
+    background-color: get-color(dark, 2);
+  }
+  &.dark-3 {
+    background-color: get-color(dark, 3);
+  }
+  &.dark-4 {
+    background-color: get-color(dark, 4);
+  }
+  &.dark-5 {
+    background-color: get-color(dark, 5);
+  }
 }
 
 main {
-  height: 100%;
-  color: get-color(light, 1);
+  width: 100%;
+  min-height: 100%;
+
+  & > article {
+    &:first-child {
+      background-color: get-color(dark, 2);
+    }
+    &:nth-child(2) {
+      background-color: get-color(dark, 3);
+    }
+    &:nth-child(3) {
+      background-color: get-color(dark, 4);
+    }
+    &:last-child {
+      background-color: get-color(dark, 5);
+    }
+  }
 }
 
 article {
-  background-color: get-color(light, 1);
-  color: get-color(dark, 1);
+  min-height: 800px;
+  width: 100%;
+  padding: 128px;
+  color: get-color(light, 1);
 }
 
 footer {
