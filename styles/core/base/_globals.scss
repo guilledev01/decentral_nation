@@ -35,6 +35,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 header {
+  z-index: 1;
   height: 500px;
   color: get-color(light, 1);
 }

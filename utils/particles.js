@@ -1,3 +1,12 @@
+import Image from "next/image";
+import BSC from "../assets/imgs/bsc.svg";
+import Ethereum from "../assets/imgs/ethereum.svg";
+import Polygon from "../assets/imgs/polygon.svg";
+import Avalanche from "../assets/imgs/avalanche.svg";
+import Solana from "../assets/imgs/solana.svg";
+import Uniswap from "../assets/imgs/uniswap.svg";
+import Chainlink from "../assets/imgs/chainlink.svg";
+
 export const ParticleConfig = {
   fullScreen: { enable: false },
   background: { color: "#131416" },
@@ -12,41 +21,69 @@ export const ParticleConfig = {
       speed: 1,
       straight: false,
     },
-    number: { density: { enable: true, area: 500 }, value: 8 },
+    number: { limit: 14 },
     opacity: {
-      value: 0.7,
+      value: 0.8,
+      anim: {
+        enable: true,
+        speed: 0.3,
+        opacity_min: 0.4,
+        sync: false,
+      },
     },
     shape: {
       type: "image",
       image: [
         {
-          src: "https://cryptologos.cc/logos/bnb-bnb-logo.svg?v=024",
+          src: BSC.src,
         },
         {
-          src: "https://cryptologos.cc/logos/polygon-matic-logo.svg?v=024",
+          src: Ethereum.src,
         },
         {
-          src: "https://cryptologos.cc/logos/ethereum-eth-logo.svg?v=024",
+          src: Polygon.src,
         },
         {
-          src: "https://cryptologos.cc/logos/bitcoin-btc-logo.svg?v=024",
+          src: Avalanche.src,
         },
         {
-          src: "https://cryptologos.cc/logos/solana-sol-logo.svg?v=024",
+          src: Solana.src,
         },
         {
-          src: "https://cryptologos.cc/logos/avalanche-avax-logo.svg?v=024",
+          src: Uniswap.src,
         },
         {
-          src: "https://cryptologos.cc/logos/chainlink-link-logo.svg?v=024",
-        },
-        {
-          src: "https://cryptologos.cc/logos/uniswap-uni-logo.svg?v=024",
+          src: Chainlink.src,
         },
       ],
     },
     size: {
-      value: { min: 10, max: 15 },
+      value: { min: 10, max: 30 },
+    },
+  },
+  interactivity: {
+    detect_on: "window",
+    events: {
+      onhover: {
+        enable: true,
+        mode: "grab",
+      },
+      onclick: {
+        enable: true,
+        mode: "repulse",
+      },
+    },
+    modes: {
+      grab: {
+        line_linked: {
+          color: "#1dff7b",
+          opacity: 0.8,
+        },
+        distance: 200,
+      },
+      repulse: {
+        distance: 200,
+      },
     },
   },
 };

@@ -43,12 +43,12 @@ const ROUTES = [
 ];
 
 export default function Header() {
+  const [open, setOpen] = useState(false);
+  const [hash, setHash] = useState(false);
+  const isMobileResolution = useMatchMedia("(max-width:970px)", undefined);
   const nav = useRef();
   const btn = useRef();
   const container = useRef();
-  const isMobileResolution = useMatchMedia("(max-width:970px)", undefined);
-  const [open, setOpen] = useState(false);
-  const [hash, setHash] = useState(false);
 
   useEffect(() => {
     window.addEventListener("scroll", handleNav);
@@ -64,7 +64,7 @@ export default function Header() {
         btn.current.removeEventListener("click", handleMenu);
       }
     };
-  }, [isMobileResolution, hash, open]);
+  }, [isMobileResolution, open, hash]);
 
   useEffect(() => {
     const hash = window.location.hash === "" ? "#" : window.location.hash;
