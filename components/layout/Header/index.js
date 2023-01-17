@@ -72,6 +72,7 @@ export default function Header() {
     };
 
     const handleMenu = (e) => {
+      console.log(e);
       e.preventDefault();
       if (open) {
         container.current.style.animation = "fadeOut 0.2s ease-in-out";
@@ -87,6 +88,7 @@ export default function Header() {
     let actionBtn = btn.current;
     window.addEventListener("scroll", handleNav);
     if (isMobileResolution && hash) {
+      console.log(hash);
       window.addEventListener("hashchange", handleMenu);
       actionBtn.addEventListener("click", handleMenu);
     }
@@ -102,8 +104,11 @@ export default function Header() {
 
   useEffect(() => {
     const hash = window.location.hash === "" ? "#home" : window.location.hash;
-    setHash(hash);
-    let timer = setTimeout(() => window.location.replace(hash), 100);
+
+    let timer = setTimeout(() => {
+      window.location.replace(hash);
+      setHash(hash);
+    }, 100);
 
     return () => clearTimeout(timer);
   }, []);

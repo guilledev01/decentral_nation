@@ -21,7 +21,7 @@ export const ParticleConfig = {
       speed: 1,
       straight: false,
     },
-    number: { limit: 14 },
+    number: { limit: 7 },
     opacity: {
       value: 0.8,
       anim: {
