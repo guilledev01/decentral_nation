@@ -72,7 +72,7 @@ export default function Header() {
     };
 
     const handleMenu = (e) => {
-      e.stopPropagation();
+      e.preventDefault();
       if (open) {
         container.current.style.animation = "fadeOut 0.2s ease-in-out";
         setTimeout(() => setOpen(false), 200);
@@ -86,14 +86,14 @@ export default function Header() {
 
     let actionBtn = btn.current;
     window.addEventListener("scroll", handleNav);
-    if (isMobileResolution) {
+    if (isMobileResolution && hash) {
       window.addEventListener("hashchange", handleMenu);
       actionBtn.addEventListener("click", handleMenu);
     }
 
     return () => {
       window.removeEventListener("scroll", handleNav);
-      if (isMobileResolution) {
+      if (isMobileResolution && hash) {
         window.removeEventListener("hashchange", handleMenu);
         actionBtn && actionBtn.removeEventListener("click", handleMenu);
       }
@@ -101,7 +101,7 @@ export default function Header() {
   }, [btn, isMobileResolution, open, hash]);
 
   useEffect(() => {
-    const hash = window.location.hash === "" ? "#" : window.location.hash;
+    const hash = window.location.hash === "" ? "#home" : window.location.hash;
     setHash(hash);
     let timer = setTimeout(() => window.location.replace(hash), 100);
 
