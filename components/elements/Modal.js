@@ -13,37 +13,36 @@ export default function Modal({
 }) {
   const modal = useRef();
 
-  const openModal = () => {
-    modal.current.classList.add("show");
-  };
-
-  const closeModal = () => {
-    modal.current.classList.remove("show");
-  };
-
-  const modalListener = (e) => {
-    e.stopPropagation();
-    if (e.target === modal.current) {
-      setOpen(false);
-    }
-  };
-
-  const adjustDimension = () => {
-    const modalContent = modal.current.children[0];
-    if (isMobileResolution) {
-      modalContent.style.width = "364px";
-    } else {
-      modalContent.style.width = "1200px";
-    }
-  };
-
   useEffect(() => {
+    const openModal = () => {
+      modal.current.classList.add("show");
+    };
+
+    const closeModal = () => {
+      modal.current.classList.remove("show");
+    };
+
+    const modalListener = (e) => {
+      e.stopPropagation();
+      if (e.target === modal.current) {
+        setOpen(false);
+      }
+    };
+
     open ? openModal() : closeModal();
     window.addEventListener("mousedown", modalListener);
     return () => window.removeEventListener("mousedown", modalListener);
-  }, [modal, open]);
+  }, [modal, open, setOpen]);
 
   useEffect(() => {
+    const adjustDimension = () => {
+      const modalContent = modal.current.children[0];
+      if (isMobileResolution) {
+        modalContent.style.width = "364px";
+      } else {
+        modalContent.style.width = "1200px";
+      }
+    };
     adjustDimension();
   }, [modal, isMobileResolution]);
 

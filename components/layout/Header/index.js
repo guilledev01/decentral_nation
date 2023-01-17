@@ -51,20 +51,54 @@ export default function Header() {
   const container = useRef();
 
   useEffect(() => {
+    const handleNav = (e) => {
+      ROUTES.forEach(({ href, className }) => {
+        var article = document.getElementById(href.slice(1));
+        var rect = article.getBoundingClientRect();
+        nav.current.classList.toggle(
+          className,
+          rect.top <= 0 && rect.bottom >= 0
+        );
+        if (isMobileResolution) {
+          container.current.classList.toggle(
+            className,
+            rect.top <= 0 && rect.bottom >= 0
+          );
+        }
+        if (rect.top <= 0 && rect.bottom >= 0 && hash !== href) {
+          setHash(href);
+        }
+      });
+    };
+
+    const handleMenu = (e) => {
+      e.stopPropagation();
+      if (open) {
+        container.current.style.animation = "fadeOut 0.2s ease-in-out";
+        setTimeout(() => setOpen(false), 200);
+      } else {
+        setOpen(true);
+        container.current.style.animation = "fadeIn 0.2s ease-in-out";
+      }
+      btn.current.classList.toggle("open");
+      container.current.classList.toggle("open");
+    };
+
+    let actionBtn = btn.current;
     window.addEventListener("scroll", handleNav);
     if (isMobileResolution) {
       window.addEventListener("hashchange", handleMenu);
-      btn.current.addEventListener("click", handleMenu);
+      actionBtn.addEventListener("click", handleMenu);
     }
 
     return () => {
       window.removeEventListener("scroll", handleNav);
       if (isMobileResolution) {
         window.removeEventListener("hashchange", handleMenu);
-        btn.current && btn.current.removeEventListener("click", handleMenu);
+        actionBtn && actionBtn.removeEventListener("click", handleMenu);
       }
     };
-  }, [isMobileResolution, open, hash]);
+  }, [btn, isMobileResolution, open, hash]);
 
   useEffect(() => {
     const hash = window.location.hash === "" ? "#" : window.location.hash;
@@ -73,39 +107,6 @@ export default function Header() {
 
     return () => clearTimeout(timer);
   }, []);
-
-  const handleNav = (e) => {
-    ROUTES.forEach(({ href, className }) => {
-      var article = document.getElementById(href.slice(1));
-      var rect = article.getBoundingClientRect();
-      nav.current.classList.toggle(
-        className,
-        rect.top <= 0 && rect.bottom >= 0
-      );
-      if (isMobileResolution) {
-        container.current.classList.toggle(
-          className,
-          rect.top <= 0 && rect.bottom >= 0
-        );
-      }
-      if (rect.top <= 0 && rect.bottom >= 0 && hash !== href) {
-        setHash(href);
-      }
-    });
-  };
-
-  const handleMenu = (e) => {
-    e.stopPropagation();
-    if (open) {
-      container.current.style.animation = "fadeOut 0.2s ease-in-out";
-      setTimeout(() => setOpen(false), 200);
-    } else {
-      setOpen(true);
-      container.current.style.animation = "fadeIn 0.2s ease-in-out";
-    }
-    btn.current.classList.toggle("open");
-    container.current.classList.toggle("open");
-  };
 
   return (
     isMobileResolution !== undefined && (

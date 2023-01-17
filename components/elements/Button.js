@@ -5,16 +5,17 @@ export default function Button({ color, titleA, titleB, ...props }) {
   const [title, setTitle] = useState("");
 
   useEffect(() => {
+    let actionBtn = btn.current;
     setTitle(titleA);
-    if (titleB && btn.current) {
-      btn.current.addEventListener("mouseenter", () => setTitle(titleB));
-      btn.current.addEventListener("mouseleave", () => setTitle(titleA));
+    if (titleB && actionBtn) {
+      actionBtn.addEventListener("mouseenter", () => setTitle(titleB));
+      actionBtn.addEventListener("mouseleave", () => setTitle(titleA));
     }
 
     return () => {
-      if (titleB && btn.current) {
-        btn.current.removeEventListener("mouseenter", () => setTitle(titleB));
-        btn.current.removeEventListener("mouseleave", () => setTitle(titleA));
+      if (titleB && actionBtn) {
+        actionBtn.removeEventListener("mouseenter", () => setTitle(titleB));
+        actionBtn.removeEventListener("mouseleave", () => setTitle(titleA));
       }
     };
   }, [btn, titleA, titleB]);
