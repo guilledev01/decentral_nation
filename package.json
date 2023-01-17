@@ -1,5 +1,5 @@
 {
-  "name": "planetary_lottery",
+  "name": "decentral_nation",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -15,16 +15,16 @@
     "@next/font": "13.1.2",
     "@successtar/react-reveal": "1.2.10",
     "clipboard": "2.0.11",
-    "eslint": "8.31.0",
+    "eslint": "8.32.0",
     "eslint-config-next": "13.1.2",
     "next": "13.1.2",
     "next-deploy-notifications": "0.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-toastify": "9.1.1",
-    "react-tsparticles": "^2.7.1",
+    "react-tsparticles": "2.7.1",
     "sharp": "0.31.3",
-    "tsparticles": "^2.7.1"
+    "tsparticles": "2.7.1"
   },
   "devDependencies": {
     "@babel/core": "7.20.12",

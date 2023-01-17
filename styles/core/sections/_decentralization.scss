@@ -1,0 +1,30 @@
+.rombo1 {
+  width: 90px;
+  height: 90px;
+  border: 1px solid get-color(primary, 1);
+  background: get-color(primary, 1);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  border-radius: 12px;
+}
+.rombo2 {
+  width: 90px;
+  height: 90px;
+  border: 1px solid get-color(primary, 1);
+  background: get-color(dark, 1);
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(-45deg);
+  border-radius: 12px;
+
+  & > svg {
+    width: 64px;
+    height: 64px;
+    fill: get-color(primary, 1);
+  }
+}

@@ -1,18 +1,19 @@
+import {
+  Decentralization,
+  Services,
+  About,
+  Projects,
+} from "../components/sections";
+import { useMatchMedia } from "../hooks";
+
 export default function HomePage() {
+  const isMobileResolution = useMatchMedia("(max-width:970px)", undefined);
   return (
     <>
-      <article id="decentralization">
-        <h4>Header 1</h4>
-      </article>
-      <article id="services">
-        <h4>Header 2</h4>
-      </article>
-      <article id="team">
-        <h4>Header 3</h4>
-      </article>
-      <article id="projects">
-        <h4>Header 4</h4>
-      </article>
+      <Decentralization isMobileResolution={isMobileResolution} />
+      <Services />
+      <About />
+      <Projects />
     </>
   );
 }

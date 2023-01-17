@@ -7,7 +7,7 @@ import { Button } from "../../elements";
 const ROUTES = [
   {
     title: "Home",
-    href: "#",
+    href: "#home",
     className: "dark-1",
     min: 100,
     max: 400,
@@ -61,7 +61,7 @@ export default function Header() {
       window.removeEventListener("scroll", handleNav);
       if (isMobileResolution) {
         window.removeEventListener("hashchange", handleMenu);
-        btn.current.removeEventListener("click", handleMenu);
+        btn.current && btn.current.removeEventListener("click", handleMenu);
       }
     };
   }, [isMobileResolution, open, hash]);
@@ -75,16 +75,20 @@ export default function Header() {
   }, []);
 
   const handleNav = (e) => {
-    const scroll = window.scrollY;
-    ROUTES.forEach(({ href, className, min, max }) => {
-      nav.current.classList.toggle(className, scroll >= min && scroll < max);
+    ROUTES.forEach(({ href, className }) => {
+      var article = document.getElementById(href.slice(1));
+      var rect = article.getBoundingClientRect();
+      nav.current.classList.toggle(
+        className,
+        rect.top <= 0 && rect.bottom >= 0
+      );
       if (isMobileResolution) {
         container.current.classList.toggle(
           className,
-          scroll >= min && scroll < max
+          rect.top <= 0 && rect.bottom >= 0
         );
       }
-      if (scroll >= min && scroll < max && hash !== href) {
+      if (rect.top <= 0 && rect.bottom >= 0 && hash !== href) {
         setHash(href);
       }
     });
@@ -105,11 +109,11 @@ export default function Header() {
 
   return (
     isMobileResolution !== undefined && (
-      <header>
+      <header id="home">
         <nav className="d-flex ai-c jc-sa" ref={nav}>
           <div className="logo d-flex ai-c jc-c gp-8">
             <LogoIcon />
-            <div className="d-flex col ai-c jc-c mt-4">
+            <div className="d-flex col ai-c jc-c">
               <h4 translate="no">Decentral</h4>
               <h4 translate="no">Nation</h4>
             </div>
@@ -172,11 +176,11 @@ export default function Header() {
           </div>
         </nav>
         <div
-          style={{ maxWidth: 600 }}
+          style={{ maxWidth: 800 }}
           className="hero d-flex col ai-c jc-c gp-16 m-center mt-32 mb-64 p-64"
         >
           <LightSpeedEffect left>
-            <h3>Decentralize your business, secure your future.</h3>
+            <h2>Decentralize your business, secure your future.</h2>
             <ZoomEffect delay={1000} duration={500}>
               <div style={{ minWidth: 200 }}>
                 <Button color="primary" titleA="BUILD WITH US" />
