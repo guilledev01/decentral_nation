@@ -54,7 +54,7 @@ export default function Services() {
                 left={id % 2 === 0}
                 right={id % 2 === 1}
                 distance="60px"
-                delay={parseInt(`${id + 1 * 5}00`)}
+                delay={parseInt(`${id + 1 * 3}00`)}
               >
                 <div
                   className={`d-flex flex-wrap ai-c jc-se gp-64 p-15 ${

@@ -56,14 +56,14 @@ const ROUTE = [
   },
 ];
 
-const BuildButton = ({ router }) => {
+const BuildButton = ({ handleRoute }) => {
   return (
     <ZoomEffect delay={1000} duration={500}>
       <div style={{ minWidth: 200 }}>
         <Button
           color="primary"
           titleA="BUILD WITH US"
-          onClick={() => router.push(ROUTE[0].route)}
+          onClick={() => handleRoute(ROUTE[0].route)}
         />
       </div>
     </ZoomEffect>
@@ -195,6 +195,11 @@ export default function Header() {
     };
   }, [btn, nav, container, isMobileResolution, open, hash, router, handleMenu]);
 
+  const handleRoute = (path) => {
+    router.push(path);
+    open && handleMenu();
+  };
+
   return (
     isMobileResolution !== undefined && (
       <header
@@ -203,7 +208,9 @@ export default function Header() {
         className="d-flex ai-c jc-c"
       >
         <nav className="d-flex ai-c jc-sa p-4" ref={nav}>
-          <Logo />
+          <div onClick={() => handleRoute("/")}>
+            <Logo />
+          </div>
           {isMobileResolution && (
             <div id="menu-icon" ref={btn}>
               <span></span>
@@ -225,7 +232,7 @@ export default function Header() {
               (router.pathname === "/" ? (
                 <>
                   <HrefHeader handleMenu={handleMenu} hash={hash} />
-                  <BuildButton router={router} />
+                  <BuildButton handleRoute={handleRoute} />
                 </>
               ) : (
                 <RouteHeader handleMenu={handleMenu} router={router} />
@@ -234,7 +241,7 @@ export default function Header() {
               (router.pathname === "/" ? (
                 <>
                   <HrefHeader hash={hash} />
-                  <BuildButton router={router} />
+                  <BuildButton handleRoute={handleRoute} />
                 </>
               ) : (
                 <RouteHeader router={router} />
@@ -248,7 +255,7 @@ export default function Header() {
           >
             <LightSpeedEffect left>
               <h2>Decentralize your business, secure your future.</h2>
-              <BuildButton />
+              <BuildButton handleRoute={handleRoute} />
             </LightSpeedEffect>
           </div>
         )}

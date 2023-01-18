@@ -59,7 +59,7 @@ export default function Decentralization({ isMobileResolution }) {
             <div className="d-flex flex-wrap ai-c jc-se gp-64">
               {DECENTRALIZATION.blockchain.map(({ icon, text }, id) => {
                 return (
-                  <ZoomEffect key={id} top delay={parseInt(`${id + 1 * 5}00`)}>
+                  <ZoomEffect key={id} top delay={parseInt(`${id + 1 * 3}00`)}>
                     <div
                       className="d-flex col ai-c jc-fs gp-32"
                       style={{
@@ -87,7 +87,7 @@ export default function Decentralization({ isMobileResolution }) {
                   <ZoomEffect
                     key={id}
                     bottom
-                    delay={parseInt(`${id + 1 * 5}00`)}
+                    delay={parseInt(`${id + 1 * 3}00`)}
                   >
                     <div
                       key={id}

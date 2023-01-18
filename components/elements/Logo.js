@@ -1,10 +1,8 @@
-import { useRouter } from "next/router";
 import { LogoIcon } from "../svgs";
 
 export default function Loader() {
-  let route = useRouter();
   return (
-    <div className="logo d-flex ai-c jc-c gp-8" onClick={() => route.push("/")}>
+    <div className="logo d-flex ai-c jc-c gp-8">
       <LogoIcon />
       <div className="d-flex col ai-c jc-c">
         <h4 translate="no">Decentral</h4>
