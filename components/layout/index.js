@@ -1,17 +1,19 @@
-import { useState, useEffect, useCallback } from "react";
-import { Chivo } from "@next/font/google";
-import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
+import { Kanit } from "@next/font/google";
+import { useHasNewDeploy } from "next-deploy-notifications";
+
+import { useCallback, useEffect, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useHasNewDeploy } from "next-deploy-notifications";
+import Particles from "react-tsparticles";
+import { loadFull } from "tsparticles";
 import { useStorage } from "../../hooks";
 import { GlobalContext } from "../../utils/context";
-import Header from "./Header";
-import Footer from "./Footer";
 import { ParticleConfig } from "../../utils/particles";
+import { Loader } from "../elements";
+import Footer from "./Footer";
+import Header from "./Header";
 
-const font = Chivo({
+const font = Kanit({
   weight: "400",
   subsets: ["latin"],
 });
@@ -82,9 +84,15 @@ export default function GlobalLayout({ children }) {
         theme="dark"
       />
       <Context>
-        <Header />
-        <main>{load && children}</main>
-        <Footer />
+        {load ? (
+          <>
+            <Header />
+            <main>{children}</main>
+            <Footer />
+          </>
+        ) : (
+          <Loader />
+        )}
       </Context>
     </div>
   );

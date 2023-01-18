@@ -21,6 +21,8 @@
 @import "core/elements/input";
 @import "core/elements/toast";
 @import "core/elements/toggleButton";
+@import "core/elements/loader";
+@import "core/elements/logo";
 
 // BASE
 @import "core/base/helpers";
@@ -28,3 +30,4 @@
 
 // SECTIONS
 @import "core/sections/decentralization";
+@import "core/sections/services";

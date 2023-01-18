@@ -1,0 +1,7 @@
+.service-image {
+  object-fit: contain;
+  max-width: 100% !important;
+  position: relative !important;
+  height: unset !important;
+  filter: drop-shadow(0 0 1px get-color(light, 1));
+}

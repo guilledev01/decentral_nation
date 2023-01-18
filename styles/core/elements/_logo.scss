@@ -1,0 +1,25 @@
+.logo {
+  cursor: pointer;
+  transition: 0.3s;
+  & > svg {
+    transition: 0.3s;
+    width: 100px;
+    height: 100px;
+  }
+  & h4 {
+    transition: 0.3s;
+    letter-spacing: 4px;
+    transition: 0.3s;
+    // line-height: 1.6;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+    & > svg {
+      filter: drop-shadow(0 0 2px get-color(light, 1));
+    }
+    & h4 {
+      text-shadow: 0 0 2px get-color(light, 1);
+    }
+  }
+}

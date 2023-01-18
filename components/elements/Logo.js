@@ -1,13 +1,15 @@
-// import Image from "next/image";
-// import LogoToken from "../../assets/imgs/logo.png";
+import { useRouter } from "next/router";
+import { LogoIcon } from "../svgs";
 
-// export default function Logo({ size }) {
-//   return (
-//     <Image
-//       className={`img ${size}`}
-//       src={LogoToken}
-//       alt="USIF TOKEN"
-//       priority
-//     />
-//   );
-// }
+export default function Loader() {
+  let route = useRouter();
+  return (
+    <div className="logo d-flex ai-c jc-c gp-8" onClick={() => route.push("/")}>
+      <LogoIcon />
+      <div className="d-flex col ai-c jc-c mt-8">
+        <h4 translate="no">Decentral</h4>
+        <h4 translate="no">Nation</h4>
+      </div>
+    </div>
+  );
+}

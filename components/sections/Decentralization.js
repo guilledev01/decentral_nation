@@ -1,10 +1,11 @@
+import { FadeEffect, ZoomEffect } from "../animations";
 import {
   BlockchainIcon,
+  DatabaseIcon,
   IpfsIcon,
   NetworkIcon,
-  ShieldIcon,
-  DatabaseIcon,
   NodeIcon,
+  ShieldIcon,
 } from "../svgs";
 
 const DECENTRALIZATION = {
@@ -30,64 +31,78 @@ export default function Decentralization({ isMobileResolution }) {
   return (
     <article id="decentralization">
       <div className="d-flex col ai-c jc-c gp-64">
-        <div className="d-flex col ai-c jc-c gp-32">
-          <h3>Decentralization</h3>
-          <span>{DECENTRALIZATION.introduction}</span>
-        </div>
-
-        <div className="d-flex col ai-c jc-c gp-64">
-          <h4>Blockchain</h4>
-          <div className="d-flex flex-wrap ai-c jc-se gp-64">
-            {DECENTRALIZATION.blockchain.map((text, id) => {
-              return (
-                <div
-                  key={id}
-                  className="d-flex col ai-c jc-fs gp-32"
-                  style={{
-                    width: isMobileResolution ? 350 : 500,
-                    minHeight: 200,
-                  }}
-                >
-                  <div className="rombo1 d-flex ai-c jc-c">
-                    <div className="rombo2 d-flex ai-c jc-c">
-                      {BLOCKCHAIN_LOGO[id]}
-                    </div>
-                  </div>
-                  <span>{text}</span>
-                </div>
-              );
-            })}
+        <FadeEffect bottom distance="60px">
+          <div className="d-flex col ai-c jc-c gp-32">
+            <h3>Decentralization</h3>
+            <span>{DECENTRALIZATION.introduction}</span>
           </div>
-        </div>
-
-        <div className="d-flex col ai-c jc-c gp-64">
-          <h4>IPFS</h4>
-          <div className="d-flex flex-wrap ai-c jc-se gp-64">
-            {DECENTRALIZATION.ipfs.map((text, id) => {
-              return (
-                <div
-                  key={id}
-                  className="d-flex col ai-c jc-c gp-32"
-                  style={{
-                    width: isMobileResolution ? 350 : 500,
-                    minHeight: 200,
-                  }}
-                >
-                  <div className="rombo1 d-flex ai-c jc-c">
-                    <div className="rombo2 d-flex ai-c jc-c">
-                      {IPFS_LOGO[id]}
+        </FadeEffect>
+        <FadeEffect bottom distance="60px" delay={400}>
+          <div className="d-flex col ai-c jc-c gp-64">
+            <h4>Blockchain</h4>
+            <div className="d-flex flex-wrap ai-c jc-se gp-64">
+              {DECENTRALIZATION.blockchain.map((text, id) => {
+                return (
+                  <ZoomEffect key={id} top delay={parseInt(`${id + 1 * 5}00`)}>
+                    <div
+                      className="d-flex col ai-c jc-fs gp-32"
+                      style={{
+                        width: isMobileResolution ? 350 : 500,
+                        minHeight: 200,
+                      }}
+                    >
+                      <div className="rombo1 d-flex ai-c jc-c">
+                        <div className="rombo2 d-flex ai-c jc-c">
+                          {BLOCKCHAIN_LOGO[id]}
+                        </div>
+                      </div>
+                      <span>{text}</span>
                     </div>
-                  </div>
-                  <span>{text}</span>
-                </div>
-              );
-            })}
+                  </ZoomEffect>
+                );
+              })}
+            </div>
           </div>
-        </div>
-        <div className="d-flex col ai-c jc-c gp-32">
-          <h4>Both</h4>
-          <span>{DECENTRALIZATION.conclusion}</span>
-        </div>
+        </FadeEffect>
+        <FadeEffect bottom distance="60px" delay={600}>
+          <div className="d-flex col ai-c jc-c gp-64">
+            <h4>IPFS</h4>
+            <div className="d-flex flex-wrap ai-c jc-se gp-64">
+              {DECENTRALIZATION.ipfs.map((text, id) => {
+                return (
+                  <ZoomEffect
+                    key={id}
+                    bottom
+                    delay={parseInt(`${id + 1 * 5}00`)}
+                  >
+                    <div
+                      key={id}
+                      className="d-flex col ai-c jc-c gp-32"
+                      style={{
+                        width: isMobileResolution ? 350 : 500,
+                        minHeight: 200,
+                      }}
+                    >
+                      <div className="rombo1 d-flex ai-c jc-c">
+                        <div className="rombo2 d-flex ai-c jc-c">
+                          {IPFS_LOGO[id]}
+                        </div>
+                      </div>
+                      <span>{text}</span>
+                    </div>
+                  </ZoomEffect>
+                );
+              })}
+            </div>
+          </div>
+        </FadeEffect>
+        <FadeEffect bottom distance="60px" delay={800}>
+          <div className="d-flex col ai-c jc-c gp-32">
+            <h4>Both</h4>
+
+            <span>{DECENTRALIZATION.conclusion}</span>
+          </div>
+        </FadeEffect>
       </div>
     </article>
   );

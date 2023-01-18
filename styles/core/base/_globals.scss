@@ -18,7 +18,6 @@ body {
   text-align: center;
   background-color: get-color(dark, 1);
   text-rendering: optimizeSpeed;
-  min-height: 100vh;
 }
 
 body::-webkit-scrollbar {
@@ -36,14 +35,13 @@ body::-webkit-scrollbar-thumb {
 
 header {
   z-index: 1;
-  height: 500px;
   color: get-color(light, 1);
 }
 
 #tsparticles {
   position: fixed;
   width: 100%;
-  height: 500px;
+  height: 100%;
   z-index: -1;
 }
 
@@ -51,7 +49,7 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 100px;
+  height: 120px;
   transition: 0.2s;
   z-index: 99999;
 
@@ -73,8 +71,9 @@ nav {
 }
 
 main {
+  overflow: hidden;
   width: 100%;
-  min-height: 100%;
+  min-height: 100vh;
 
   & > article {
     &:first-child {
@@ -100,45 +99,9 @@ article {
 }
 
 footer {
-  height: 100%;
-}
-
-.grid-container {
-  position: relative;
-  display: grid;
-  gap: 10px;
-  grid-template:
-    "earth" 60vh
-    "right" 440px
-    "bottom" 610px
-    "video" 320px
-    "left" 440px
-    "history" 300px
-    "team" 190px;
-}
-
-@media (min-width: $mobile-resolution) {
-  .grid-container {
-    grid-template:
-      "earth" 70vh
-      "right" 450px
-      "bottom" 400px
-      "video" 560px
-      "left" 450px
-      "history" 350px
-      "team" 350px;
-  }
-}
-
-@media (min-width: $tablet-resolution) {
-  .grid-container {
-    grid-template:
-      "left center right" 80vh
-      "bottom bottom bottom" 400px
-      "video video video" 560px
-      "history history history" 350px
-      "team team team" 350px /650px auto 650px;
-  }
+  z-index: 1;
+  height: 200px;
+  color: get-color(light, 1);
 }
 
 ul {

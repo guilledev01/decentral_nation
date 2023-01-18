@@ -1,4 +1,3 @@
-import Image from "next/image";
 import BSC from "../assets/imgs/bsc.svg";
 import Ethereum from "../assets/imgs/ethereum.svg";
 import Polygon from "../assets/imgs/polygon.svg";

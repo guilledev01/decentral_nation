@@ -1,8 +1,8 @@
 import {
-  Decentralization,
-  Services,
   About,
+  Decentralization,
   Projects,
+  Services,
 } from "../components/sections";
 import { useMatchMedia } from "../hooks";
 
