@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useMatchMedia } from "../../../hooks";
 import { FadeEffect, LightSpeedEffect, ZoomEffect } from "../../animations";
 import { Button, Logo } from "../../elements";
@@ -70,7 +70,7 @@ const BuildButton = ({ router }) => {
   );
 };
 
-const HrefHeader = ({ hash }) => {
+const HrefHeader = ({ hash, handleMenu }) => {
   return HREF.map(({ title, href }, id) => {
     return (
       <FadeEffect
@@ -80,7 +80,11 @@ const HrefHeader = ({ hash }) => {
         distance="30px"
         duration={id === 0 ? 0 : 200}
       >
-        <a href={href} className={`routes ${hash === href ? "active" : ""}`}>
+        <a
+          onClick={() => handleMenu && handleMenu()}
+          href={href}
+          className={`routes ${hash === href ? "active" : ""}`}
+        >
           {title}
         </a>
       </FadeEffect>
@@ -88,7 +92,7 @@ const HrefHeader = ({ hash }) => {
   });
 };
 
-const RouteHeader = ({ router }) => {
+const RouteHeader = ({ router, handleMenu }) => {
   return ROUTE.map(({ title, route }, id) => {
     return (
       <FadeEffect
@@ -99,8 +103,9 @@ const RouteHeader = ({ router }) => {
         duration={id === 0 ? 0 : 200}
       >
         <Link
+          onClick={() => handleMenu && handleMenu()}
           href={route}
-          className={`routes ${router.asPath === route ? "active" : ""}`}
+          className={`routes ${router.pathname === route ? "active" : ""}`}
         >
           {title}
         </Link>
@@ -117,6 +122,21 @@ export default function Header() {
   const btn = useRef();
   const container = useRef();
   let router = useRouter();
+
+  const handleMenu = useCallback(
+    (e) => {
+      if (open) {
+        container.current.style.animation = "fadeOut 0.2s ease-in-out";
+        setTimeout(() => setOpen(false), 200);
+      } else {
+        setOpen(true);
+        container.current.style.animation = "fadeIn 0.2s ease-in-out";
+      }
+      btn.current.classList.toggle("open");
+      container.current.classList.toggle("open");
+    },
+    [open]
+  );
 
   useEffect(() => {
     let actionBtn = btn.current;
@@ -136,24 +156,23 @@ export default function Header() {
     };
 
     const handleNav = (e) => {
-      e.preventDefault();
-      if (router.asPath === "/") {
+      if (router.pathname === "/") {
         HREF.forEach(({ href, className }) => {
           var article = document.getElementById(href.slice(1));
           var rect = article.getBoundingClientRect();
           elNav.classList.toggle(
             className,
             href === HREF[0].href
-              ? rect.top < 0 && rect.bottom >= 0
-              : rect.top <= 0 && rect.bottom >= 0
+              ? rect.top < 0 && rect.bottom >= 45
+              : rect.top <= 45 && rect.bottom >= 45
           );
           if (isMobileResolution) {
             elContainer.classList.toggle(
               className,
-              rect.top <= 0 && rect.bottom >= 0
+              rect.top <= 45 && rect.bottom >= 45
             );
           }
-          if (rect.top <= 0 && rect.bottom >= 0 && hash !== href) {
+          if (rect.top <= 45 && rect.bottom >= 45 && hash !== href) {
             setHash(href);
           }
         });
@@ -165,41 +184,25 @@ export default function Header() {
       }
     };
 
-    const handleMenu = (e) => {
-      e.preventDefault();
-      if (open) {
-        container.current.style.animation = "fadeOut 0.2s ease-in-out";
-        setTimeout(() => setOpen(false), 200);
-      } else {
-        setOpen(true);
-        container.current.style.animation = "fadeIn 0.2s ease-in-out";
-      }
-      btn.current.classList.toggle("open");
-      container.current.classList.toggle("open");
-    };
-
     window.addEventListener("scroll", handleNav);
-    if (isMobileResolution && hash) {
-      window.addEventListener("hashchange", handleMenu);
-      actionBtn.addEventListener("click", handleMenu);
-    }
+    isMobileResolution && actionBtn.addEventListener("click", handleMenu);
 
     return () => {
       window.removeEventListener("scroll", handleNav);
-      if (isMobileResolution && hash) {
-        window.removeEventListener("hashchange", handleMenu);
-        actionBtn && actionBtn.removeEventListener("click", handleMenu);
-      }
+      isMobileResolution &&
+        actionBtn &&
+        actionBtn.removeEventListener("click", handleMenu);
     };
-  }, [btn, nav, container, isMobileResolution, open, hash, router]);
+  }, [btn, nav, container, isMobileResolution, open, hash, router, handleMenu]);
 
   return (
     isMobileResolution !== undefined && (
       <header
         id="home"
-        style={{ height: router.asPath === "/" ? 500 : "100%" }}
+        style={{ height: router.pathname === "/" ? 500 : "100%" }}
+        className="d-flex ai-c jc-c"
       >
-        <nav className="d-flex ai-c jc-sa" ref={nav}>
+        <nav className="d-flex ai-c jc-sa p-4" ref={nav}>
           <Logo />
           {isMobileResolution && (
             <div id="menu-icon" ref={btn}>
@@ -219,16 +222,16 @@ export default function Header() {
           >
             {isMobileResolution &&
               open &&
-              (router.asPath === "/" ? (
+              (router.pathname === "/" ? (
                 <>
-                  <HrefHeader hash={hash} />
+                  <HrefHeader handleMenu={handleMenu} hash={hash} />
                   <BuildButton router={router} />
                 </>
               ) : (
-                <RouteHeader router={router} />
+                <RouteHeader handleMenu={handleMenu} router={router} />
               ))}
             {!isMobileResolution &&
-              (router.asPath === "/" ? (
+              (router.pathname === "/" ? (
                 <>
                   <HrefHeader hash={hash} />
                   <BuildButton router={router} />
@@ -238,10 +241,10 @@ export default function Header() {
               ))}
           </div>
         </nav>
-        {router.asPath === "/" && (
+        {router.pathname === "/" && (
           <div
-            style={{ maxWidth: 800 }}
-            className="hero d-flex col ai-c jc-c gp-16 m-center mt-32 mb-64 p-64"
+            style={{ maxWidth: 600 }}
+            className="d-flex col ai-c jc-c gp-16 pt-64"
           >
             <LightSpeedEffect left>
               <h2>Decentralize your business, secure your future.</h2>

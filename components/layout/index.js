@@ -1,6 +1,5 @@
 import { Kanit } from "@next/font/google";
 import { useHasNewDeploy } from "next-deploy-notifications";
-
 import { useCallback, useEffect, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";

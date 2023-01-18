@@ -12,7 +12,7 @@ export default function Footer() {
   return (
     <footer className="d-flex col ai-c jc-c gp-32">
       <Logo />
-      <div className="d-flex ai-c jc-c gp-16">
+      <div className="d-flex ai-c jc-c gp-16 pl-32 pr-32">
         {ROUTES.map(({ title, route }, id) => {
           return (
             <Link className="routes" key={id} href={route}>

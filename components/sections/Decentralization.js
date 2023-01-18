@@ -47,7 +47,7 @@ export default function Decentralization({ isMobileResolution }) {
                     <div
                       className="d-flex col ai-c jc-fs gp-32"
                       style={{
-                        width: isMobileResolution ? 350 : 500,
+                        maxWidth: isMobileResolution ? "100%" : 500,
                         minHeight: 200,
                       }}
                     >
@@ -79,7 +79,7 @@ export default function Decentralization({ isMobileResolution }) {
                       key={id}
                       className="d-flex col ai-c jc-c gp-32"
                       style={{
-                        width: isMobileResolution ? 350 : 500,
+                        maxWidth: isMobileResolution ? "100%" : 500,
                         minHeight: 200,
                       }}
                     >

@@ -1,10 +1,10 @@
+import Avalanche from "../assets/imgs/avalanche.svg";
 import BSC from "../assets/imgs/bsc.svg";
+import Chainlink from "../assets/imgs/chainlink.svg";
 import Ethereum from "../assets/imgs/ethereum.svg";
 import Polygon from "../assets/imgs/polygon.svg";
-import Avalanche from "../assets/imgs/avalanche.svg";
 import Solana from "../assets/imgs/solana.svg";
 import Uniswap from "../assets/imgs/uniswap.svg";
-import Chainlink from "../assets/imgs/chainlink.svg";
 
 export const ParticleConfig = {
   fullScreen: { enable: false },
@@ -20,7 +20,7 @@ export const ParticleConfig = {
       speed: 1,
       straight: false,
     },
-    number: { limit: 7 },
+    number: { limit: 14 },
     opacity: {
       value: 0.8,
       anim: {

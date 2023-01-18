@@ -3,10 +3,11 @@
   transition: 0.3s;
   & > svg {
     transition: 0.3s;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
   }
   & h4 {
+    font-size: 20px;
     transition: 0.3s;
     letter-spacing: 4px;
     transition: 0.3s;

@@ -6,7 +6,7 @@ export default function Loader() {
   return (
     <div className="logo d-flex ai-c jc-c gp-8" onClick={() => route.push("/")}>
       <LogoIcon />
-      <div className="d-flex col ai-c jc-c mt-8">
+      <div className="d-flex col ai-c jc-c">
         <h4 translate="no">Decentral</h4>
         <h4 translate="no">Nation</h4>
       </div>

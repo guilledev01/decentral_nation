@@ -647,7 +647,7 @@ export const LogoIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 400 220"
+      viewBox="0 0 400 245"
       databackgroundcolor="#31c48d"
     >
       <g transform="matrix(1,0,0,1,0.2400000000000091,-0.09999999999999432)">
