@@ -56,20 +56,26 @@ export default function Decentralization({ isMobileResolution }) {
         <FadeEffect bottom distance="60px" delay={400}>
           <div className="d-flex col ai-c jc-c gp-64">
             <h4>Blockchain</h4>
-            <div className="d-flex flex-wrap ai-c jc-se gp-64">
+            <div className="d-flex flex-wrap jc-se gp-64">
               {DECENTRALIZATION.blockchain.map(({ icon, text }, id) => {
                 return (
-                  <ZoomEffect key={id} top delay={parseInt(`${id + 1 * 3}00`)}>
+                  <ZoomEffect
+                    key={id}
+                    bottom
+                    delay={parseInt(`${id + 1 * 5}00`)}
+                    duration={1500}
+                  >
                     <div
+                      key={id}
                       className="d-flex col ai-c jc-fs gp-32"
                       style={{
                         maxWidth: isMobileResolution ? "100%" : 500,
-                        minHeight: 200,
                       }}
                     >
                       <div className="rombo1 d-flex ai-c jc-c">
                         <div className="rombo2 d-flex ai-c jc-c">{icon}</div>
                       </div>
+
                       <span>{text}</span>
                     </div>
                   </ZoomEffect>
@@ -81,25 +87,26 @@ export default function Decentralization({ isMobileResolution }) {
         <FadeEffect bottom distance="60px" delay={600}>
           <div className="d-flex col ai-c jc-c gp-64">
             <h4>IPFS</h4>
-            <div className="d-flex flex-wrap ai-c jc-se gp-64">
+            <div className="d-flex flex-wrap jc-se gp-64">
               {DECENTRALIZATION.ipfs.map(({ icon, text }, id) => {
                 return (
                   <ZoomEffect
                     key={id}
                     bottom
-                    delay={parseInt(`${id + 1 * 3}00`)}
+                    delay={parseInt(`${id + 1 * 5}00`)}
+                    duration={1500}
                   >
                     <div
                       key={id}
-                      className="d-flex col ai-c jc-c gp-32"
+                      className="d-flex col ai-c jc-fs gp-32"
                       style={{
                         maxWidth: isMobileResolution ? "100%" : 500,
-                        minHeight: 200,
                       }}
                     >
                       <div className="rombo1 d-flex ai-c jc-c">
                         <div className="rombo2 d-flex ai-c jc-c">{icon}</div>
                       </div>
+
                       <span>{text}</span>
                     </div>
                   </ZoomEffect>

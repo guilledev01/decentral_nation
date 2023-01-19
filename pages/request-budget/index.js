@@ -1,3 +1,3 @@
 export default function RequestBudgetPage() {
-  return <></>;
+  return <article id="request-budget"></article>;
 }

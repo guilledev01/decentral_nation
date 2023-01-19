@@ -94,13 +94,13 @@
 .menu-container {
   background-color: get-color(dark, 1);
   position: fixed;
-  top: 89px;
+  top: 97px;
   left: 0;
   right: 0;
   transform: translateX(-0%);
   visibility: hidden;
   opacity: 0;
-  transition: 0.2s;
+  border-bottom: 1px solid get-color(light, 1);
 
   &.open {
     position: absolute;

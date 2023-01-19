@@ -1,5 +1,6 @@
 import { Kanit } from "@next/font/google";
 import { useHasNewDeploy } from "next-deploy-notifications";
+import { useRouter } from "next/router";
 import { useCallback, useEffect, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -34,6 +35,7 @@ const Context = ({ children }) => {
 export default function GlobalLayout({ children }) {
   const [load, setLoad] = useState(false);
   let { hasNewDeploy } = useHasNewDeploy();
+  let router = useRouter();
 
   const NewVersionMsg = () => (
     <div className="d-flex ai-c jc-c">
@@ -87,7 +89,7 @@ export default function GlobalLayout({ children }) {
           <>
             <Header />
             <main>{children}</main>
-            <Footer />
+            {router.pathname === "/" && <Footer />}
           </>
         ) : (
           <Loader />
