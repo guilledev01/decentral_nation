@@ -1,0 +1,15 @@
+.form {
+  border-radius: 12px;
+
+  &.error {
+    background-color: get-color(error, 2);
+  }
+  &.success {
+    color: get-color(dark, 1);
+    background-color: get-color(primary, 2);
+  }
+}
+
+.required {
+  color: get-color(error, 2);
+}

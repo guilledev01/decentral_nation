@@ -1,0 +1,53 @@
+.cookies {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: get-color(dark, 1);
+  border-top: 1px solid get-color(secondary, 1);
+  border-bottom: 1px solid get-color(secondary, 1);
+
+  .cookie-btn > button {
+    background-color: get-color(light, 1);
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    width: 120px;
+    padding: 12px;
+    border: none;
+    font-size: 16px;
+    letter-spacing: 2px;
+    border: 1px solid transparent;
+    transition: 0.2s ease-out;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & > span {
+      transition: 0.2s ease-out;
+      color: get-color(dark, 1);
+    }
+
+    &:hover {
+      background-color: get-color(dark, 4);
+      transform: scale(1.1);
+      & > span {
+        transform: scale(1.1);
+      }
+
+      &:first-child {
+        border-color: get-color(error, 1);
+        & > span {
+          color: get-color(error, 1);
+        }
+      }
+      &:last-child {
+        border-color: get-color(primary, 1);
+        & > span {
+          color: get-color(primary, 1);
+        }
+      }
+    }
+  }
+}

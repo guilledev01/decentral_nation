@@ -29,9 +29,9 @@ const PATH = [
     route: "/request-budget",
   },
   {
-    title: "Contact",
-    id: "#contact",
-    route: "/contact",
+    title: "Contact Us",
+    id: "#contact-us",
+    route: "/contact-us",
   },
   {
     title: "Privacy Policy",
@@ -53,7 +53,7 @@ const PATH = [
 export default function useNavigation() {
   const [open, setOpen] = useState(false);
   const [hash, setHash] = useState(PATH[0].id);
-  const isMobileResolution = useMatchMedia("(max-width:1180px)", undefined);
+  const isMobileResolution = useMatchMedia("(max-width:1370px)", undefined);
   const nav = useRef();
   const btn = useRef();
   const container = useRef();

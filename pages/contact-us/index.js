@@ -5,13 +5,11 @@ import { FadeEffect } from "../../components/animations";
 import { Button } from "../../components/elements";
 import { useMatchMedia } from "../../hooks";
 
-export default function RequestBudgetPage() {
+export default function ContactUsPage() {
   const [form, setForm] = useState({
     fullName: "",
-    companyName: "",
     email: "",
-    projectName: "",
-    projectDescription: "",
+    message: "",
     privacyPolicy: false,
   });
   const [send, setSend] = useState(undefined);
@@ -45,22 +43,20 @@ export default function RequestBudgetPage() {
     setSend(true);
     setForm({
       fullName: "",
-      companyName: "",
       email: "",
-      projectName: "",
-      projectDescription: "",
+      message: "",
       privacyPolicy: false,
     });
   };
 
   return (
-    <article id="request-budget">
+    <article id="contact-us">
       <div className="d-flex col ai-c jc-c m-center gp-64">
         <div>
-          <h3>Request Budget</h3>
+          <h3>Contact us</h3>
           <span>
-            Obtain a complimentary and non-binding budget estimate for your
-            project.
+            Tell us how we can help you and our support team will contact you as
+            soon as possible.
           </span>
         </div>
 
@@ -75,7 +71,7 @@ export default function RequestBudgetPage() {
                 className={`form ${send ? "success" : "error"} max-width p-8`}
               >
                 {send
-                  ? "Budget requested successfully"
+                  ? "Message sended successfully"
                   : "Complete all required field"}
               </span>
             </FadeEffect>
@@ -96,19 +92,6 @@ export default function RequestBudgetPage() {
           </div>
           <div className="max-width">
             <span className="d-flex ai-fs pl-8">
-              Organization or company name&nbsp;
-              <span className="required">*</span>
-            </span>
-            <input
-              name="companyName"
-              className="form-field"
-              type="text"
-              onChange={handleForm}
-              value={form.companyName}
-            />
-          </div>
-          <div className="max-width">
-            <span className="d-flex ai-fs pl-8">
               E-mail&nbsp;<span className="required">*</span>
             </span>
             <input
@@ -121,26 +104,14 @@ export default function RequestBudgetPage() {
           </div>
           <div className="max-width">
             <span className="d-flex ai-fs pl-8">
-              Project name&nbsp;<span className="required">*</span>
-            </span>
-            <input
-              name="projectName"
-              className="form-field"
-              type="text"
-              onChange={handleForm}
-              value={form.projectName}
-            />
-          </div>
-          <div className="max-width">
-            <span className="d-flex ai-fs pl-8">
-              Project description&nbsp;<span className="required">*</span>
+              Message&nbsp;<span className="required">*</span>
             </span>
             <textarea
-              name="projectDescription"
+              name="message"
               className="form-field"
-              placeholder="Insert a detailed description of the project, including the specific use of blockchain technology and its functions and characteristics within the app. Provide information on the overall goals and objectives of the project, as well as any specific features or functionality that must be included in the final product. The more detailed the description, the more accurate the development cost estimate will be."
+              placeholder="How we can help you?"
               onChange={handleForm}
-              value={form.projectDescription}
+              value={form.message}
               style={{ resize: "none", height: 180 }}
             />
           </div>
@@ -160,17 +131,8 @@ export default function RequestBudgetPage() {
               <span className="required">*</span>
             </span>
           </div>
-          <Button color="secondary" titleA="REQUEST BUDGET" type="submit" />
+          <Button color="secondary" titleA="CONTACT US" type="submit" />
         </form>
-
-        <span>
-          The approximate budget for your project will be provided to you within
-          a maximum of 5 business days. Upon receipt of the approximate budget,
-          a project manager will reach out to you for further detailed
-          information in order to provide you with an accurate budget for the
-          development of your project. If you have any other questions or
-          concerns, please do not hesitate to contact our support team.
-        </span>
       </div>
     </article>
   );

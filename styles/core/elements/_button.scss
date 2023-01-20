@@ -40,7 +40,7 @@
       get-color(primary, 1),
       get-color(primary, 2)
     );
-    box-shadow: 0 0 20px rgba(0, 140, 255, 0.2);
+    box-shadow: 0 0 20px rgba(0, 255, 64, 0.2);
   }
   &.secondary {
     background-image: linear-gradient(
@@ -48,7 +48,7 @@
       get-color(secondary, 1),
       get-color(secondary, 2)
     );
-    box-shadow: 0 0 20px rgba(255, 230, 0, 0.2);
+    box-shadow: 0 0 20px rgba(0, 255, 242, 0.2);
   }
   &.error {
     background-image: linear-gradient(

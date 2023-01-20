@@ -1,10 +1,11 @@
 const PRIVACY_POLICY = [
   "We are committed to protecting your privacy and personal information. Our privacy policy explains how we collect, use, and disclose your personal information.",
   "In no event will we be liable for any loss or damage including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits arising out of, or in connection with, the use of this website.",
-  "We collect personal information when you register for an account, make a purchase, or contact us. We may also collect information about your browsing activity on our website, including the pages you visit, the links you click, and the search terms you enter.",
-  "We use your personal information to provide you with the services you have requested and to improve our website. We may also use your personal information for marketing and advertising purposes.",
-  "We will not share your personal information with third parties without your consent, except as required by law. We may share your personal information with our service providers, such as payment processors and shipping companies, to fulfill your orders.",
-  "We have implemented security measures to protect your personal information from unauthorized access, use, or disclosure. However, please note that no method of transmitting information over the internet is completely secure.",
+  "At Decentral Nation, we understand the importance of protecting the personal information and data of our clients. We are committed to ensuring that your data is collected, used, and shared in accordance with the laws and regulations regarding data protection.",
+  "When you request a budget estimate for your DAPP development project, we collect personal information such as your name, contact information, and details about your project. We use this information to provide you with an accurate budget estimate and to communicate with you about your project.",
+  "We take the protection of your personal information very seriously, and we will not share or disclose your personal information to any third parties without your express consent, except as required by law or to comply with legal requirements.",
+  "We take appropriate technical and organizational measures to safeguard your personal data against unauthorized or unlawful processing and against accidental loss, destruction or damage.",
+  "Please contact us if you have any questions or concerns about our data processing practices or if you wish to exercise your rights under the applicable data protection laws.",
 ];
 
 export default function PrivacyPolicyPage() {

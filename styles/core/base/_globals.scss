@@ -18,20 +18,19 @@ body {
   text-align: center;
   background-color: get-color(dark, 1);
   text-rendering: optimizeSpeed;
-  overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {
-  width: 5px;
+  width: 8px;
 }
 
 body::-webkit-scrollbar-track {
-  background: get-color(dark, 1);
+  background-color: get-color(dark, 1);
 }
 
 body::-webkit-scrollbar-thumb {
   background-color: get-color(light, 1);
-  border-radius: 15px;
+  border-radius: 12px;
 }
 
 header {
@@ -70,17 +69,11 @@ article {
   padding: 128px 64px;
   color: get-color(light, 1);
 
-  &:first-child {
-    background-color: get-color(dark, 2);
-  }
-  &:nth-child(2) {
+  &:nth-child(even) {
     background-color: get-color(dark, 3);
   }
-  &:nth-child(3) {
+  &:nth-child(odd) {
     background-color: get-color(dark, 4);
-  }
-  &:last-child {
-    background-color: get-color(dark, 5);
   }
 }
 

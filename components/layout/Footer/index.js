@@ -3,7 +3,7 @@ import { Logo } from "../../elements";
 
 const ROUTES = [
   { title: "Request Budget", route: "/request-budget" },
-  { title: "Contact", route: "/contact" },
+  { title: "Contact Us", route: "/contact-us" },
   { title: "Privacy Policy", route: "/privacy-policy" },
   { title: "Legal Warning", route: "/legal-warning" },
   { title: "Cookies Policy", route: "/cookies-policy" },

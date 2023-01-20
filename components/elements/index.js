@@ -2,7 +2,6 @@ import Button from "./Button";
 import Card from "./Card";
 import Chip from "./Chip";
 import Divider from "./Divider";
-import Input from "./Input";
 import Loader from "./Loader";
 import Logo from "./Logo";
 import Modal from "./Modal";
@@ -18,6 +17,5 @@ export {
   Loader,
   Modal,
   Title,
-  Input,
   ToggleButton,
 };
