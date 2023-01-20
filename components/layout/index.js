@@ -5,7 +5,7 @@ import Particles from "react-tsparticles";
 import { useLayout } from "../../hooks";
 import { ParticleConfig } from "../../utils/particles";
 import { Loader } from "../elements";
-import Cookies from "../sections/Cookies";
+import { Cookies } from "../sections";
 import Footer from "./Footer";
 import Header from "./Header";
 
