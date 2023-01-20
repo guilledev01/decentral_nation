@@ -26,8 +26,8 @@ export default function Cookies() {
           <div>
             <span>
               Our website uses cookies to enhance your browsing experience and
-              provide you with personalized content. By clicking 'Accept', you
-              consent to the use of cookies. If you choose to 'Decline', some
+              provide you with personalized content. By clicking &apos;Accept&apos;, you
+              consent to the use of cookies. If you choose to &apos;Decline&apos;, some
               features of the website may be limited. For more information on
               our cookie policy, please visit our
             </span>
