@@ -107,22 +107,6 @@
     opacity: 1;
     visibility: visible;
   }
-
-  &.dark-1 {
-    background-color: get-color(dark, 1);
-  }
-  &.dark-2 {
-    background-color: get-color(dark, 2);
-  }
-  &.dark-3 {
-    background-color: get-color(dark, 3);
-  }
-  &.dark-4 {
-    background-color: get-color(dark, 4);
-  }
-  &.dark-5 {
-    background-color: get-color(dark, 5);
-  }
 }
 
 @keyframes fadeIn {

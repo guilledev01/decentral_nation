@@ -1,4 +1,4 @@
-import Document, { Html, Head, Main, NextScript } from "next/document";
+import Document, { Head, Html, Main, NextScript } from "next/document";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -18,8 +18,8 @@ class MyDocument extends Document {
             content="default"
           />
           <meta name="apple-mobile-web-app-title" content="Software Factory" />
-          <meta name="apple-mobile-web-app-status-bar" content="#191b1d" />
-          <meta name="theme-color" content="#191b1d" />
+          <meta name="apple-mobile-web-app-status-bar" content="#131416" />
+          <meta name="theme-color" content="#131416" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <body>

@@ -42,16 +42,18 @@ export default function Header() {
           ref={nav}
         >
           <div onClick={() => handleRoute("/")}>
-            <Logo />
+            <Logo /> Hi
           </div>
-          {isMobileResolution && (
-            <div id="menu-icon" ref={btn}>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          )}
+          <div id="menu-icon" ref={btn}>
+            {isMobileResolution && (
+              <>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </>
+            )}
+          </div>
 
           <div
             className={

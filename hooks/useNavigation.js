@@ -63,12 +63,14 @@ export default function useNavigation() {
     if (open) {
       container.current.style.animation = "fadeOut 0.2s ease-in-out";
       setTimeout(() => setOpen(false), 200);
+      btn.current.classList.remove("open");
+      container.current.classList.remove("open");
     } else {
-      setOpen(true);
       container.current.style.animation = "fadeIn 0.2s ease-in-out";
+      btn.current.classList.add("open");
+      container.current.classList.add("open");
+      setOpen(true);
     }
-    btn.current.classList.toggle("open");
-    container.current.classList.toggle("open");
   }, [open]);
 
   const handleColor = ({ articleColor }) => {
@@ -81,7 +83,8 @@ export default function useNavigation() {
   };
 
   useEffect(() => {
-    const handleNav = () => {
+    const handleNav = (e) => {
+      e.preventDefault();
       PATH.filter((path) =>
         router.pathname === "/"
           ? !path.route
@@ -142,8 +145,8 @@ export default function useNavigation() {
 
   // Reset open
   useEffect(() => {
-    open && handleMenu();
-  }, [isMobileResolution]);
+    !isMobileResolution && open && handleMenu();
+  }, [isMobileResolution, open, handleMenu]);
 
   const handleRoute = (path) => {
     router.push(path);
