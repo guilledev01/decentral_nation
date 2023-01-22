@@ -8,7 +8,7 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
+      <Html lang="en-us">
         <Head>
           <meta name="description" content="Software Factory" />
           <meta name="application-name" content="Software Factory" />
@@ -20,6 +20,7 @@ class MyDocument extends Document {
           <meta name="apple-mobile-web-app-title" content="Software Factory" />
           <meta name="apple-mobile-web-app-status-bar" content="#131416" />
           <meta name="theme-color" content="#131416" />
+          <meta name="robots" content="index, follow" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <body>

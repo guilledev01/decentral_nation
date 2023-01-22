@@ -10,8 +10,18 @@ const font = Kanit({
   subsets: ["latin"],
 });
 
+const TITLE = {
+  "/": "Welcome",
+  "/request-budget": "Request Budget",
+  "/contact-us": "Contact Us",
+  "/privacy-policy": "Privacy Policy",
+  "/legal-warning": "Legal Warning",
+  "/cookies-policy": "Cookies Policy",
+};
+
 export default function useLayout() {
   const [load, setLoad] = useState(false);
+  const [title, setTitle] = useState("Loading");
   let router = useRouter();
 
   let { hasNewDeploy } = useHasNewDeploy();
@@ -43,5 +53,9 @@ export default function useLayout() {
     setLoad(true);
   }, []);
 
-  return { load, particlesInit, particlesLoaded, router, font };
+  useEffect(() => {
+    setTitle(TITLE[router.pathname]);
+  }, [router]);
+
+  return { load, particlesInit, particlesLoaded, router, font, title };
 }

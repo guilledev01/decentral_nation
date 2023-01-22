@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useCallback } from "react";
 import { useNavigation } from "../../../hooks";
 import { FadeEffect, LightSpeedEffect, ZoomEffect } from "../../animations";
 import { Button, Logo } from "../../elements";
@@ -20,6 +21,7 @@ const BuildButton = ({ handleRoute }) => {
 export default function Header() {
   const {
     PATH,
+    open,
     hash,
     isMobileResolution,
     nav,
@@ -29,6 +31,50 @@ export default function Header() {
     handleMenu,
     handleRoute,
   } = useNavigation();
+
+  const Routes = useCallback(
+    ({ hash, router, handleMenu, handleRoute }) => {
+      return (
+        <>
+          {PATH.filter((path) =>
+            router.pathname === "/" ? !path.route : path.route
+          ).map(({ title, id, route }, index) => {
+            return (
+              <FadeEffect
+                key={id}
+                top
+                delay={parseInt(`${index + 1 * 3}00`)}
+                distance="30px"
+                duration={200}
+              >
+                {route ? (
+                  <Link
+                    onClick={() => isMobileResolution && handleMenu()}
+                    href={route}
+                    className={`routes ${
+                      router.pathname === route ? "active" : ""
+                    }`}
+                  >
+                    {title}
+                  </Link>
+                ) : (
+                  <a
+                    onClick={() => isMobileResolution && handleMenu()}
+                    href={id}
+                    className={`routes ${hash === id ? "active" : ""}`}
+                  >
+                    {title}
+                  </a>
+                )}
+              </FadeEffect>
+            );
+          })}
+          {router.pathname === "/" && <BuildButton handleRoute={handleRoute} />}
+        </>
+      );
+    },
+    [PATH, isMobileResolution, open]
+  );
 
   return (
     isMobileResolution !== undefined && (
@@ -42,7 +88,7 @@ export default function Header() {
           ref={nav}
         >
           <div onClick={() => handleRoute("/")}>
-            <Logo /> Hi
+            <Logo />
           </div>
           <div id="menu-icon" ref={btn}>
             {isMobileResolution && (
@@ -63,42 +109,12 @@ export default function Header() {
             }
             ref={container}
           >
-            {PATH.filter((path) =>
-              router.pathname === "/" ? !path.route : path.route
-            ).map(({ title, id, route }, index) => {
-              return (
-                <FadeEffect
-                  key={id}
-                  top
-                  delay={parseInt(`${index + 1 * 3}00`)}
-                  distance="30px"
-                  duration={200}
-                >
-                  {route ? (
-                    <Link
-                      onClick={() => isMobileResolution && handleMenu()}
-                      href={route}
-                      className={`routes ${
-                        router.pathname === route ? "active" : ""
-                      }`}
-                    >
-                      {title}
-                    </Link>
-                  ) : (
-                    <a
-                      onClick={() => isMobileResolution && handleMenu()}
-                      href={id}
-                      className={`routes ${hash === id ? "active" : ""}`}
-                    >
-                      {title}
-                    </a>
-                  )}
-                </FadeEffect>
-              );
-            })}
-            {router.pathname === "/" && (
-              <BuildButton handleRoute={handleRoute} />
-            )}
+            <Routes
+              hash={hash}
+              router={router}
+              handleMenu={handleMenu}
+              handleRoute={handleRoute}
+            />
           </div>
         </nav>
         {router.pathname === "/" && (

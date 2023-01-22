@@ -1,4 +1,5 @@
 import { ReCaptchaProvider } from "next-recaptcha-v3";
+import Head from "next/head";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Particles from "react-tsparticles";
@@ -10,9 +11,13 @@ import Footer from "./Footer";
 import Header from "./Header";
 
 export default function GlobalLayout({ children }) {
-  const { load, particlesInit, particlesLoaded, router, font } = useLayout();
+  const { load, particlesInit, particlesLoaded, router, font, title } =
+    useLayout();
   return (
     <div className={font.className}>
+      <Head>
+        <title>Decentral Nation | {title}</title>
+      </Head>
       <ReCaptchaProvider
         reCaptchaKey="6LcksxIkAAAAAIF5VJcHKyEO5yXyoZzYN_GQfcWD"
         useEnterprise

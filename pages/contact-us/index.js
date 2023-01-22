@@ -36,7 +36,7 @@ export default function ContactUsPage() {
       const token = await executeRecaptcha("form_submit");
       token ? sendForm() : setSend(false);
     },
-    [form]
+    [form, executeRecaptcha]
   );
 
   const sendForm = () => {

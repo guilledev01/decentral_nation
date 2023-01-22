@@ -36,7 +36,7 @@ export default function Cookies() {
     <>
       {cookies === "accepted" && <GoogleAnalytics trackPageViews />}
       {show && (
-        <ZoomEffect duration={500} distance="60px" when={request}>
+        <ZoomEffect duration={200} distance="60px" when={request}>
           <div className="cookies d-flex col jc-c p-32 gp-16">
             <div>
               <span>

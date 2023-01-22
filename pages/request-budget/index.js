@@ -38,7 +38,7 @@ export default function RequestBudgetPage() {
       const token = await executeRecaptcha("form_submit");
       token ? sendForm() : setSend(false);
     },
-    [form]
+    [form, executeRecaptcha]
   );
 
   const sendForm = () => {

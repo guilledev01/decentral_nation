@@ -44,7 +44,7 @@ export default function About({ isMobileResolution }) {
                   <ZoomEffect
                     key={id}
                     bottom
-                    delay={parseInt(`${id + 1 * 5}00`)}
+                    delay={parseInt(`${id + 1 * 2}00`)}
                     duration={1500}
                   >
                     <div
