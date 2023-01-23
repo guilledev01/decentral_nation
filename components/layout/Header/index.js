@@ -1,16 +1,17 @@
+import useTranslation from "next-translate/useTranslation";
 import Link from "next/link";
 import { useCallback } from "react";
 import { useNavigation } from "../../../hooks";
 import { FadeEffect, LightSpeedEffect, ZoomEffect } from "../../animations";
 import { Button, Logo } from "../../elements";
 
-const BuildButton = ({ handleRoute }) => {
+const BuildButton = ({ handleRoute, text }) => {
   return (
     <ZoomEffect delay={1000} duration={500}>
       <div style={{ minWidth: 200 }}>
         <Button
           color="primary"
-          titleA="BUILD WITH US"
+          titleA={text}
           onClick={() => handleRoute("/request-budget")}
         />
       </div>
@@ -31,6 +32,8 @@ export default function Header() {
     handleMenu,
     handleRoute,
   } = useNavigation();
+  const { t } = useTranslation("common");
+  const hero = t("hero", {}, { returnObjects: true });
 
   const Routes = useCallback(
     ({ hash, router, handleMenu, handleRoute }) => {
@@ -69,11 +72,13 @@ export default function Header() {
               </FadeEffect>
             );
           })}
-          {router.pathname === "/" && <BuildButton handleRoute={handleRoute} />}
+          {router.pathname === "/" && (
+            <BuildButton handleRoute={handleRoute} text={hero.btn} />
+          )}
         </>
       );
     },
-    [PATH, isMobileResolution, open]
+    [PATH, isMobileResolution, open, hero.btn]
   );
 
   return (
@@ -123,8 +128,8 @@ export default function Header() {
             className="d-flex col ai-c jc-c gp-16 pt-64"
           >
             <LightSpeedEffect left>
-              <h2>Decentralize your business, secure your future.</h2>
-              <BuildButton handleRoute={handleRoute} />
+              <h2>{hero.title}</h2>
+              <BuildButton handleRoute={handleRoute} text={hero.btn} />
             </LightSpeedEffect>
           </div>
         )}

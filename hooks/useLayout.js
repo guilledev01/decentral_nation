@@ -21,7 +21,7 @@ const TITLE = {
 
 export default function useLayout() {
   const [load, setLoad] = useState(false);
-  const [title, setTitle] = useState("Loading");
+  const [title, setTitle] = useState(false);
   let router = useRouter();
 
   let { hasNewDeploy } = useHasNewDeploy();

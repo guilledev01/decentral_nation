@@ -1,0 +1,68 @@
+{
+  "path": [
+    {
+      "title": "Home",
+      "id": "#home"
+    },
+    {
+      "title": "Decentralization",
+      "id": "#decentralization"
+    },
+    {
+      "title": "Our Services",
+      "id": "#services"
+    },
+    {
+      "title": "About Us",
+      "id": "#team"
+    },
+    {
+      "title": "Projetcs Launched",
+      "id": "#projects"
+    },
+    {
+      "title": "Request Budget",
+      "id": "#request-budget",
+      "route": "/request-budget"
+    },
+    {
+      "title": "Contact Us",
+      "id": "#contact-us",
+      "route": "/contact-us"
+    },
+    {
+      "title": "Privacy Policy",
+      "id": "#privacy-policy",
+      "route": "/privacy-policy"
+    },
+    {
+      "title": "Legal Warning",
+      "id": "#legal-warning",
+      "route": "/legal-warning"
+    },
+    {
+      "title": "Cookies Policy",
+      "id": "#cookies-policy",
+      "route": "/cookies-policy"
+    }
+  ],
+  "hero": {
+    "title": "Decentralize your business, secure your future",
+    "btn": "BUILD WITH US"
+  },
+  "language": {
+    "en": "English",
+    "es": "Spanish",
+    "ca": "Catalan"
+  },
+  "cookies": {
+    "text": "Our website uses cookies to enhance your browsing experience and provide you with personalized content. By clicking 'Accept', you consent to the use of cookies. If you choose to 'Decline', some features of the website may be limited. For more information please visit our",
+    "and": "and",
+    "policy": {
+      "privacy": "Privacy Policy",
+      "cookie": "Cookies Policy"
+    },
+    "decline": "Decline",
+    "accept": "Accept"
+  }
+}

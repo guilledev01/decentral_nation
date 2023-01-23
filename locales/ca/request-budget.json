@@ -1,0 +1,29 @@
+{
+  "request-budget": {
+    "title": "Sol·licita Pressupost",
+    "description": "Obtenir un pressupost gratuït i sense compromís per al teu projecte.",
+    "warning": {
+      "success": "Missatge enviat correctament",
+      "error": "Ompli tots els camps obligatoris"
+    },
+    "form": [
+      { "name": "Nom complet", "value": "fullName" },
+      {
+        "name": "Nom de l'organització o empresa",
+        "value": "companyName"
+      },
+      { "name": "E-mail", "value": "email" },
+      { "name": "Nom del projecte", "value": "projectName" }
+    ],
+    "textArea": {
+      "name": "Descripció del projecte",
+      "placeholder": "Insereix una descripció detallada del projecte, incloent l'ús específic de la tecnologia de blockchain i les seves funcions i característiques dins de l'aplicació. Proporciona informació sobre els objectius i metes generals del projecte, així com qualsevol característica o funcionalitat específica que s'hagi de incloure en el producte final. Com més detallada sigui la descripció, més precís serà l'estimat de cost de desenvolupament."
+    },
+    "accept": {
+      "text": "He llegit i accepto la",
+      "policy": "Política de Privacitat"
+    },
+    "request": "SOL·LICITAR PRESSUPOST",
+    "footer": "El pressupost aproximat per al teu projecte t'es proporcionarà dins d'un màxim de 5 dies laborables. Un cop rebut el pressupost aproximat, un gestor de projecte es posarà en contacte amb tu per obtenir més informació detallada per proporcionar-te un pressupost precís per al desenvolupament del teu projecte. Si tens altres preguntes o preocupacions, no dubtis en posar-te en contacte amb el nostre equip de suport."
+  }
+}

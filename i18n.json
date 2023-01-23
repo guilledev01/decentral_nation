@@ -1,0 +1,13 @@
+{
+  "locales": ["en", "ca", "es"],
+  "defaultLocale": "en",
+  "pages": {
+    "*": ["common"],
+    "/": ["home"],
+    "/request-budget": ["request-budget"],
+    "/contact-us": ["contact-us"],
+    "/legal-warning": ["legal-warning"],
+    "/privacy-policy": ["privacy-policy"],
+    "/cookies-policy": ["cookies-policy"]
+  }
+}

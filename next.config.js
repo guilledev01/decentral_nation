@@ -1,10 +1,11 @@
 /** @type {import('next').NextConfig} */
 const path = require("path");
+const nextTranslate = require("next-translate");
 // const withBundleAnalyzer = require("@next/bundle-analyzer")({
 //   enabled: process.env.ANALYZE === "true",
 // });
 
-const config = {
+const config = nextTranslate({
   experimental: {
     appDir: false,
     fontLoaders: [
@@ -29,6 +30,6 @@ const config = {
     includePaths: [path.join(__dirname, "styles")],
   },
   reactStrictMode: true,
-};
+});
 
 module.exports = config;

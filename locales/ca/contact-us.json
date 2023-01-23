@@ -1,0 +1,23 @@
+{
+  "contact-us": {
+    "title": "Contacta amb nosaltres",
+    "description": "Fes-nos saber com podem ajudar-te i el nostre equip de suport es posarà en contacte amb tu tan aviat com sigui possible.",
+    "warning": {
+      "success": "Missatge enviat correctament",
+      "error": "Ompli tots els camps obligatoris"
+    },
+    "form": [
+      { "name": "Nom complet", "value": "fullName" },
+      { "name": "E-mail", "value": "email" }
+    ],
+    "textArea": {
+      "name": "Missatge",
+      "placeholder": "En què et podem ajudar?"
+    },
+    "accept": {
+      "text": "He llegit i accepto la",
+      "policy": "Política de privacitat"
+    },
+    "request": "CONTACTA AMB NOSALTRES"
+  }
+}

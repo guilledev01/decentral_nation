@@ -1,0 +1,68 @@
+{
+  "path": [
+    {
+      "title": "Inicio",
+      "id": "#home"
+    },
+    {
+      "title": "Descentralización",
+      "id": "#decentralization"
+    },
+    {
+      "title": "Nuestros Servicios",
+      "id": "#services"
+    },
+    {
+      "title": "Sobre Nosotros",
+      "id": "#team"
+    },
+    {
+      "title": "Proyectos Lanzados",
+      "id": "#projects"
+    },
+    {
+      "title": "Solicitar Presupuesto",
+      "id": "#request-budget",
+      "route": "/request-budget"
+    },
+    {
+      "title": "Contactar Con Nosotros",
+      "id": "#contact-us",
+      "route": "/contact-us"
+    },
+    {
+      "title": "Política de Privacidad",
+      "id": "#privacy-policy",
+      "route": "/privacy-policy"
+    },
+    {
+      "title": "Aviso Legal",
+      "id": "#legal-warning",
+      "route": "/legal-warning"
+    },
+    {
+      "title": "Política de Cookies",
+      "id": "#cookies-policy",
+      "route": "/cookies-policy"
+    }
+  ],
+  "hero": {
+    "title": "Descentraliza tu negocio, asegura tu futuro.",
+    "btn": "CONSTRÚYELO CON NOSOTROS"
+  },
+  "language": {
+    "en": "Inglés",
+    "es": "Español",
+    "ca": "Catalán"
+  },
+  "cookies": {
+    "text": "Nuestro sitio web utiliza cookies para mejorar su experiencia de navegación y proporcionarle contenido personalizado. Al hacer clic en 'Aceptar', usted acepta el uso de cookies. Si elige 'Declinar', algunas funciones del sitio web pueden estar limitadas. Para obtener más información visite nuestra",
+    "and": "y",
+    "policy": {
+      "privacy": "Política de Privacidad",
+      "cookie": "Política de Cookies"
+    },
+    "decline": "Declinar",
+    "accept": "Aceptar"
+  }
+}

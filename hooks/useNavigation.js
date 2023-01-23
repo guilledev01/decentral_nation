@@ -1,56 +1,59 @@
+import useTranslation from "next-translate/useTranslation";
 import { useRouter } from "next/router";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useMatchMedia } from "./index";
 
-const PATH = [
-  {
-    title: "Home",
-    id: "#home",
-  },
-  {
-    title: "Decentralization",
-    id: "#decentralization",
-  },
-  {
-    title: "Our Services",
-    id: "#services",
-  },
-  {
-    title: "About Us",
-    id: "#team",
-  },
-  {
-    title: "Projetcs Launched",
-    id: "#projects",
-  },
-  {
-    title: "Request Budget",
-    id: "#request-budget",
-    route: "/request-budget",
-  },
-  {
-    title: "Contact Us",
-    id: "#contact-us",
-    route: "/contact-us",
-  },
-  {
-    title: "Privacy Policy",
-    id: "#privacy-policy",
-    route: "/privacy-policy",
-  },
-  {
-    title: "Legal Warning",
-    id: "#legal-warning",
-    route: "/legal-warning",
-  },
-  {
-    title: "Cookies Policy",
-    id: "#cookies-policy",
-    route: "/cookies-policy",
-  },
-];
+// const PATH = [
+//   {
+//     title: "Home",
+//     id: "#home",
+//   },
+//   {
+//     title: "Decentralization",
+//     id: "#decentralization",
+//   },
+//   {
+//     title: "Our Services",
+//     id: "#services",
+//   },
+//   {
+//     title: "About Us",
+//     id: "#team",
+//   },
+//   {
+//     title: "Projetcs Launched",
+//     id: "#projects",
+//   },
+//   {
+//     title: "Request Budget",
+//     id: "#request-budget",
+//     route: "/request-budget",
+//   },
+//   {
+//     title: "Contact Us",
+//     id: "#contact-us",
+//     route: "/contact-us",
+//   },
+//   {
+//     title: "Privacy Policy",
+//     id: "#privacy-policy",
+//     route: "/privacy-policy",
+//   },
+//   {
+//     title: "Legal Warning",
+//     id: "#legal-warning",
+//     route: "/legal-warning",
+//   },
+//   {
+//     title: "Cookies Policy",
+//     id: "#cookies-policy",
+//     route: "/cookies-policy",
+//   },
+// ];
 
 export default function useNavigation() {
+  const { t } = useTranslation("common");
+  const PATH = t("path", {}, { returnObjects: true });
   const [open, setOpen] = useState(false);
   const [hash, setHash] = useState(PATH[0].id);
   const isMobileResolution = useMatchMedia("(max-width:1370px)", undefined);

@@ -1,4 +1,5 @@
 import { useReCaptcha } from "next-recaptcha-v3";
+import useTranslation from "next-translate/useTranslation";
 import Link from "next/link";
 import { useCallback, useState } from "react";
 import { FadeEffect } from "../../components/animations";
@@ -6,6 +7,8 @@ import { Button } from "../../components/elements";
 import { useMatchMedia } from "../../hooks";
 
 export default function ContactUsPage() {
+  const { t } = useTranslation("contact-us");
+  const contactUs = t("contact-us", {}, { returnObjects: true });
   const [form, setForm] = useState({
     fullName: "",
     email: "",
@@ -53,11 +56,8 @@ export default function ContactUsPage() {
     <article id="contact-us">
       <div className="d-flex col ai-c jc-c m-center gp-64">
         <div>
-          <h3>Contact us</h3>
-          <span>
-            Tell us how we can help you and our support team will contact you as
-            soon as possible.
-          </span>
+          <h3>{contactUs.title}</h3>
+          <span>{contactUs.description}</span>
         </div>
 
         <form
@@ -70,68 +70,57 @@ export default function ContactUsPage() {
               <span
                 className={`form ${send ? "success" : "error"} max-width p-8`}
               >
-                {send
-                  ? "Message sended successfully"
-                  : "Complete all required field"}
+                {send ? contactUs.warning.success : contactUs.warning.error}
               </span>
             </FadeEffect>
           )}
-
-          <div className="max-width">
+          {contactUs.form.map(({ name, value }, id) => {
+            return (
+              <div key={id} className="max-width d-flex col jc-c gp-4">
+                <span className="d-flex ai-fs pl-8">
+                  {name}&nbsp;<span className="required">*</span>
+                </span>
+                <input
+                  name={value}
+                  className="form-field"
+                  type="text"
+                  onChange={handleForm}
+                  value={form[value]}
+                />
+              </div>
+            );
+          })}
+          <div className="max-width d-flex col jc-c gp-4">
             <span className="d-flex ai-fs pl-8">
-              Full name&nbsp;<span className="required">*</span>
-            </span>
-
-            <input
-              name="fullName"
-              className="form-field"
-              type="text"
-              onChange={handleForm}
-              value={form.fullName}
-            />
-          </div>
-          <div className="max-width">
-            <span className="d-flex ai-fs pl-8">
-              E-mail&nbsp;<span className="required">*</span>
-            </span>
-            <input
-              name="email"
-              className="form-field"
-              type="email"
-              onChange={handleForm}
-              value={form.email}
-            />
-          </div>
-          <div className="max-width">
-            <span className="d-flex ai-fs pl-8">
-              Message&nbsp;<span className="required">*</span>
+              {contactUs.textArea.name}&nbsp;
+              <span className="required">*</span>
             </span>
             <textarea
               name="message"
               className="form-field"
-              placeholder="How we can help you?"
+              placeholder={contactUs.textArea.placeholder}
               onChange={handleForm}
               value={form.message}
-              style={{ resize: "none", height: 180 }}
+              style={{ resize: "none", height: 195 }}
             />
           </div>
-          <div className="max-width d-flex ai-c jc-c">
+          <div className="max-width d-flex ai-c jc-c gp-4">
             <input
               name="privacyPolicy"
               type="checkbox"
               onChange={handleForm}
               checked={form.privacyPolicy}
             />
-            <span className="d-flex ai-fs pl-8">
-              I have read and accept the&nbsp;
+            <span>
+              {contactUs.accept.text}&nbsp;
               <Link className="routes" href="/privacy-policy">
-                Privacy Policy
+                {contactUs.accept.policy}
               </Link>
               &nbsp;
               <span className="required">*</span>
             </span>
           </div>
-          <Button color="secondary" titleA="CONTACT US" type="submit" />
+          <Button color="secondary" titleA={contactUs.request} type="submit" />
         </form>
       </div>
     </article>

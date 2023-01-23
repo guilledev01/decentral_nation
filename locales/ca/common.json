@@ -1,0 +1,68 @@
+{
+  "path": [
+    {
+      "title": "Inici",
+      "id": "#home"
+    },
+    {
+      "title": "Descentralització",
+      "id": "#decentralization"
+    },
+    {
+      "title": "Els Nostres Serveis",
+      "id": "#services"
+    },
+    {
+      "title": "Sobre Nosaltres",
+      "id": "#team"
+    },
+    {
+      "title": "Projectes Llançats",
+      "id": "#projects"
+    },
+    {
+      "title": "Sol·licitud De Pressupost",
+      "id": "#request-budget",
+      "route": "/request-budget"
+    },
+    {
+      "title": "Contacteu Amb Nosaltres",
+      "id": "#contact-us",
+      "route": "/contact-us"
+    },
+    {
+      "title": "Política de Privacitat",
+      "id": "#privacy-policy",
+      "route": "/privacy-policy"
+    },
+    {
+      "title": "Advertència legal",
+      "id": "#legal-warning",
+      "route": "/legal-warning"
+    },
+    {
+      "title": "Política de Galetes",
+      "id": "#cookies-policy",
+      "route": "/cookies-policy"
+    }
+  ],
+  "hero": {
+    "title": "Descentralitza el teu negoci, assegura el teu futur.",
+    "btn": "CONSTRUEIX AMB NOSALTRES"
+  },
+  "language": {
+    "en": "Anglès",
+    "es": "Castellà",
+    "ca": "Català"
+  },
+  "cookies": {
+    "text": "El nostre lloc web utilitza galetes per millorar la vostra experiència de navegació i proporcionar-vos contingut personalitzat. Al fer clic a 'Acceptar', consentiu l'ús de galetes. Si trieu 'Declinar', algunes funcions del lloc web poden estar limitades. Per a més informació visiteu la nostra",
+    "and": "i",
+    "policy": {
+      "privacy": "Política de Privacitat",
+      "cookie": "Política de Galetes"
+    },
+    "decline": "Declinar",
+    "accept": "Acceptar"
+  }
+}

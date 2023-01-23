@@ -1,0 +1,29 @@
+{
+  "request-budget": {
+    "title": "Request Budget",
+    "description": "Obtain a complimentary and non-binding budget estimate for your project.",
+    "warning": {
+      "success": "Message sended successfully",
+      "error": "Complete all required field"
+    },
+    "form": [
+      { "name": "Full name", "value": "fullName" },
+      {
+        "name": "Organization or company name",
+        "value": "companyName"
+      },
+      { "name": "E-mail", "value": "email" },
+      { "name": "Project name", "value": "projectName" }
+    ],
+    "textArea": {
+      "name": "Project description",
+      "placeholder": "Insert a detailed description of the project, including the specific use of blockchain technology and its functions and characteristics within the app. Provide information on the overall goals and objectives of the project, as well as any specific features or functionality that must be included in the final product. The more detailed the description, the more accurate the development cost estimate will be."
+    },
+    "accept": {
+      "text": "I have read and accept the ",
+      "policy": "Privacy Policy"
+    },
+    "request": "REQUEST BUDGET",
+    "footer": "The approximate budget for your project will be provided to you within a maximum of 5 business days. Upon receipt of the approximate budget, a project manager will reach out to you for further detailed information in order to provide you with an accurate budget for the development of your project. If you have any other questions or concerns, please do not hesitate to contact our support team."
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "contact-us": {
+    "title": "Contact Us",
+    "description": "Tell us how we can help you and our support team will contact you as soon as possible.",
+    "warning": {
+      "success": "Message sended successfully",
+      "error": "Complete all required field"
+    },
+    "form": [
+      { "name": "Full name", "value": "fullName" },
+      { "name": "E-mail", "value": "email" }
+    ],
+    "textArea": { "name": "Message", "placeholder": "How can we help you?" },
+    "accept": {
+      "text": "I have read and accept the",
+      "policy": "Privacy Policy"
+    },
+    "request": "CONTACT US"
+  }
+}

@@ -1,0 +1,34 @@
+.lang-widget {
+  cursor: pointer;
+  position: fixed;
+  bottom: 15px;
+  left: 15px;
+}
+
+.lang-btn {
+  width: 120px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  color: get-color(light, 1);
+  background-color: get-color(dark, 1);
+  transition: 0.2s;
+
+  &:hover {
+    background: get-color(dark, 2);
+  }
+
+  & > div {
+    width: 24px;
+    & > svg {
+      width: 24px;
+    }
+  }
+
+  &.active {
+    & > span {
+      color: get-color(primary, 1);
+    }
+  }
+}

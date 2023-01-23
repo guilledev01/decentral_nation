@@ -1,3 +1,4 @@
+import useTranslation from "next-translate/useTranslation";
 import Link from "next/link";
 import { GoogleAnalytics } from "nextjs-google-analytics";
 import { useEffect, useState } from "react";
@@ -7,6 +8,8 @@ export default function Cookies() {
   const [request, setRequest] = useState(false);
   const [cookies, setCookies] = useState(false);
   const [show, setShow] = useState(false);
+  const { t, lang } = useTranslation("common");
+  const cookie = t("cookies", {}, { returnObjects: true });
 
   const handleCookies = (permission) => {
     window.localStorage.setItem("cookies", permission);
@@ -37,35 +40,27 @@ export default function Cookies() {
       {cookies === "accepted" && <GoogleAnalytics trackPageViews />}
       {show && (
         <ZoomEffect duration={200} distance="60px" when={request}>
-          <div className="cookies d-flex col jc-c p-32 gp-16">
+          <div className="cookies d-flex col jc-c pl-32 pr-32 pt-64 pb-64 gp-16">
             <div>
-              <span>
-                Our website uses cookies to enhance your browsing experience and
-                provide you with personalized content. By clicking
-                &apos;Accept&apos;, you consent to the use of cookies. If you
-                choose to &apos;Decline&apos;, some features of the website may
-                be limited. For more information on our cookie policy, please
-                visit our
-              </span>
+              <span>{cookie.text}</span>
               &nbsp;
               <Link className="routes" href="cookies-policy">
-                Cookies Policy
+                {cookie.policy.cookie}
               </Link>
               &nbsp;
-              <span>and</span>
+              <span>{cookie.and}</span>
               &nbsp;
               <Link className="routes" href="cookies-policy">
-                Privacy Policy
+                {cookie.policy.privacy}
               </Link>
               &nbsp;
-              <span>pages</span>
             </div>
-            <div className="cookie-btn d-flex ai-c jc-c gp-32">
+            <div className="cookie-btn d-flex ai-c jc-c gp-32 m-16">
               <button onClick={() => handleCookies("declined")}>
-                <span>Decline</span>
+                <span>{cookie.decline}</span>
               </button>
               <button onClick={() => handleCookies("accepted")}>
-                <span>Accept</span>
+                <span>{cookie.accept}</span>
               </button>
             </div>
           </div>

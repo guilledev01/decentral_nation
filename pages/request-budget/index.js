@@ -1,4 +1,5 @@
 import { useReCaptcha } from "next-recaptcha-v3";
+import useTranslation from "next-translate/useTranslation";
 import Link from "next/link";
 import { useCallback, useState } from "react";
 import { FadeEffect } from "../../components/animations";
@@ -6,6 +7,8 @@ import { Button } from "../../components/elements";
 import { useMatchMedia } from "../../hooks";
 
 export default function RequestBudgetPage() {
+  const { t } = useTranslation("request-budget");
+  const requestBudget = t("request-budget", {}, { returnObjects: true });
   const [form, setForm] = useState({
     fullName: "",
     companyName: "",
@@ -57,11 +60,8 @@ export default function RequestBudgetPage() {
     <article id="request-budget">
       <div className="d-flex col ai-c jc-c m-center gp-64">
         <div>
-          <h3>Request Budget</h3>
-          <span>
-            Obtain a complimentary and non-binding budget estimate for your
-            project.
-          </span>
+          <h3>{requestBudget.title}</h3>
+          <span>{requestBudget.description}</span>
         </div>
 
         <form
@@ -75,102 +75,64 @@ export default function RequestBudgetPage() {
                 className={`form ${send ? "success" : "error"} max-width p-8`}
               >
                 {send
-                  ? "Budget requested successfully"
-                  : "Complete all required field"}
+                  ? requestBudget.warning.success
+                  : requestBudget.warning.error}
               </span>
             </FadeEffect>
           )}
-
-          <div className="max-width">
+          {requestBudget.form.map(({ name, value }, id) => {
+            return (
+              <div key={id} className="max-width d-flex col jc-c gp-4">
+                <span className="d-flex ai-fs pl-8">
+                  {name}&nbsp;<span className="required">*</span>
+                </span>
+                <input
+                  name={value}
+                  className="form-field"
+                  type="text"
+                  onChange={handleForm}
+                  value={form[value]}
+                />
+              </div>
+            );
+          })}
+          <div className="max-width d-flex col jc-c gp-4">
             <span className="d-flex ai-fs pl-8">
-              Full name&nbsp;<span className="required">*</span>
-            </span>
-
-            <input
-              name="fullName"
-              className="form-field"
-              type="text"
-              onChange={handleForm}
-              value={form.fullName}
-            />
-          </div>
-          <div className="max-width">
-            <span className="d-flex ai-fs pl-8">
-              Organization or company name&nbsp;
+              {requestBudget.textArea.name}&nbsp;
               <span className="required">*</span>
-            </span>
-            <input
-              name="companyName"
-              className="form-field"
-              type="text"
-              onChange={handleForm}
-              value={form.companyName}
-            />
-          </div>
-          <div className="max-width">
-            <span className="d-flex ai-fs pl-8">
-              E-mail&nbsp;<span className="required">*</span>
-            </span>
-            <input
-              name="email"
-              className="form-field"
-              type="email"
-              onChange={handleForm}
-              value={form.email}
-            />
-          </div>
-          <div className="max-width">
-            <span className="d-flex ai-fs pl-8">
-              Project name&nbsp;<span className="required">*</span>
-            </span>
-            <input
-              name="projectName"
-              className="form-field"
-              type="text"
-              onChange={handleForm}
-              value={form.projectName}
-            />
-          </div>
-          <div className="max-width">
-            <span className="d-flex ai-fs pl-8">
-              Project description&nbsp;<span className="required">*</span>
             </span>
             <textarea
               name="projectDescription"
               className="form-field"
-              placeholder="Insert a detailed description of the project, including the specific use of blockchain technology and its functions and characteristics within the app. Provide information on the overall goals and objectives of the project, as well as any specific features or functionality that must be included in the final product. The more detailed the description, the more accurate the development cost estimate will be."
+              placeholder={requestBudget.textArea.placeholder}
               onChange={handleForm}
               value={form.projectDescription}
-              style={{ resize: "none", height: 180 }}
+              style={{ resize: "none", height: 195 }}
             />
           </div>
-          <div className="max-width d-flex ai-c jc-c">
+          <div className="max-width d-flex ai-c jc-c gp-4">
             <input
               name="privacyPolicy"
               type="checkbox"
               onChange={handleForm}
               checked={form.privacyPolicy}
             />
-            <span className="d-flex ai-fs pl-8">
-              I have read and accept the&nbsp;
+            <span>
+              {requestBudget.accept.text}&nbsp;
               <Link className="routes" href="/privacy-policy">
-                Privacy Policy
+                {requestBudget.accept.policy}
               </Link>
               &nbsp;
               <span className="required">*</span>
             </span>
           </div>
-          <Button color="secondary" titleA="REQUEST BUDGET" type="submit" />
+          <Button
+            color="secondary"
+            titleA={requestBudget.request}
+            type="submit"
+          />
         </form>
-
-        <span>
-          The approximate budget for your project will be provided to you within
-          a maximum of 5 business days. Upon receipt of the approximate budget,
-          a project manager will reach out to you for further detailed
-          information in order to provide you with an accurate budget for the
-          development of your project. If you have any other questions or
-          concerns, please do not hesitate to contact our support team.
-        </span>
+        <span>{requestBudget.footer}</span>
       </div>
     </article>
   );
