@@ -53,9 +53,9 @@ import { useMatchMedia } from "./index";
 
 export default function useNavigation() {
   const { t } = useTranslation("common");
-  const PATH = t("path", {}, { returnObjects: true });
+  const path = t("path", {}, { returnObjects: true });
   const [open, setOpen] = useState(false);
-  const [hash, setHash] = useState(PATH[0].id);
+  const [hash, setHash] = useState(path[0].id);
   const isMobileResolution = useMatchMedia("(max-width:1370px)", undefined);
   const nav = useRef();
   const btn = useRef();
@@ -88,33 +88,35 @@ export default function useNavigation() {
   useEffect(() => {
     const handleNav = (e) => {
       e.preventDefault();
-      PATH.filter((path) =>
-        router.pathname === "/"
-          ? !path.route
-          : path.route && path.route.slice(1) === router.pathname.slice(1)
-      ).forEach(({ id }) => {
-        const elId = id.slice(1);
-        const el = router.pathname === "/" ? elId : router.pathname.slice(1);
-        const isTopEl =
-          router.pathname === "/" ? id === PATH[0].id : elId === el;
-        var article = document.getElementById(el);
-        var rect = article.getBoundingClientRect();
-        const articleColor = window.getComputedStyle(article).backgroundColor;
-        isTopEl
-          ? rect.top < 0 && rect.bottom >= 49
-            ? handleColor({
-                articleColor:
-                  router.pathname === "/" ? "rgb(19, 20, 22)" : articleColor,
-              })
-            : rect.top === 0 &&
-              handleColor({
-                articleColor: "rgba(0, 0, 0, 0)",
-              })
-          : rect.top <= 49 &&
-            rect.bottom >= 49 &&
-            handleColor({ articleColor });
-        rect.top <= 49 && rect.bottom >= 49 && hash !== id && setHash(id);
-      });
+      path
+        .filter((path) =>
+          router.pathname === "/"
+            ? !path.route
+            : path.route && path.route.slice(1) === router.pathname.slice(1)
+        )
+        .forEach(({ id }) => {
+          const elId = id.slice(1);
+          const el = router.pathname === "/" ? elId : router.pathname.slice(1);
+          const isTopEl =
+            router.pathname === "/" ? id === path[0].id : elId === el;
+          var article = document.getElementById(el);
+          var rect = article.getBoundingClientRect();
+          const articleColor = window.getComputedStyle(article).backgroundColor;
+          isTopEl
+            ? rect.top < 0 && rect.bottom >= 49
+              ? handleColor({
+                  articleColor:
+                    router.pathname === "/" ? "rgb(19, 20, 22)" : articleColor,
+                })
+              : rect.top === 0 &&
+                handleColor({
+                  articleColor: "rgba(0, 0, 0, 0)",
+                })
+            : rect.top <= 49 &&
+              rect.bottom >= 49 &&
+              handleColor({ articleColor });
+          rect.top <= 49 && rect.bottom >= 49 && hash !== id && setHash(id);
+        });
     };
 
     let actionBtn = btn.current;
@@ -143,7 +145,7 @@ export default function useNavigation() {
 
   // Reset hash
   useEffect(() => {
-    router.pathname === "/" && setHash(PATH[0].id);
+    router.pathname === "/" && setHash(path[0].id);
   }, [router.pathname]);
 
   // Reset open
@@ -157,7 +159,7 @@ export default function useNavigation() {
   };
 
   return {
-    PATH,
+    path,
     open,
     hash,
     isMobileResolution,

@@ -21,7 +21,7 @@ const BuildButton = ({ handleRoute, text }) => {
 
 export default function Header() {
   const {
-    PATH,
+    path,
     open,
     hash,
     isMobileResolution,
@@ -36,49 +36,51 @@ export default function Header() {
   const hero = t("hero", {}, { returnObjects: true });
 
   const Routes = useCallback(
-    ({ hash, router, handleMenu, handleRoute }) => {
+    ({ path, hash, router, handleMenu, handleRoute }) => {
       return (
         <>
-          {PATH.filter((path) =>
-            router.pathname === "/" ? !path.route : path.route
-          ).map(({ title, id, route }, index) => {
-            return (
-              <FadeEffect
-                key={id}
-                top
-                delay={parseInt(`${index + 1 * 3}00`)}
-                distance="30px"
-                duration={200}
-              >
-                {route ? (
-                  <Link
-                    onClick={() => isMobileResolution && handleMenu()}
-                    href={route}
-                    className={`routes ${
-                      router.pathname === route ? "active" : ""
-                    }`}
-                  >
-                    {title}
-                  </Link>
-                ) : (
-                  <a
-                    onClick={() => isMobileResolution && handleMenu()}
-                    href={id}
-                    className={`routes ${hash === id ? "active" : ""}`}
-                  >
-                    {title}
-                  </a>
-                )}
-              </FadeEffect>
-            );
-          })}
+          {path
+            .filter((path) =>
+              router.pathname === "/" ? !path.route : path.route
+            )
+            .map(({ title, id, route }, index) => {
+              return (
+                <FadeEffect
+                  key={id}
+                  top
+                  delay={parseInt(`${index + 1 * 3}00`)}
+                  distance="30px"
+                  duration={200}
+                >
+                  {route ? (
+                    <Link
+                      onClick={() => isMobileResolution && handleMenu()}
+                      href={route}
+                      className={`routes ${
+                        router.pathname === route ? "active" : ""
+                      }`}
+                    >
+                      {title}
+                    </Link>
+                  ) : (
+                    <a
+                      onClick={() => isMobileResolution && handleMenu()}
+                      href={id}
+                      className={`routes ${hash === id ? "active" : ""}`}
+                    >
+                      {title}
+                    </a>
+                  )}
+                </FadeEffect>
+              );
+            })}
           {router.pathname === "/" && (
             <BuildButton handleRoute={handleRoute} text={hero.btn} />
           )}
         </>
       );
     },
-    [PATH, isMobileResolution, open, hero.btn]
+    [isMobileResolution, open, hero.btn]
   );
 
   return (
@@ -115,6 +117,7 @@ export default function Header() {
             ref={container}
           >
             <Routes
+              path={path}
               hash={hash}
               router={router}
               handleMenu={handleMenu}

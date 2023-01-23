@@ -16,7 +16,7 @@ export default function GlobalLayout({ children }) {
   return (
     <>
       <Head>
-        <title>{title ? `Decentral Nation | ${title}` : "Loading"}</title>
+        <title>{title ? `Decentral Nation | ${title}` : "Welcome"}</title>
       </Head>
       <div className={font.className}>
         <ReCaptchaProvider
