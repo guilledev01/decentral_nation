@@ -1,7 +1,7 @@
 {
   "request-budget": {
     "title": "Solicitar Presupuesto",
-    "description": "Obtenga una estimación de presupuesto gratuita y no vinculante para su proyecto.",
+    "description": "Obtenga una estimación de presupuesto gratuita y sin compromiso para su proyecto.",
     "warning": {
       "success": "Mensaje enviado correctamente",
       "error": "Rellene todos los campos obligatorios"

@@ -24,9 +24,9 @@ export default function LangWidget() {
     async ({ lng }) => {
       menuRef.current.classList.toggle("show");
       setOpen(!open);
-      await setLanguage(lng);
+      lang !== lng && (await setLanguage(lng));
     },
-    [open, menuRef]
+    [open, menuRef, lang]
   );
 
   useEffect(() => {
