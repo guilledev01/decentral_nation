@@ -21,7 +21,7 @@ export default function LangWidget() {
   const menuRef = useRef();
 
   const toggleDropdown = useCallback(
-    async ({ lng }) => {
+    async ({ lng = lang }) => {
       menuRef.current.classList.toggle("show");
       setOpen(!open);
       lang !== lng && (await setLanguage(lng));
