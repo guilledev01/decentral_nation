@@ -1,0 +1,23 @@
+.chat-widget {
+  cursor: pointer;
+  position: fixed;
+  bottom: 100px;
+  right: 15px;
+  background-color: get-color(dark, 1);
+  color: get-color(light, 1);
+  border-radius: 50%;
+  transition: 0.2s;
+  box-shadow: 2px 1px 3px 3px get-color(dark, 2);
+
+  &:hover {
+    background-color: get-color(dark, 2);
+    box-shadow: 0px 0px 3px 3px get-color(dark, 1);
+  }
+
+  & > svg {
+    padding-top: 4px;
+    width: 32px;
+    height: 32px;
+    fill: get-color(primary, 1);
+  }
+}

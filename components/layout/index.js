@@ -6,7 +6,7 @@ import Particles from "react-tsparticles";
 import { useLayout } from "../../hooks";
 import { ParticleConfig } from "../../utils/particles";
 import { Loader } from "../elements";
-import { Cookies, LangWidget } from "../sections";
+import { ChatWidget, Cookies, LangWidget } from "../sections";
 import Footer from "./Footer";
 import Header from "./Header";
 
@@ -48,6 +48,7 @@ export default function GlobalLayout({ children }) {
               {router.pathname === "/" && <Footer />}
               <Cookies />
               <LangWidget router={router} />
+              <ChatWidget router={router} />
             </>
           ) : (
             <Loader />

@@ -3,17 +3,13 @@
   bottom: 58px;
   left: 0;
   position: absolute;
-  border-radius: 10px;
-  background: get-color(dark, 1);
   color: get-color(light, 1);
   visibility: hidden;
   opacity: 0;
-  transform: translateY(0.5rem);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.5, 1);
 
   &.show {
     visibility: visible;
     opacity: 1;
-    transform: translateY(0rem);
   }
 }
