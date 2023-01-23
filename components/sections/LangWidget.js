@@ -1,6 +1,5 @@
 import setLanguage from "next-translate/setLanguage";
 import useTranslation from "next-translate/useTranslation";
-import { useEffect } from "react";
 import i18nConfig from "../../i18n.json";
 import { Dropdown } from "../elements";
 import { CAIcon, EEUUIcon, ESIcon } from "../svgs";
@@ -15,20 +14,6 @@ const ICON = {
 export default function LangWidget() {
   const { t, lang } = useTranslation("common");
   const language = t("language", {}, { returnObjects: true });
-
-  useEffect(() => {
-    const isAvailable = locales.find(
-      (item) => item === window.navigator.language.slice(0, 2)
-    );
-
-    const detectUserLanguage = async () => {
-      await setLanguage(isAvailable);
-    };
-
-    if (isAvailable && lang !== isAvailable) {
-      detectUserLanguage();
-    }
-  }, [lang]);
 
   return (
     <div className="lang-widget">
