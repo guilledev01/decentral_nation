@@ -1,0 +1,29 @@
+{
+  "request-budget": {
+    "title": "Pedir Orçamento",
+    "description": "Obtém um orçamento gratuito, sem compromisso, para o teu projecto",
+    "warning": {
+      "success": "Mensagem enviada com sucesso",
+      "error": "Preenche todos os campos obrigatórios"
+    },
+    "form": [
+      { "name": "Nome completo", "value": "fullName" },
+      {
+        "name": "Organização ou nome da empresa",
+        "value": "companyName"
+      },
+      { "name": "E-mail", "value": "email" },
+      { "name": "Nome do projecto", "value": "projectName" }
+    ],
+    "textArea": {
+      "name": "Descrição do Projecto",
+      "placeholder": "Insere uma descrição detalhada do projecto, incluindo o uso específico da tecnologia da cadeia de blocos e as suas funções e características dentro da aplicação. Fornecer informação sobre os objectivos e metas gerais do projecto, assim como quaisquer características ou funcionalidades específicas a serem incluídas no produto final. Quanto mais detalhada for a descrição, mais exacta será a estimativa do custo de desenvolvimento"
+    },
+    "accept": {
+      "text": "Eu li e aceito o",
+      "policy": "Política de Privacidade"
+    },
+    "request": "PEDIDO DE PERGUNTA",
+    "footer": "A estimativa aproximada para o teu projecto ser-te-á fornecida dentro de um máximo de 5 dias úteis. Depois de receberes o orçamento aproximado, um gestor de projecto irá contactar-te para obteres informação mais detalhada de modo a fornecer-te um orçamento preciso para o desenvolvimento do teu projecto. Se tiveres mais alguma questão ou preocupação, por favor não hesites em contactar a nossa equipa de apoio"
+  }
+}

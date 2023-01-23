@@ -1,0 +1,72 @@
+{
+  "path": [
+    {
+      "title": "Casa",
+      "id": "#home"
+    },
+    {
+      "title": "Descentralização",
+      "id": "#decentralization"
+    },
+    {
+      "title": "Os Nossos Serviços",
+      "id": "#services"
+    },
+    {
+      "title": "Sobre nós",
+      "id": "#team"
+    },
+    {
+      "title": "Projectos Lançados",
+      "id": "#projects"
+    },
+    {
+      "title": "Pedir Orçamento",
+      "id": "#request-budget",
+      "route": "/request-budget"
+    },
+    {
+      "title": "Contacta-nos",
+      "id": "#contact-us",
+      "route": "/contact-us"
+    },
+    {
+      "title": "Política de Privacidade",
+      "id": "#privacy-policy",
+      "route": "/privacy-policy"
+    },
+    {
+      "title": "Aviso legal",
+      "id": "#legal-warning",
+      "route": "/legal-warning"
+    },
+    {
+      "title": "Política de Cookies",
+      "id": "#cookies-policy",
+      "route": "/cookies-policy"
+    }
+  ],
+  "hero": {
+    "title": "Descentraliza o teu negócio, assegura o teu futuro",
+    "btn": "CONSTRUÍ-LO COM OS EUA"
+  },
+  "language": {
+    "en": "Inglês",
+    "es": "Espanhol",
+    "ca": "Catalão",
+    "de": "Alemão",
+    "fr": "Francês",
+    "pt": "Português",
+    "it": "Italiano"
+  },
+  "cookies": {
+    "text": "O nosso website utiliza cookies para melhorar a tua experiência de navegação e fornecer-te conteúdos personalizados. Ao clicares em 'Aceitar', concordas com o uso de cookies. Se escolheres 'Declinar', algumas características do website podem ser limitadas. Para mais informações, visita a nossa",
+    "and": "e",
+    "policy": {
+      "privacy": "Política de Privacidade",
+      "cookie": "Política de Bolachas"
+    },
+    "decline": "declinar",
+    "accept": "Aceitar"
+  }
+}

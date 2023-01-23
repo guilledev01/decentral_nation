@@ -1,0 +1,72 @@
+{
+  "path": [
+    {
+      "title": "Home",
+      "id": "#home"
+    },
+    {
+      "title": "Décentralisation",
+      "id": "#decentralization"
+    },
+    {
+      "title": "Nos services",
+      "id": "#services"
+    },
+    {
+      "title": "A propos De Nous",
+      "id": "#team"
+    },
+    {
+      "title": "Projets lancés",
+      "id": "#projects"
+    },
+    {
+      "title": "Demander un budget",
+      "id": "#request-budget",
+      "route": "/request-budget"
+    },
+    {
+      "title": "Nous contacter",
+      "id": "#contact-us",
+      "route": "/contact-us"
+    },
+    {
+      "title": "Politique de confidentialité",
+      "id": "#privacy-policy",
+      "route": "/privacy-policy"
+    },
+    {
+      "title": " Avis juridique ",
+      "id": "#legal-warning",
+      "route": "/legal-warning"
+    },
+    {
+      "title": "Politique en matière de cookies",
+      "id": "#cookies-policy",
+      "route": "/cookies-policy"
+    }
+  ],
+  "hero": {
+    "title": "Décentralise ton entreprise, sécurise ton avenir.",
+    "btn": "Construisez-le avec nous"
+  },
+  "language": {
+    "en": "Anglais",
+    "es": "Espagnol",
+    "ca": "Catalan",
+    "de": "Allemand",
+    "fr": "Français",
+    "pt": "Portugais",
+    "it": "Italien"
+  },
+  "cookies": {
+    "text": "Notre site Web utilise des cookies pour améliorer ton expérience de navigation et te fournir un contenu personnalisé. En cliquant sur 'Accepter', tu acceptes l'utilisation des cookies. Si tu choisis 'Refuser', certaines fonctionnalités du site Web peuvent être limitées. Pour plus d'informations, visite notre",
+    "and": "et",
+    "Politique": {
+      "privacy": "Politique de confidentialité",
+      "cookie": "Politique en matière de cookies"
+    },
+    "decline": "Déclin",
+    "accept": "Accepter"
+  }
+}

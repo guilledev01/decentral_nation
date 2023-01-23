@@ -51,9 +51,13 @@
     "btn": "CONSTRUEIX AMB NOSALTRES"
   },
   "language": {
-    "en": "Anglès",
-    "es": "Castellà",
-    "ca": "Català"
+    "en": "Inglés",
+    "es": "Español",
+    "ca": "Catalán",
+    "de": "Alemán",
+    "fr": "Francés",
+    "pt": "Portugués",
+    "it": "Italiano"
   },
   "cookies": {
     "text": "El nostre lloc web utilitza galetes per millorar la vostra experiència de navegació i proporcionar-vos contingut personalitzat. Al fer clic a 'Acceptar', consentiu l'ús de galetes. Si trieu 'Declinar', algunes funcions del lloc web poden estar limitades. Per a més informació visiteu la nostra",

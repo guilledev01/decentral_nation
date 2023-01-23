@@ -51,9 +51,13 @@
     "btn": "BUILD WITH US"
   },
   "language": {
-    "en": "English",
-    "es": "Spanish",
-    "ca": "Catalan"
+    "en": "Inglés",
+    "es": "Español",
+    "ca": "Catalán",
+    "de": "Alemán",
+    "fr": "Francés",
+    "pt": "Portugués",
+    "it": "Italiano"
   },
   "cookies": {
     "text": "Our website uses cookies to enhance your browsing experience and provide you with personalized content. By clicking 'Accept', you consent to the use of cookies. If you choose to 'Decline', some features of the website may be limited. For more information please visit our",

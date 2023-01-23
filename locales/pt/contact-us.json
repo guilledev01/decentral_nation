@@ -1,0 +1,23 @@
+{
+  "contact-us": {
+    "title": "Contacta-nos",
+    "description": "Diz-nos como podemos ajudar-te e a nossa equipa de apoio irá responder-te o mais rápido possível",
+    "warning": {
+      "success": "Mensagem enviada com sucesso",
+      "error": "Por favor preenche todos os campos obrigatórios"
+    },
+    "form": [
+      { "name": "Nome completo", "value": "fullName" },
+      { "name": "E-mail", "value": "email" }
+    ],
+    "textArea": {
+      "name": "Mensagem",
+      "placeholder": "Como podemos ajudar-te?"
+    },
+    "accept": {
+      "text": "Eu li e aceito o",
+      "policy": "Política de privacidade"
+    },
+    "request": "CONTACTA-NOS"
+  }
+}

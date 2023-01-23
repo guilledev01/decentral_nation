@@ -1,0 +1,29 @@
+{
+  "request-budget": {
+    "title": "Budget Anfordern",
+    "description": "Hol dir einen kostenlosen, unverbindlichen Kostenvoranschlag für dein Projekt.",
+    "warning": {
+      "success": "Nachricht erfolgreich gesendet",
+      "error": "Fülle alle erforderlichen Felder aus"
+    },
+    "form": [
+      { "name": "Vollständiger name", "value": "fullName" },
+      {
+        "name": "Name der Organisation oder des Unternehmens",
+        "value": "companyName"
+      },
+      { "name": "E-Mail", "value": "email" },
+      { "name": "Projektname", "value": "projectName" }
+    ],
+    "textArea": {
+      "name": "Projektbeschreibung",
+      "placeholder": "Füge eine detaillierte Beschreibung des Projekts ein, einschließlich der spezifischen Nutzung der Blockchain-Technologie und ihrer Funktionen und Merkmale innerhalb der Anwendung. Informiere dich über die allgemeinen Ziele des Projekts sowie über alle besonderen Merkmale oder Funktionen, die das Endprodukt enthalten soll. Je detaillierter die Beschreibung ist, desto genauer wird die Schätzung der Entwicklungskosten ausfallen."
+    },
+    "accept": {
+      "text": "Ich habe die gelesen und akzeptiere sie",
+      "policy": "Datenschutzrichtlinie"
+    },
+    "request": "ANFRAGE",
+    "footer": "Den groben Kostenvoranschlag für dein Projekt erhältst du innerhalb von maximal 5 Arbeitstagen. Nach Erhalt des groben Kostenvoranschlags wird sich ein Projektmanager mit dir in Verbindung setzen, um detailliertere Informationen zu erhalten und dir ein genaues Angebot für die Entwicklung deines Projekts zu machen. Wenn du weitere Fragen oder Bedenken hast, zögere bitte nicht, unser Support-Team zu kontaktieren."
+  }
+}

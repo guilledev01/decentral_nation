@@ -1,0 +1,29 @@
+{
+  "request-budget": {
+    "title": "Solicitar Presupuesto",
+    "description": "Obtenga una estimación de presupuesto gratuita y sin compromiso para su proyecto.",
+    "warning": {
+      "success": "Mensaje enviado correctamente",
+      "error": "Rellene todos los campos obligatorios"
+    },
+    "form": [
+      { "name": "Nombre completo", "value": "fullName" },
+      {
+        "name": "Nombre de la organización o empresa",
+        "value": "companyName"
+      },
+      { "name": "E-mail", "value": "email" },
+      { "name": "Nombre del proyecto", "value": "projectName" }
+    ],
+    "textArea": {
+      "name": "Descripción del proyecto",
+      "placeholder": "Inserte una descripción detallada del proyecto, incluyendo el uso específico de la tecnología de blockchain y sus funciones y características dentro de la aplicación. Proporcione información sobre los objetivos y metas generales del proyecto, así como cualquier característica o funcionalidad específica que deba incluirse en el producto final. Cuanto más detallada sea la descripción, más preciso será el estimado de costo de desarrollo."
+    },
+    "accept": {
+      "text": "He leído y acepto la",
+      "policy": "Política de Privacidad"
+    },
+    "request": "SOLICITAR PRESUPUESTO",
+    "footer": "El presupuesto aproximado para su proyecto se le proporcionará dentro de un máximo de 5 días hábiles. Tras recibir el presupuesto aproximado, un gerente de proyecto se pondrá en contacto con usted para obtener más información detallada con el fin de proporcionarle un presupuesto preciso para el desarrollo de su proyecto. Si tiene alguna otra pregunta o inquietud, no dude en ponerse en contacto con nuestro equipo de soporte."
+  }
+}

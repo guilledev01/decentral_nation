@@ -108,8 +108,7 @@ export default function Decentralization({ isMobileResolution }) {
         </FadeEffect>
         <FadeEffect bottom distance="60px" delay={800}>
           <div className="d-flex col ai-c jc-c gp-32">
-            <h4>Both</h4>
-
+            <h4>Blockchain + IPFS</h4>
             <span>{decentralization.conclusion}</span>
           </div>
         </FadeEffect>

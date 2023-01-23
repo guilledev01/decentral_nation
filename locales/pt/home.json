@@ -1,0 +1,78 @@
+{
+  "decentralization": {
+    "header": "descentralização",
+    "introduction": "A descentralização é o processo de distribuição de poder e controlo longe das entidades centralizadas. No mundo digital, isto significa criar sistemas e aplicações que não são controlados por uma única entidade, mas por uma rede de utilizadores. Isto permite um sistema mais seguro e transparente, uma vez que não há um único ponto de falha.",
+    "blockchain": [
+      {
+        "text": "Um dos elementos chave da descentralização é o uso da tecnologia blockchain. Uma cadeia de bloqueio é um livro-razão digital que é usado para registar e verificar transacções, criar contratos inteligentes, e muito mais."
+      },
+      {
+        "text": "Oferecemos desenvolvimento em diferentes plataformas de cadeias de blocos como Ethereum, Polygon, BSC e muitas mais. Isto permite-te escolher a melhor plataforma para o teu projecto, com base nas tuas necessidades e requisitos específicos."
+      },
+      {
+        "text": "Ao desenvolveres a tua aplicação descentralizada numa plataforma em cadeia de bloqueio, podes ter a certeza de que os teus dados estarão seguros, acessíveis e facilmente acessíveis a todas as partes envolvidas."
+      }
+    ],
+    "ipfs": [
+      {
+        "text": "Somos especializados em usar IPFS (Interplanetary File System) como parte das nossas soluções descentralizadas. IPFS é um protocolo descentralizado que permite guardar e recuperar ficheiros através de uma rede distribuída."
+      },
+      {
+        "text": "Isto é particularmente útil para aplicações descentralizadas, uma vez que permite armazenar grandes quantidades de dados, tais como ficheiros multimédia, metadados para NFT e criar uma base de dados descentralizada."
+      },
+      {
+        "text": "Permite uma recuperação de dados mais rápida e uma latência mais baixa devido aos nós de peer to peer. O IPFS pode fornecer uma solução segura e eficiente para os teus dados."
+      }
+    ],
+    "conclusion": "Utilizando IPFS em conjunto com a tecnologia blockchain, podemos fornecer uma solução verdadeiramente descentralizada que é segura e eficiente. Isto permite-te aproveitar os pontos fortes de ambas as tecnologias e criar uma aplicação descentralizada robusta."
+  },
+  "services": {
+    "header": "Os nossos serviços",
+    "introduction": "Nós oferecemos uma vasta gama de serviços para te ajudar a construir e lançar a tua aplicação descentralizada. Estes incluem:",
+    "service": [
+      {
+        "title": "Desenvolvimento Descentralizado de Aplicações",
+        "text": "A nossa equipa de peritos pode ajudar-te a criar uma aplicação descentralizada totalmente funcional, incluindo componentes frontend, backend e blockchain. Temos experiência com várias plataformas de cadeias de bloqueio, incluindo Ethereum, Polygon, BSC e outras, e podemos ajudar-te a escolher a plataforma certa para o teu projecto."
+      },
+      {
+        "title": "Auditorias Inteligentes de Contratos",
+        "text": "Oferecemos auditorias completas aos teus contratos inteligentes, incluindo um relatório detalhado de quaisquer potenciais vulnerabilidades ou problemas. As nossas auditorias também incluem um certificado de conclusão, que demonstra a segurança e a fiabilidade do teu contrato inteligente."
+      },
+      {
+        "title": "Armazenamento descentralizado",
+        "text": "Podemos ajudar-te a criar uma base de dados descentralizada para manteres um registo das tuas transacções inteligentes de contratos e contabilidade. Isto assegura que todos os dados são transparentes, inalteráveis e acessíveis a todas as partes envolvidas."
+      },
+      {
+        "title": "Consultoria tecnológica",
+        "text": "Oferecemos conselhos tecnológicos para projectos de tokenisation e blockchain. Isto inclui conselhos sobre economia simbólica, desenvolvimento inteligente de contratos. Podemos ajudar-te a navegar no complexo mundo da tecnologia da cadeia de bloqueio e a tomar decisões informadas para o teu projecto."
+      },
+      {
+        "title": "Serviço de Advocacia",
+        "text": "Ao escolheres trabalhar connosco, podes aproveitar a nossa plataforma para alcançar uma audiência mais vasta e mostrar o teu projecto a potenciais utilizadores e investidores. Acreditamos que o sucesso do teu projecto é também o nosso sucesso, e é por isso que oferecemos um serviço de promoção gratuito para os projectos em que trabalhamos. Isto inclui a apresentação do teu projecto no nosso website, assim como a sua promoção através das nossas redes sociais e rede de contactos. O nosso objectivo é ajudar-te a lançar a tua aplicação descentralizada e torná-la um sucesso."
+      }
+    ]
+  },
+  "about": {
+    "header": "Sobre nós",
+    "introduction": "Somos uma equipa de criadores e empreendedores apaixonados pela descentralização e pelo potencial que esta tem para mudar o mundo. Acreditamos que as aplicações descentralizadas podem criar um mundo digital mais seguro e transparente, e estamos dedicados a ajudar outros a criar e lançar as suas próprias aplicações descentralizadas. Na nossa empresa, oferecemos serviços de desenvolvimento de aplicações descentralizadas (DAPP) de alta qualidade. Os nossos criadores são especialistas em tecnologia de cadeias de bloqueio e estão empenhados em fornecer soluções inovadoras e escaláveis aos nossos clientes. A nossa metodologia de trabalho baseia-se na comunicação contínua e na estreita colaboração com os nossos clientes para assegurar que os projectos são concluídos a tempo e dentro do orçamento.",
+    "team": [
+      {
+        "title": "Gestor de Projecto",
+        "text": "O gestor do projecto é responsável por supervisionar o processo de desenvolvimento e assegurar que o projecto é concluído a tempo e dentro do orçamento. Isto inclui gerir a equipa, estabelecer marcos de projecto e comunicar com os interessados."
+      },
+      {
+        "title": "Criador de cadeias de bloqueio",
+        "text": "Um programador de blocos é um programador especializado que é responsável pelo desenvolvimento e implementação de contratos inteligentes na cadeia de blocos. Isto inclui criar e testar contratos inteligentes, bem como interagir com a rede da cadeia de bloqueios para implementar e executar os contratos. Também podem ser responsáveis pela criação e manutenção da infra-estrutura necessária para que a rede de blocos funcione correctamente."
+      },
+      {
+        "title": "Desenvolvedor de Pilha Completa",
+        "text": "Um Desenvolvedor Full Stack num projecto DAPP é responsável pelo desenvolvimento e manutenção tanto do front-end como do back-end da aplicação. Isto inclui o design e a implementação da interface do utilizador, bem como a integração de contratos inteligentes na cadeia de bloqueios."
+      }
+    ],
+    "conclusion": "Todos estes papéis são importantes para assegurar um processo de desenvolvimento DAPP bem sucedido e de alta qualidade."
+  },
+  "projects": {
+    "header": "Projectos Lançados",
+    "introduction": "Lançámos com sucesso vários projectos utilizando tecnologia descentralizada, incluindo um mercado descentralizado, uma plataforma de social media descentralizada e um sistema de votação descentralizado. Os nossos clientes têm visto um aumento na segurança, transparência e eficiência dos seus sistemas através do uso de tecnologia descentralizada."
+  }
+}

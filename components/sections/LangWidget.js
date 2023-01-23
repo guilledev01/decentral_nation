@@ -3,13 +3,25 @@ import useTranslation from "next-translate/useTranslation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import i18nConfig from "../../i18n.json";
 import { FadeEffect } from "../animations";
-import { CAIcon, EEUUIcon, ESIcon } from "../svgs";
+import {
+  CAIcon,
+  DEIcon,
+  EEUUIcon,
+  ESIcon,
+  FRIcon,
+  ITIcon,
+  PTIcon,
+} from "../svgs";
 const { locales } = i18nConfig;
 
 const ICON = {
   en: <EEUUIcon />,
   es: <ESIcon />,
   ca: <CAIcon />,
+  de: <DEIcon />,
+  fr: <FRIcon />,
+  pt: <PTIcon />,
+  it: <ITIcon />,
 };
 
 export default function LangWidget() {
@@ -39,7 +51,7 @@ export default function LangWidget() {
   return (
     <div className="lang-widget">
       <div className="dropdown-menu" ref={menuRef}>
-        <FadeEffect top when={open} cascade duration={200} distance="60px">
+        <FadeEffect top when={open} cascade duration={200} distance="120px">
           <div className="d-flex col ai-c jc-c gp-8">
             {locales.map((lng) => {
               if (lng === lang) return null;

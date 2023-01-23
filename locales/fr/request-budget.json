@@ -1,0 +1,29 @@
+{
+  "request-budget": {
+    "title": "Demander un budget",
+    "description": "Obtenir un devis gratuit et sans engagement pour ton projet.",
+    "warning": {
+      "success": "Message envoyé avec succès",
+      "error": "Remplir tous les champs obligatoires"
+    },
+    "form": [
+      { "name": "Nom et prénom", "value": "fullName" },
+      {
+        "name": "Nom de l'organisation ou de l'entreprise",
+        "value": "companyName"
+      },
+      { "name": "E-mail", "value": "email" },
+      { "name": "Nom du projet", "value": "projectName" }
+    ],
+    "textArea": {
+      "name": "Description du projet",
+      "placeholder": "Insère une description détaillée du projet, notamment l'utilisation spécifique de la technologie blockchain et ses fonctions et caractéristiques au sein de l'application. Fournis des informations sur les objectifs et buts généraux du projet, ainsi que sur les caractéristiques ou fonctionnalités spécifiques à inclure dans le produit final. Plus la description est détaillée, plus l'estimation des coûts de développement sera précise."
+    },
+    "accept": {
+      "text": "J'ai lu et j'accepte les",
+      "policy": "Politique de confidentialité"
+    },
+    "request": "Demande de devis",
+    "footer": "L'estimation approximative de ton projet te sera fournie dans un délai maximum de 5 jours ouvrables. Après avoir reçu l'estimation approximative, un chef de projet te contactera pour obtenir des informations plus détaillées afin de te fournir un devis précis pour le développement de ton projet. Si tu as d'autres questions ou préoccupations, n'hésite pas à contacter notre équipe d'assistance."
+  }
+}

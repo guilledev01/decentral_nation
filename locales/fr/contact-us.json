@@ -1,0 +1,23 @@
+{
+  "contact-us": {
+    "title": "Nous contacter",
+    "description": "Dis-nous comment nous pouvons t'aider et notre équipe d'assistance te contactera dès que possible.",
+    "warning": {
+      "success": "Message envoyé avec succès",
+      "error": "Veuillez remplir tous les champs obligatoires."
+    },
+    "form": [
+      { "name": "Nom et prénom", "value": "fullName" },
+      { "name": "E-mail", "value": "email" }
+    ],
+    "textArea": {
+      "name": "Message",
+      "placeholder": "Comment pouvons-nous t'aider ?"
+    },
+    "accept": {
+      "text": "J'ai lu et j'accepte les",
+      "policy": "Politique de confidentialité"
+    },
+    "request": "CONTACTEZ-NOUS"
+  }
+}
