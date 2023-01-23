@@ -25,10 +25,10 @@ export default function LangWidget() {
       await setLanguage(isAvailable);
     };
 
-    if (isAvailable) {
+    if (isAvailable && lang !== isAvailable) {
       detectUserLanguage();
     }
-  }, []);
+  }, [lang]);
 
   return (
     <div className="lang-widget">
