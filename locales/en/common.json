@@ -9,45 +9,45 @@
       "id": "#decentralization"
     },
     {
-      "title": "Our Services",
+      "title": "Our services",
       "id": "#services"
     },
     {
-      "title": "About Us",
+      "title": "About us",
       "id": "#team"
     },
     {
-      "title": "Projetcs Launched",
+      "title": "Projetcs launched",
       "id": "#projects"
     },
     {
-      "title": "Request Budget",
+      "title": "Request budget",
       "id": "#request-budget",
       "route": "/request-budget"
     },
     {
-      "title": "Contact Us",
+      "title": "Contact us",
       "id": "#contact-us",
       "route": "/contact-us"
     },
     {
-      "title": "Privacy Policy",
+      "title": "Privacy policy",
       "id": "#privacy-policy",
       "route": "/privacy-policy"
     },
     {
-      "title": "Legal Warning",
+      "title": "Legal warning",
       "id": "#legal-warning",
       "route": "/legal-warning"
     },
     {
-      "title": "Cookies Policy",
+      "title": "Cookies policy",
       "id": "#cookies-policy",
       "route": "/cookies-policy"
     }
   ],
   "hero": {
-    "title": "Decentralize your business, secure your future",
+    "title": "Decentralize your business, secure your future.",
     "btn": "BUILD WITH US"
   },
   "language": {
@@ -63,8 +63,8 @@
     "text": "Our website uses cookies to enhance your browsing experience and provide you with personalized content. By clicking 'Accept', you consent to the use of cookies. If you choose to 'Decline', some features of the website may be limited. For more information please visit our",
     "and": "and",
     "policy": {
-      "privacy": "Privacy Policy",
-      "cookie": "Cookies Policy"
+      "privacy": "Privacy policy",
+      "cookie": "Cookies policy"
     },
     "decline": "Decline",
     "accept": "Accept"

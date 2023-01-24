@@ -1,6 +1,6 @@
 {
   "decentralization": {
-    "header": "descentralização",
+    "header": "Descentralização",
     "introduction": "A descentralização é o processo de distribuição de poder e controlo longe das entidades centralizadas. No mundo digital, isto significa criar sistemas e aplicações que não são controlados por uma única entidade, mas por uma rede de utilizadores. Isto permite um sistema mais seguro e transparente, uma vez que não há um único ponto de falha.",
     "blockchain": [
       {
@@ -31,11 +31,11 @@
     "introduction": "Nós oferecemos uma vasta gama de serviços para te ajudar a construir e lançar a tua aplicação descentralizada. Estes incluem:",
     "service": [
       {
-        "title": "Desenvolvimento Descentralizado de Aplicações",
+        "title": "Desenvolvimento descentralizado de pplicações",
         "text": "A nossa equipa de peritos pode ajudar-te a criar uma aplicação descentralizada totalmente funcional, incluindo componentes frontend, backend e blockchain. Temos experiência com várias plataformas de cadeias de bloqueio, incluindo Ethereum, Polygon, BSC e outras, e podemos ajudar-te a escolher a plataforma certa para o teu projecto."
       },
       {
-        "title": "Auditorias Inteligentes de Contratos",
+        "title": "Auditorias inteligentes de contratos",
         "text": "Oferecemos auditorias completas aos teus contratos inteligentes, incluindo um relatório detalhado de quaisquer potenciais vulnerabilidades ou problemas. As nossas auditorias também incluem um certificado de conclusão, que demonstra a segurança e a fiabilidade do teu contrato inteligente."
       },
       {
@@ -47,7 +47,7 @@
         "text": "Oferecemos conselhos tecnológicos para projectos de tokenisation e blockchain. Isto inclui conselhos sobre economia simbólica, desenvolvimento inteligente de contratos. Podemos ajudar-te a navegar no complexo mundo da tecnologia da cadeia de bloqueio e a tomar decisões informadas para o teu projecto."
       },
       {
-        "title": "Serviço de Advocacia",
+        "title": "Serviço de advocacia",
         "text": "Ao escolheres trabalhar connosco, podes aproveitar a nossa plataforma para alcançar uma audiência mais vasta e mostrar o teu projecto a potenciais utilizadores e investidores. Acreditamos que o sucesso do teu projecto é também o nosso sucesso, e é por isso que oferecemos um serviço de promoção gratuito para os projectos em que trabalhamos. Isto inclui a apresentação do teu projecto no nosso website, assim como a sua promoção através das nossas redes sociais e rede de contactos. O nosso objectivo é ajudar-te a lançar a tua aplicação descentralizada e torná-la um sucesso."
       }
     ]
@@ -72,7 +72,7 @@
     "conclusion": "Todos estes papéis são importantes para assegurar um processo de desenvolvimento DAPP bem sucedido e de alta qualidade."
   },
   "projects": {
-    "header": "Projectos Lançados",
+    "header": "Projectos lançados",
     "introduction": "Lançámos com sucesso vários projectos utilizando tecnologia descentralizada, incluindo um mercado descentralizado, uma plataforma de social media descentralizada e um sistema de votação descentralizado. Os nossos clientes têm visto um aumento na segurança, transparência e eficiência dos seus sistemas através do uso de tecnologia descentralizada."
   }
 }

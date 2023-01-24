@@ -1,7 +1,7 @@
 {
   "path": [
     {
-      "title": "Casa",
+      "title": "Começo",
       "id": "#home"
     },
     {
@@ -9,7 +9,7 @@
       "id": "#decentralization"
     },
     {
-      "title": "Os Nossos Serviços",
+      "title": "Os nossos serviços",
       "id": "#services"
     },
     {
@@ -17,11 +17,11 @@
       "id": "#team"
     },
     {
-      "title": "Projectos Lançados",
+      "title": "Projectos lançados",
       "id": "#projects"
     },
     {
-      "title": "Pedir Orçamento",
+      "title": "Pedir orçamento",
       "id": "#request-budget",
       "route": "/request-budget"
     },
@@ -31,7 +31,7 @@
       "route": "/contact-us"
     },
     {
-      "title": "Política de Privacidade",
+      "title": "Política de privacidade",
       "id": "#privacy-policy",
       "route": "/privacy-policy"
     },
@@ -41,13 +41,13 @@
       "route": "/legal-warning"
     },
     {
-      "title": "Política de Cookies",
+      "title": "Política de cookies",
       "id": "#cookies-policy",
       "route": "/cookies-policy"
     }
   ],
   "hero": {
-    "title": "Descentraliza o teu negócio, assegura o teu futuro",
+    "title": "Descentraliza o teu negócio, assegura o teu futuro.",
     "btn": "CONSTRUÍ-LO COM OS EUA"
   },
   "language": {
@@ -63,8 +63,8 @@
     "text": "O nosso website utiliza cookies para melhorar a tua experiência de navegação e fornecer-te conteúdos personalizados. Ao clicares em 'Aceitar', concordas com o uso de cookies. Se escolheres 'Declinar', algumas características do website podem ser limitadas. Para mais informações, visita a nossa",
     "and": "e",
     "policy": {
-      "privacy": "Política de Privacidade",
-      "cookie": "Política de Bolachas"
+      "privacy": "Política de privacidade",
+      "cookie": "Política de bolachas"
     },
     "decline": "declinar",
     "accept": "Aceitar"

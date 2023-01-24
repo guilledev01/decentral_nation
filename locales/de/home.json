@@ -1,7 +1,7 @@
 {
   "decentralization": {
     "header": "Dezentralisierung",
-    "introduction": "Dezentralisierung ist der Prozess der Verteilung von Macht und Kontrolle weg von zentralisierten Einheiten. In der digitalen Welt bedeutet das, Systeme und Anwendungen zu schaffen, die nicht von einer einzelnen Person, sondern von einem Netzwerk von Nutzer/innen kontrolliert werden. Dies ermöglicht ein sichereres und transparenteres System, da es keinen Single Point of Failure gibt",
+    "introduction": "Dezentralisierung ist der Prozess der Verteilung von Macht und Kontrolle weg von zentralisierten Einheiten. In der digitalen Welt bedeutet das, Systeme und Anwendungen zu schaffen, die nicht von einer einzelnen Person, sondern von einem Netzwerk von Nutzer/innen kontrolliert werden. Dies ermöglicht ein sichereres und transparenteres System, da es keinen Single Point of Failure gibt.",
     "blockchain": [
       {
         "text": "Eines der Schlüsselelemente der Dezentralisierung ist die Verwendung der Blockchain-Technologie. Eine Blockchain ist ein digitales Hauptbuch, das verwendet wird, um Transaktionen aufzuzeichnen und zu überprüfen, intelligente Verträge zu erstellen und vieles mehr."

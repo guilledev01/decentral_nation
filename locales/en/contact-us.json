@@ -13,7 +13,7 @@
     "textArea": { "name": "Message", "placeholder": "How can we help you?" },
     "accept": {
       "text": "I have read and accept the",
-      "policy": "Privacy Policy"
+      "policy": "Privacy policy"
     },
     "request": "CONTACT US"
   }

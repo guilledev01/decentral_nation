@@ -18,7 +18,7 @@
         "text": "We specialize in using IPFS (InterPlanetary File System) as part of our decentralized solutions. IPFS is a decentralized protocol that allows for the storage and retrieval of files on a distributed network."
       },
       {
-        "text": "This is particularly useful for decentralized applications, as it allows for the storage of large amounts of data, such as media files, metadata for NFTs and create a decentralized database"
+        "text": "This is particularly useful for decentralized applications, as it allows for the storage of large amounts of data, such as media files, metadata for NFTs and create a decentralized database."
       },
       {
         "text": "It allows faster data retrieval and lower latency due to peer to peer nodes. IPFS can provide a secure and efficient solution for your data."
@@ -27,7 +27,7 @@
     "conclusion": "By using IPFS in conjunction with blockchain technology, we can provide a truly decentralized solution that is both secure and efficient. This allows you to take advantage of the strengths of both technologies, and create a robust and reliable decentralized application."
   },
   "services": {
-    "header": "Our Services",
+    "header": "Our services",
     "introduction": "We offer a comprehensive range of services to help you create and launch your decentralized application. These include:",
     "service": [
       {
@@ -53,7 +53,7 @@
     ]
   },
   "about": {
-    "header": "About Us",
+    "header": "About us",
     "introduction": "We are a team of developers and entrepreneurs who are passionate about decentralization and the potential it has to change the world. We believe that decentralized applications can create a more secure and transparent digital world, and we are dedicated to helping others create and launch their own decentralized applications. At our company, we offer high-quality decentralized application (DAPP) development services. Our developers are experts in blockchain technology and are committed to providing innovative and scalable solutions to our clients. Our working methodology is based on continuous communication and close collaboration with our clients to ensure projects are completed on time and within budget.",
     "team": [
       {
@@ -72,7 +72,7 @@
     "conclusion": "All of these roles are important to ensure a successful and high-quality DAPP development process."
   },
   "projects": {
-    "header": "Projects Launched",
+    "header": "Projects launched",
     "introduction": "We have successfully launched several projects using decentralized technology, including a decentralized marketplace, a decentralized social media platform, and a decentralized voting system. Our clients have seen increased security, transparency, and efficiency in their systems thanks to the use of decentralized technology."
   }
 }

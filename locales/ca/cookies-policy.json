@@ -1,11 +1,11 @@
 {
   "cookies-policy": {
-    "title": "Política de Galetes",
+    "title": "Política de cookies",
     "policy": [
-      "El nostre lloc web utilitza cookies per millorar la vostra experiència de navegació i per personalitzar el contingut i els anuncis. Les galetes són petits fitxers de text que s'emmagatzemen al vostre dispositiu quan visiteu un lloc web. Utilitzem tant galetes de sessió com galetes persistents al nostre lloc web.",
-      "Les galetes de sessió s'eliminen automàticament quan tanqueu el navegador i les galetes persistents romanen al vostre dispositiu fins que caduquen o les suprimiu. Utilitzem aquestes galetes per recordar les vostres preferències, per entendre com feu servir el nostre lloc web i per millorar la vostra experiència",
+      "El nostre lloc web utilitza cookies per millorar la vostra experiència de navegació i per personalitzar el contingut i els anuncis. Les cookies són petits fitxers de text que s'emmagatzemen al vostre dispositiu quan visiteu un lloc web. Utilitzem tant cookies de sessió com cookies persistents al nostre lloc web.",
+      "Les cookies de sessió s'eliminen automàticament quan tanqueu el navegador i les cookies persistents romanen al vostre dispositiu fins que caduquen o les suprimiu. Utilitzem aquestes cookies per recordar les vostres preferències, per entendre com feu servir el nostre lloc web i per millorar la vostra experiència",
       "També fem servir Google Analytics, un servei d'anàlisi web proporcionat per Google, Inc. Google Analytics utilitza cookies per ajudar-nos a analitzar com els usuaris utilitzen el nostre lloc web. La informació generada per la cookie sobre el vostre ús del nostre lloc web (inclosa la vostra adreça IP) ser transmesa i emmagatzemada per Google als servidors dels Estats Units. Google utilitzarà aquesta informació amb la finalitat d'avaluar el vostre ús del nostre lloc web, recopilar informes sobre l'activitat del lloc web per a nosaltres i proporcionar altres serveis relacionats amb l'activitat del lloc web i l'ús d'Internet. Google també pot transferir aquesta informació a tercers quan així ho requereixi la llei, o quan aquests tercers processin la informació en nom de Google",
-      "Podeu canviar la configuració de les galetes en qualsevol moment ajustant la configuració del navegador. Tanmateix, si desactiveu les galetes, és possible que algunes funcions del nostre lloc web no funcionin correctament."
+      "Podeu canviar la configuració de les cookies en qualsevol moment ajustant la configuració del navegador. Tanmateix, si desactiveu les cookies, és possible que algunes funcions del nostre lloc web no funcionin correctament."
     ]
   }
 }

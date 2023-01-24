@@ -9,39 +9,39 @@
       "id": "#decentralization"
     },
     {
-      "title": "Nuestros Servicios",
+      "title": "Nuestros servicios",
       "id": "#services"
     },
     {
-      "title": "Sobre Nosotros",
+      "title": "Sobre nosotros",
       "id": "#team"
     },
     {
-      "title": "Proyectos Lanzados",
+      "title": "Proyectos lanzados",
       "id": "#projects"
     },
     {
-      "title": "Solicitar Presupuesto",
+      "title": "Solicitar presupuesto",
       "id": "#request-budget",
       "route": "/request-budget"
     },
     {
-      "title": "Contactar Con Nosotros",
+      "title": "Contactar con nosotros",
       "id": "#contact-us",
       "route": "/contact-us"
     },
     {
-      "title": "Política de Privacidad",
+      "title": "Política de privacidad",
       "id": "#privacy-policy",
       "route": "/privacy-policy"
     },
     {
-      "title": "Aviso Legal",
+      "title": "Aviso legal",
       "id": "#legal-warning",
       "route": "/legal-warning"
     },
     {
-      "title": "Política de Cookies",
+      "title": "Política de cookies",
       "id": "#cookies-policy",
       "route": "/cookies-policy"
     }
@@ -63,8 +63,8 @@
     "text": "Nuestro sitio web utiliza cookies para mejorar su experiencia de navegación y proporcionarle contenido personalizado. Al hacer clic en 'Aceptar', usted acepta el uso de cookies. Si elige 'Declinar', algunas funciones del sitio web pueden estar limitadas. Para obtener más información visite nuestra",
     "and": "y",
     "policy": {
-      "privacy": "Política de Privacidad",
-      "cookie": "Política de Cookies"
+      "privacy": "Política de privacidad",
+      "cookie": "Política de cookies"
     },
     "decline": "Declinar",
     "accept": "Aceptar"

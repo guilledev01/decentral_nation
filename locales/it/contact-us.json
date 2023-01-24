@@ -1,23 +1,23 @@
 {
   "contact-us": {
-    "title": "Contáctanos",
-    "description": "Dinos cómo podemos ayudarte y nuestro equipo de soporte se pondrá en contacto contigo lo antes posible.",
+    "title": "Contattaci",
+    "description": "Ci dica come possiamo aiutarla e il nostro team di supporto la ricontatterà al più presto.",
     "warning": {
-      "success": "Mensaje enviado correctamente",
-      "error": "Rellene todos los campos obligatorios"
+      "success": "Messaggio inviato con successo",
+      "error": "La preghiamo di compilare tutti i campi obbligatori"
     },
     "form": [
-      { "name": "Nombre completo", "value": "fullName" },
+      { "name": "Nome e cognome", "value": "fullName" },
       { "name": "E-mail", "value": "email" }
     ],
     "textArea": {
-      "name": "Mensaje",
-      "placeholder": "En que podemos ayudarte?"
+      "name": "Messaggio",
+      "placeholder": "Come possiamo aiutarla?"
     },
     "accept": {
-      "text": "He leído y acepto la",
-      "policy": "Política de privacidad"
+      "text": "Ho letto e accetto il",
+      "policy": "Politica sulla privacy"
     },
-    "request": "CONTÁCTANOS"
+    "request": "CONTATTI"
   }
 }

@@ -1,11 +1,13 @@
 {
   "cookies-policy": {
-    "title": "Política de Cookies",
+    "title": "Politica sui cookie",
     "policy": [
-      "Nuestro sitio web utiliza cookies para mejorar su experiencia de navegación y personalizar el contenido y los anuncios. Las cookies son pequeños archivos de texto que se almacenan en su dispositivo cuando visita un sitio web. Utilizamos cookies de sesión y cookies persistentes en nuestro sitio web.",
-      "Las cookies de sesión se eliminan automáticamente cuando cierra su navegador y las cookies persistentes permanecen en su dispositivo hasta que caducan o las elimina. Usamos estas cookies para recordar sus preferencias, comprender cómo usa nuestro sitio web y mejorar su experiencia",
-      "También utilizamos Google Analytics, un servicio de análisis web proporcionado por Google, Inc. Google Analytics utiliza cookies para ayudarnos a analizar cómo los usuarios usan nuestro sitio web. La información generada por la cookie sobre su uso de nuestro sitio web (incluida su dirección IP) se será transmitida y almacenada por Google en servidores en los EE. UU. Google utilizará esta información con el fin de evaluar su uso de nuestro sitio web, recopilar informes sobre la actividad del sitio web para nosotros y proporcionar otros servicios relacionados con la actividad del sitio web y el uso de Internet. Google también puede transferir esta información a terceros cuando así se lo requiera la ley, o cuando dichos terceros procesen la información en nombre de Google",
-      "Puede cambiar la configuración de las cookies en cualquier momento ajustando la configuración de su navegador. Sin embargo, si desactiva las cookies, es posible que algunas funciones de nuestro sitio web no funcionen correctamente."
+      "Il nostro sito web utilizza i cookie per migliorare la sua esperienza di navigazione e personalizzare i contenuti e gli annunci. I cookie sono piccoli file di testo che vengono memorizzati sul suo dispositivo quando visita un sito web. Sul nostro sito web utilizziamo sia cookie di sessione che cookie persistenti.",
+      "I cookie di sessione vengono eliminati automaticamente alla chiusura del browser, mentre i cookie persistenti rimangono sul suo dispositivo fino alla loro scadenza o alla loro eliminazione. Utilizziamo questi cookie per ricordare le sue preferenze, capire come utilizza il nostro sito web e migliorare la sua esperienza.",
+      "Utilizziamo anche Google Analytics, uno strumento di analisi web, per aiutarci a capire come utilizza il nostro sito.",
+      "Utilizziamo anche Google Analytics, un servizio di analisi web fornito da Google, Inc. Google Analytics utilizza i cookie per aiutarci ad analizzare come gli utenti utilizzano il nostro sito web. Le informazioni generate dal cookie sull'utilizzo del nostro sito web da parte sua (compreso il suo indirizzo IP) saranno trasmesse e memorizzate da Google su server negli Stati Uniti. Google utilizzerà queste informazioni per valutare il suo utilizzo del nostro sito web, compilare rapporti sull'attività del sito web per noi e fornire altri servizi relativi all'attività del sito web e all'utilizzo di Internet. Google può anche trasferire queste informazioni a terzi, se richiesto dalla legge o se tali terzi elaborano le informazioni per conto di Google.",
+      "Può modificare le impostazioni dei cookie in qualsiasi momento, regolando le impostazioni del browser. Tuttavia, se disattiva i cookie, alcune funzioni del nostro sito web potrebbero non funzionare correttamente.",
+      "Può modificare le impostazioni dei cookie in qualsiasi momento regolando le impostazioni del suo browser."
     ]
   }
 }

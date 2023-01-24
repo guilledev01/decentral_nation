@@ -1,72 +1,72 @@
 {
   "path": [
     {
-      "title": "Inicio",
+      "title": "Inizio",
       "id": "#home"
     },
     {
-      "title": "Descentralización",
+      "title": "Decentramento",
       "id": "#decentralization"
     },
     {
-      "title": "Nuestros Servicios",
+      "title": "I nostri servizi",
       "id": "#services"
     },
     {
-      "title": "Sobre Nosotros",
+      "title": "Chi siamo",
       "id": "#team"
     },
     {
-      "title": "Proyectos Lanzados",
+      "title": "Progetti avviati",
       "id": "#projects"
     },
     {
-      "title": "Solicitar Presupuesto",
+      "title": "Richiesta di budget",
       "id": "#request-budget",
       "route": "/request-budget"
     },
     {
-      "title": "Contactar Con Nosotros",
+      "title": "Contattaci",
       "id": "#contact-us",
       "route": "/contact-us"
     },
     {
-      "title": "Política de Privacidad",
+      "title": "Informativa sulla privacy",
       "id": "#privacy-policy",
       "route": "/privacy-policy"
     },
     {
-      "title": "Aviso Legal",
+      "title": "Avviso legale",
       "id": "#legal-warning",
       "route": "/legal-warning"
     },
     {
-      "title": "Política de Cookies",
+      "title": "Politica sui cookie",
       "id": "#cookies-policy",
       "route": "/cookies-policy"
     }
   ],
   "hero": {
-    "title": "Descentraliza tu negocio, asegura tu futuro.",
-    "btn": "CONSTRÚYELO CON NOSOTROS"
+    "title": "Decentra la tua attività, metti al sicuro il tuo futuro.",
+    "btn": "COSTRUISCI CON NOI"
   },
   "language": {
-    "en": "Inglés",
-    "es": "Español",
-    "ca": "Catalán",
-    "de": "Alemán",
-    "fr": "Francés",
-    "pt": "Portugués",
+    "en": "Inglese",
+    "es": "Spagnolo",
+    "ca": "Catalano",
+    "de": "Tedesco",
+    "fr": "Francese",
+    "pt": "Portoghese",
     "it": "Italiano"
   },
-  "cookies": {
-    "text": "Nuestro sitio web utiliza cookies para mejorar su experiencia de navegación y proporcionarle contenido personalizado. Al hacer clic en 'Aceptar', usted acepta el uso de cookies. Si elige 'Declinar', algunas funciones del sitio web pueden estar limitadas. Para obtener más información visite nuestra",
-    "and": "y",
+  "cookie": {
+    "text": "Il nostro sito web utilizza i cookie per migliorare la sua esperienza di navigazione e fornirle contenuti personalizzati. Cliccando su 'Accetta', lei accetta l'uso dei cookie. Se sceglie 'Rifiuto', alcune funzioni del sito web potrebbero essere limitate. Per maggiori informazioni, visiti il nostro sito",
+    "and": "e",
     "policy": {
-      "privacy": "Política de Privacidad",
-      "cookie": "Política de Cookies"
+      "privacy": "Informativa sulla privacy",
+      "cookie": "Politica sui cookie"
     },
-    "decline": "Declinar",
-    "accept": "Aceptar"
+    "decline": "Declino",
+    "accept": "Accetta"
   }
 }

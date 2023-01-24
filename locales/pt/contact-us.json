@@ -1,7 +1,7 @@
 {
   "contact-us": {
     "title": "Contacta-nos",
-    "description": "Diz-nos como podemos ajudar-te e a nossa equipa de apoio irá responder-te o mais rápido possível",
+    "description": "Diz-nos como podemos ajudar-te e a nossa equipa de apoio irá responder-te o mais rápido possível.",
     "warning": {
       "success": "Mensagem enviada com sucesso",
       "error": "Por favor preenche todos os campos obrigatórios"

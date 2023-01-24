@@ -9,7 +9,7 @@
     "form": [
       { "name": "Vollständiger name", "value": "fullName" },
       {
-        "name": "Name der Organisation oder des Unternehmens",
+        "name": "Name der organisation oder des unternehmens",
         "value": "companyName"
       },
       { "name": "E-Mail", "value": "email" },

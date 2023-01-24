@@ -9,29 +9,29 @@
       "id": "#decentralization"
     },
     {
-      "title": "Els Nostres Serveis",
+      "title": "Els nostres serveis",
       "id": "#services"
     },
     {
-      "title": "Sobre Nosaltres",
+      "title": "Sobre nosaltres",
       "id": "#team"
     },
     {
-      "title": "Projectes Llançats",
+      "title": "Projectes llançats",
       "id": "#projects"
     },
     {
-      "title": "Sol·licitud De Pressupost",
+      "title": "Sol·licitud de pressupost",
       "id": "#request-budget",
       "route": "/request-budget"
     },
     {
-      "title": "Contacteu Amb Nosaltres",
+      "title": "Contacteu amb nosaltres",
       "id": "#contact-us",
       "route": "/contact-us"
     },
     {
-      "title": "Política de Privacitat",
+      "title": "Política de privacitat",
       "id": "#privacy-policy",
       "route": "/privacy-policy"
     },
@@ -41,7 +41,7 @@
       "route": "/legal-warning"
     },
     {
-      "title": "Política de Galetes",
+      "title": "Política de cookies",
       "id": "#cookies-policy",
       "route": "/cookies-policy"
     }
@@ -63,8 +63,8 @@
     "text": "El nostre lloc web utilitza galetes per millorar la vostra experiència de navegació i proporcionar-vos contingut personalitzat. Al fer clic a 'Acceptar', consentiu l'ús de galetes. Si trieu 'Declinar', algunes funcions del lloc web poden estar limitades. Per a més informació visiteu la nostra",
     "and": "i",
     "policy": {
-      "privacy": "Política de Privacitat",
-      "cookie": "Política de Galetes"
+      "privacy": "Política de privacitat",
+      "cookie": "Política de cookies"
     },
     "decline": "Declinar",
     "accept": "Acceptar"

@@ -1,7 +1,7 @@
 {
   "path": [
     {
-      "title": "home",
+      "title": "Anfang",
       "id": "#home"
     },
     {
@@ -9,7 +9,7 @@
       "id": "#decentralization"
     },
     {
-      "title": "Unsere Dienstleistungen",
+      "title": "Unsere dienstleistungen",
       "id": "#services"
     },
     {
@@ -17,16 +17,16 @@
       "id": "#team"
     },
     {
-      "title": "Gestartete Projekte",
+      "title": "Gestartete projekte",
       "id": "#projects"
     },
     {
-      "title": "Budget Anfordern",
+      "title": "Budget anfordern",
       "id": "#request-budget",
       "route": "/request-budget"
     },
     {
-      "title": "Kontaktiere Uns",
+      "title": "Kontaktiere uns",
       "id": "#contact-us",
       "route": "/contact-us"
     },
@@ -47,7 +47,7 @@
     }
   ],
   "hero": {
-    "title": "Dezentralisiere dein Geschäft, sichere deine Zukunft",
+    "title": "Dezentralisiere dein Geschäft, sichere deine Zukunft.",
     "btn": "BAUEN SIE ES MIT UNS"
   },
   "language": {

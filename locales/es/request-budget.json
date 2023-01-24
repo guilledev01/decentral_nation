@@ -1,6 +1,6 @@
 {
   "request-budget": {
-    "title": "Solicitar Presupuesto",
+    "title": "Solicitar presupuesto",
     "description": "Obtenga una estimación de presupuesto gratuita y sin compromiso para su proyecto.",
     "warning": {
       "success": "Mensaje enviado correctamente",
@@ -21,7 +21,7 @@
     },
     "accept": {
       "text": "He leído y acepto la",
-      "policy": "Política de Privacidad"
+      "policy": "Política de privacidad"
     },
     "request": "SOLICITAR PRESUPUESTO",
     "footer": "El presupuesto aproximado para su proyecto se le proporcionará dentro de un máximo de 5 días hábiles. Tras recibir el presupuesto aproximado, un gerente de proyecto se pondrá en contacto con usted para obtener más información detallada con el fin de proporcionarle un presupuesto preciso para el desarrollo de su proyecto. Si tiene alguna otra pregunta o inquietud, no dude en ponerse en contacto con nuestro equipo de soporte."

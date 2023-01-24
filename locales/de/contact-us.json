@@ -4,7 +4,7 @@
     "description": "Sag uns, wie wir dir helfen können und unser Support-Team wird sich so schnell wie möglich bei dir melden.",
     "warning": {
       "success": "Nachricht erfolgreich gesendet",
-      "error": "Bitte fülle alle erforderlichen Felder aus."
+      "error": "Bitte fülle alle erforderlichen Felder aus"
     },
     "form": [
       { "name": "Vollständiger name", "value": "fullName" },
