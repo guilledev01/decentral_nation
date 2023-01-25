@@ -13,34 +13,37 @@ import Header from "./Header";
 export default function GlobalLayout({ children }) {
   const { load, particlesInit, particlesLoaded, router, font, title } =
     useLayout();
+
   return (
     <>
       <Head>
-        <title>{title ? `Decentral Nation | ${title}` : "Welcome"}</title>
+        <title>
+          {title ? `Decentral Nation | ${title}` : "Decentral Nation | Welcome"}
+        </title>
       </Head>
       <div className={font.className}>
+        <Particles
+          id="tsparticles"
+          init={particlesInit}
+          loaded={particlesLoaded}
+          options={ParticleConfig}
+        />
+        <ToastContainer
+          position="bottom-right"
+          closeOnClick
+          autoClose={4000}
+          hideProgressBar={false}
+          newestOnTop={true}
+          rtl={false}
+          pauseOnFocusLoss={false}
+          draggable
+          pauseOnHover={false}
+          theme="dark"
+        />
         <ReCaptchaProvider
           reCaptchaKey="6LcksxIkAAAAAIF5VJcHKyEO5yXyoZzYN_GQfcWD"
           useEnterprise
         >
-          <Particles
-            id="tsparticles"
-            init={particlesInit}
-            loaded={particlesLoaded}
-            options={ParticleConfig}
-          />
-          <ToastContainer
-            position="bottom-right"
-            closeOnClick
-            autoClose={4000}
-            hideProgressBar={false}
-            newestOnTop={true}
-            rtl={false}
-            pauseOnFocusLoss={false}
-            draggable
-            pauseOnHover={false}
-            theme="dark"
-          />
           {load ? (
             <>
               <Header />
