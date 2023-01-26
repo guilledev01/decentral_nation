@@ -34,22 +34,6 @@ export default function RequestBudgetPage() {
     });
   };
 
-  const handleSubmit = useCallback(
-    async (e) => {
-      e.preventDefault();
-      for (const property in form) {
-        if (form[property] === "" || form[property] === false) {
-          setSend(false);
-          return false;
-        }
-      }
-      if (!domain) return false;
-      const token = await executeRecaptcha("form_submit");
-      token ? sendForm() : setSend(false);
-    },
-    [form, executeRecaptcha, domain, sendForm]
-  );
-
   const sendForm = () => {
     fetch("/api/email/request-budget", {
       method: "PUT",
@@ -74,6 +58,22 @@ export default function RequestBudgetPage() {
       })
       .catch(console.error);
   };
+
+  const handleSubmit = useCallback(
+    async (e) => {
+      e.preventDefault();
+      for (const property in form) {
+        if (form[property] === "" || form[property] === false) {
+          setSend(false);
+          return false;
+        }
+      }
+      if (!domain) return false;
+      const token = await executeRecaptcha("form_submit");
+      token ? sendForm() : setSend(false);
+    },
+    [form, executeRecaptcha, domain, sendForm]
+  );
 
   return (
     <article id="request-budget">
