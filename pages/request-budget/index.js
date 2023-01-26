@@ -1,7 +1,7 @@
 import { useReCaptcha } from "next-recaptcha-v3";
 import useTranslation from "next-translate/useTranslation";
 import Link from "next/link";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { FadeEffect } from "../../components/animations";
 import { Button } from "../../components/elements";
 import { useMatchMedia } from "../../hooks";
@@ -20,6 +20,11 @@ export default function RequestBudgetPage() {
   const [send, setSend] = useState(undefined);
   const isMobileResolution = useMatchMedia("(max-width:1370px)", undefined);
   const { executeRecaptcha } = useReCaptcha();
+  const [domain, setDomain] = useState(false);
+
+  useEffect(() => {
+    setDomain(window.location.host);
+  }, []);
 
   const handleForm = (e) => {
     setForm({
@@ -38,22 +43,36 @@ export default function RequestBudgetPage() {
           return false;
         }
       }
+      if (!domain) return false;
       const token = await executeRecaptcha("form_submit");
       token ? sendForm() : setSend(false);
     },
-    [form, executeRecaptcha]
+    [form, executeRecaptcha, domain, sendForm]
   );
 
   const sendForm = () => {
-    setSend(true);
-    setForm({
-      fullName: "",
-      companyName: "",
-      email: "",
-      projectName: "",
-      projectDescription: "",
-      privacyPolicy: false,
-    });
+    fetch("/api/email/request-budget", {
+      method: "PUT",
+      headers: {
+        authorization: process.env.NEXT_PUBLIC_JWT,
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({ ...form, domain }),
+    })
+      .then((res) => {
+        if (res.status === 201) {
+          setSend(true);
+          setForm({
+            fullName: "",
+            companyName: "",
+            email: "",
+            projectName: "",
+            projectDescription: "",
+            privacyPolicy: false,
+          });
+        }
+      })
+      .catch(console.error);
   };
 
   return (
