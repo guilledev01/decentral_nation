@@ -38,22 +38,17 @@ export default async function handler(req, res) {
         res.end();
       }
       const msg = {
-        to: "guille1000142@gmail.com",
+        to: "guilledevelop01@gmail.com",
         from: "guilledevelop01@gmail.com",
         subject: "Budget request",
-        text: `Name: ${fullName}, Company Name: ${companyName}, E-mail: ${email}, Project Name: ${projectName}, Project Description: ${projectDescription}}`,
-        html: `<strong>Name:</strong> ${fullName}, <strong>Company Name:</strong> ${companyName}, <strong>E-mail:</strong> ${email}, <strong>Project Name:</strong> ${projectName}, <strong>Project Description:</strong> ${projectDescription}}`,
+        text: "and easy to do anywhere, even with Node.js",
+        html: "<strong>and easy to do anywhere, even with Node.js</strong>",
       };
       sgMail
         .send(msg)
-        .then((mail) => {
-          if (mail.statusCode === 202) {
-            res.statusCode = 202;
-            res.end();
-          } else {
-            res.statusCode = mail.statusCode;
-            res.end();
-          }
+        .then(() => {
+          res.statusCode = 202;
+          res.end();
         })
         .catch(() => {
           res.statusCode = 500;

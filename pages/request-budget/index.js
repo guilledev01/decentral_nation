@@ -44,7 +44,7 @@ export default function RequestBudgetPage() {
       body: JSON.stringify({ ...form, domain }),
     })
       .then((res) => {
-        if (res.status === 201) {
+        if (res.status === 202) {
           setSend(true);
           setForm({
             fullName: "",
