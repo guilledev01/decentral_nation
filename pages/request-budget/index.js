@@ -1,3 +1,4 @@
+import * as jose from "jose";
 import { useReCaptcha } from "next-recaptcha-v3";
 import useTranslation from "next-translate/useTranslation";
 import Link from "next/link";
@@ -34,14 +35,31 @@ export default function RequestBudgetPage() {
     });
   };
 
-  const sendForm = () => {
+  const sendForm = async () => {
+    const iss = process.env.NEXT_PUBLIC_CORS_ORIGIN_INTERNAL;
+    const aud = form.email;
+    const alg = "RS256";
+    const privateKey = await jose.importPKCS8(
+      process.env.NEXT_PUBLIC_RSA_PRIVATE_KEY,
+      alg
+    );
+    const jwt = await new jose.SignJWT(form)
+      .setProtectedHeader({ alg })
+      .setIssuedAt()
+      .setIssuer(iss)
+      .setAudience(aud)
+      .setExpirationTime("10s")
+      .sign(privateKey);
     fetch("/api/email/request-budget", {
-      method: "PUT",
+      method: "POST",
       headers: {
-        authorization: process.env.NEXT_PUBLIC_JWT,
+        authorization: jwt,
         "Content-type": "application/json",
       },
-      body: JSON.stringify({ ...form, domain }),
+      body: JSON.stringify({
+        iss,
+        aud,
+      }),
     })
       .then((res) => {
         if (res.status === 202) {

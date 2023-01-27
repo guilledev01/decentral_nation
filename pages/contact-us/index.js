@@ -1,3 +1,4 @@
+import * as jose from "jose";
 import { useReCaptcha } from "next-recaptcha-v3";
 import useTranslation from "next-translate/useTranslation";
 import Link from "next/link";
@@ -42,14 +43,44 @@ export default function ContactUsPage() {
     [form, executeRecaptcha]
   );
 
-  const sendForm = () => {
-    setSend(true);
-    setForm({
-      fullName: "",
-      email: "",
-      message: "",
-      privacyPolicy: false,
-    });
+  const sendForm = async () => {
+    const iss = process.env.NEXT_PUBLIC_CORS_ORIGIN_INTERNAL;
+    const aud = form.email;
+    const alg = "RS256";
+    const privateKey = await jose.importPKCS8(
+      process.env.NEXT_PUBLIC_RSA_PRIVATE_KEY,
+      alg
+    );
+    const jwt = await new jose.SignJWT(form)
+      .setProtectedHeader({ alg })
+      .setIssuedAt()
+      .setIssuer(iss)
+      .setAudience(aud)
+      .setExpirationTime("10s")
+      .sign(privateKey);
+    fetch("/api/email/support-contact", {
+      method: "POST",
+      headers: {
+        authorization: jwt,
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({
+        iss,
+        aud,
+      }),
+    })
+      .then((res) => {
+        if (res.status === 202) {
+          setSend(true);
+          setForm({
+            fullName: "",
+            email: "",
+            message: "",
+            privacyPolicy: false,
+          });
+        }
+      })
+      .catch(console.error);
   };
 
   return (

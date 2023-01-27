@@ -1,59 +1,45 @@
 import sgMail from "@sendgrid/mail";
-import jwt from "jsonwebtoken";
+import * as jose from "jose";
+import { middleware } from "../../../utils/base";
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 export default async function handler(req, res) {
-  if (req.method !== "PUT") {
-    res.statusCode = 405;
-    res.end();
+  middleware(req, res).catch(() => {
+    res.status(400).end();
+  });
+  if (req.headers.origin !== process.env.CORS_ORIGIN_INTERNAL) {
+    return res.status(403).end();
   }
   const authorization = req.headers.authorization;
-  if (!authorization) {
-    res.statusCode = 401;
-    res.end();
-  }
-  const {
-    fullName,
-    companyName,
-    email,
-    projectName,
-    projectDescription,
-    domain,
-  } = req.body;
-  jwt.verify(
-    authorization,
-    process.env.SECRET_KEY_256,
-    function (err, decoded) {
-      if (err) {
-        res.status(403).send();
-        res.end();
-      }
-      if (!decoded.domain) {
-        res.status(400).send();
-        res.end();
-      }
-      if (decoded.domain !== domain) {
-        res.status(403).send();
-        res.end();
-      }
+  const { iss, aud } = req.body;
+  const alg = "RS256";
+  const publicKey = await jose.importSPKI(process.env.RSA_PUBLIC_KEY, alg);
+  return jose
+    .jwtVerify(authorization, publicKey, {
+      issuer: iss,
+      audience: aud,
+    })
+    .then(async ({ payload }) => {
+      const { fullName, companyName, email, projectName, projectDescription } =
+        payload;
       const msg = {
-        to: "guilledevelop01@gmail.com",
+        to: "guille1000142@gmail.com",
         from: "guilledevelop01@gmail.com",
         subject: "Budget request",
-        text: "and easy to do anywhere, even with Node.js",
-        html: "<strong>and easy to do anywhere, even with Node.js</strong>",
+        text: `${fullName} ${companyName} ${email} ${projectName} ${projectDescription}`,
+        html: `<h2>${fullName} ${companyName} ${email} ${projectName} ${projectDescription}</h2>`,
       };
-      sgMail
+      return sgMail
         .send(msg)
         .then(() => {
-          res.statusCode = 202;
-          res.end();
+          return res.status(202).end();
         })
         .catch(() => {
-          res.statusCode = 500;
-          res.end();
+          return res.status(500).end();
         });
-    }
-  );
+    })
+    .catch((err) => {
+      return res.status(403).send({ err });
+    });
 }

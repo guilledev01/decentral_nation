@@ -17,7 +17,7 @@
     "@successtar/react-reveal": "1.2.10",
     "clipboard": "2.0.11",
     "eslint-config-next": "13.1.5",
-    "jsonwebtoken": "9.0.0",
+    "jose": "^4.11.2",
     "next": "13.1.5",
     "next-deploy-notifications": "0.1.6",
     "next-recaptcha-v3": "1.1.1",
