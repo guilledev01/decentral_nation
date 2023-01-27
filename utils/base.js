@@ -13,12 +13,12 @@ export const middleware = (req, res) => {
   });
 };
 
-export const verifyRecaptcha = async (token) => {
+export const verifyRecaptcha = async (secretToken, userToken) => {
   const url = "https://www.google.com/recaptcha/api/siteverify";
   const response = await fetch(url, {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: `secret=${process.env.RE_CAPTCHA_SECRET_KEY}&response=${token}`,
+    body: `secret=${secretToken}&response=${userToken}`,
   });
   return await response.json();
 };

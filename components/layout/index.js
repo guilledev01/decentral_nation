@@ -40,9 +40,7 @@ export default function GlobalLayout({ children }) {
           pauseOnHover={false}
           theme="dark"
         />
-        <ReCaptchaProvider
-          reCaptchaKey={process.env.NEXT_PUBLIC_RE_CAPTCHA_PUBLIC_KEY}
-        >
+        <ReCaptchaProvider>
           {load ? (
             <>
               <Header />
