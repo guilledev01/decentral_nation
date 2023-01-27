@@ -24,21 +24,14 @@ export default async function handler(req, res) {
       audience: aud,
     })
     .then(({ payload }) => {
-      const {
-        fullName,
-        companyName,
-        email,
-        projectName,
-        projectDescription,
-        token,
-      } = payload;
+      const { fullName, email, message, token } = payload;
       verifyRecaptcha(token).then((result) => {
         if (!result.success) return res.status(403).end();
       });
       const msgUser = {
         to: email,
         from: "guilledevelop01@gmail.com",
-        subject: "Budget Request Received",
+        subject: "Support Request Received",
         text: "Decentral Nation",
         html: `
           <html>
@@ -62,14 +55,13 @@ export default async function handler(req, res) {
               </style>
             </head>
             <body>
-              <h1>Thank you for submitting your budget request</h1>
+              <h1>Thank you for contacting our support team</h1>
               <div class="message" style="font-size: 16px; line-height: 1.5; color: #444; margin: 20px 0;">
                 <span>Dear <strong translate="no">${fullName}</strong>,</span>
                 <br><br>
-                <span>We have received your request and we're glad you're considering us for your project.</span>
+                <span>We have received your request and we're glad you reached out to us.</span>
                 <br><br>
-                <span>We will review your request carefully and will be in touch with you shortly to discuss your project in more detail and provide you with a budget estimate.
-                We understand the importance of your project and we're committed to providing you with a high-quality and accurate budget estimate as soon as possible.</span>
+                <span>We understand the importance of your issue and we're committed to providing you with a prompt and efficient resolution. Your request has been received and is   being assigned to one of our support managers who will be in touch with you as soon as possible.</span>
                 <br><br>
                 <span>Best regards,</span>
                 <br><br>
@@ -92,18 +84,14 @@ export default async function handler(req, res) {
       const msgTeam = {
         to: "guille1000142@gmail.com",
         from: "guilledevelop01@gmail.com",
-        subject: "Budget Request",
+        subject: "Support Request",
         text: "Decentral Nation",
         html: `
           Full name: <strong>${fullName}</strong>
           <br></br> 
-          Company name: <strong>${companyName}</strong>
-          <br></br> 
           E-mail: <strong>${email}</strong>
           <br></br> 
-          Project name: <strong>${projectName}</strong>
-          <br></br> 
-          Project description: <strong>${projectDescription}</strong>
+          Message: <strong>${message}</strong>
         `,
       };
       return Promise.all([sendMail(msgUser), sendMail(msgTeam)])

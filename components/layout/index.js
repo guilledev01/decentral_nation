@@ -41,8 +41,7 @@ export default function GlobalLayout({ children }) {
           theme="dark"
         />
         <ReCaptchaProvider
-          reCaptchaKey="6LcksxIkAAAAAIF5VJcHKyEO5yXyoZzYN_GQfcWD"
-          useEnterprise
+          reCaptchaKey={process.env.NEXT_PUBLIC_RE_CAPTCHA_PUBLIC_KEY}
         >
           {load ? (
             <>

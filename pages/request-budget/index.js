@@ -2,7 +2,7 @@ import * as jose from "jose";
 import { useReCaptcha } from "next-recaptcha-v3";
 import useTranslation from "next-translate/useTranslation";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FadeEffect } from "../../components/animations";
 import { Button } from "../../components/elements";
 import { useMatchMedia } from "../../hooks";
@@ -22,6 +22,14 @@ export default function RequestBudgetPage() {
   const isMobileResolution = useMatchMedia("(max-width:1370px)", undefined);
   const { executeRecaptcha } = useReCaptcha();
 
+  useEffect(() => {
+    let timer;
+    if (send === true) {
+      timer = setTimeout(() => setSend(undefined), 5000);
+    }
+    return () => clearTimeout(timer);
+  }, [send]);
+
   const handleForm = (e) => {
     setForm({
       ...form,
@@ -30,7 +38,7 @@ export default function RequestBudgetPage() {
     });
   };
 
-  const sendForm = async () => {
+  const sendForm = async (token) => {
     const iss = process.env.NEXT_PUBLIC_CORS_ORIGIN_INTERNAL;
     const aud = form.email;
     const alg = "RS256";
@@ -38,7 +46,7 @@ export default function RequestBudgetPage() {
       process.env.NEXT_PUBLIC_RSA_PRIVATE_KEY,
       alg
     );
-    const jwt = await new jose.SignJWT(form)
+    const jwt = await new jose.SignJWT({ ...form, token })
       .setProtectedHeader({ alg })
       .setIssuedAt()
       .setIssuer(iss)
@@ -74,6 +82,7 @@ export default function RequestBudgetPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setSend("sending");
     for (const property in form) {
       if (form[property] === "" || form[property] === false) {
         setSend(false);
@@ -81,7 +90,7 @@ export default function RequestBudgetPage() {
       }
     }
     const token = await executeRecaptcha("form_submit");
-    token ? sendForm() : setSend(false);
+    token ? sendForm(token) : setSend(false);
   };
 
   return (
@@ -97,12 +106,14 @@ export default function RequestBudgetPage() {
           className="d-flex col ai-c jc-c m-center gp-16"
           onSubmit={handleSubmit}
         >
-          {send !== undefined && (
+          {send !== undefined && send !== "sending" && (
             <FadeEffect top>
               <span
-                className={`form ${send ? "success" : "error"} max-width p-8`}
+                className={`form ${
+                  send === true ? "success" : "error"
+                } max-width p-8`}
               >
-                {send
+                {send === true
                   ? requestBudget.warning.success
                   : requestBudget.warning.error}
               </span>
@@ -158,6 +169,7 @@ export default function RequestBudgetPage() {
             color="secondary"
             titleA={requestBudget.request}
             type="submit"
+            disabled={send === "sending"}
           />
         </form>
         <span>{requestBudget.footer}</span>
