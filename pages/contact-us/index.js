@@ -2,7 +2,7 @@ import * as jose from "jose";
 import { useReCaptcha } from "next-recaptcha-v3";
 import useTranslation from "next-translate/useTranslation";
 import Link from "next/link";
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import { FadeEffect } from "../../components/animations";
 import { Button } from "../../components/elements";
 import { useMatchMedia } from "../../hooks";
@@ -27,21 +27,6 @@ export default function ContactUsPage() {
         e.target.type === "checkbox" ? e.target.checked : e.target.value,
     });
   };
-
-  const handleSubmit = useCallback(
-    async (e) => {
-      e.preventDefault();
-      for (const property in form) {
-        if (form[property] === "" || form[property] === false) {
-          setSend(false);
-          return false;
-        }
-      }
-      const token = await executeRecaptcha("form_submit");
-      token ? sendForm() : setSend(false);
-    },
-    [form, executeRecaptcha]
-  );
 
   const sendForm = async () => {
     const iss = process.env.NEXT_PUBLIC_CORS_ORIGIN_INTERNAL;
@@ -81,6 +66,18 @@ export default function ContactUsPage() {
         }
       })
       .catch(console.error);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    for (const property in form) {
+      if (form[property] === "" || form[property] === false) {
+        setSend(false);
+        return false;
+      }
+    }
+    const token = await executeRecaptcha("form_submit");
+    token ? sendForm() : setSend(false);
   };
 
   return (

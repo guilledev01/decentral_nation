@@ -2,7 +2,7 @@ import * as jose from "jose";
 import { useReCaptcha } from "next-recaptcha-v3";
 import useTranslation from "next-translate/useTranslation";
 import Link from "next/link";
-import { useCallback, useEffect, useState } from "react";
+import { useState } from "react";
 import { FadeEffect } from "../../components/animations";
 import { Button } from "../../components/elements";
 import { useMatchMedia } from "../../hooks";
@@ -21,11 +21,6 @@ export default function RequestBudgetPage() {
   const [send, setSend] = useState(undefined);
   const isMobileResolution = useMatchMedia("(max-width:1370px)", undefined);
   const { executeRecaptcha } = useReCaptcha();
-  const [domain, setDomain] = useState(false);
-
-  useEffect(() => {
-    setDomain(window.location.host);
-  }, []);
 
   const handleForm = (e) => {
     setForm({
@@ -77,21 +72,17 @@ export default function RequestBudgetPage() {
       .catch(console.error);
   };
 
-  const handleSubmit = useCallback(
-    async (e) => {
-      e.preventDefault();
-      for (const property in form) {
-        if (form[property] === "" || form[property] === false) {
-          setSend(false);
-          return false;
-        }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    for (const property in form) {
+      if (form[property] === "" || form[property] === false) {
+        setSend(false);
+        return false;
       }
-      if (!domain) return false;
-      const token = await executeRecaptcha("form_submit");
-      token ? sendForm() : setSend(false);
-    },
-    [form, executeRecaptcha, domain, sendForm]
-  );
+    }
+    const token = await executeRecaptcha("form_submit");
+    token ? sendForm() : setSend(false);
+  };
 
   return (
     <article id="request-budget">
