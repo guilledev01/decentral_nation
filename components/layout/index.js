@@ -11,15 +11,24 @@ import Footer from "./Footer";
 import Header from "./Header";
 
 export default function GlobalLayout({ children }) {
-  const { load, particlesInit, particlesLoaded, router, font, title } =
-    useLayout();
+  const {
+    load,
+    particlesInit,
+    particlesLoaded,
+    router,
+    font,
+    title,
+    description,
+  } = useLayout();
 
   return (
     <>
       <Head>
         <title>
           {title ? `Decentral Nation | ${title}` : "Decentral Nation | Welcome"}
+          <meta name="description" content={description} />
         </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <div className={font.className}>
         <Particles

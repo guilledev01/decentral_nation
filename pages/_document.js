@@ -8,19 +8,19 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang="en-us">
+      <Html>
         <Head>
-          <meta name="description" content="Software Factory" />
-          <meta name="application-name" content="Software Factory" />
-          <meta name="apple-mobile-web-app-capable" content="yes" />
+          <meta property="og:title" content="Decentral Nation" />
           <meta
-            name="apple-mobile-web-app-status-bar-style"
-            content="default"
+            property="og:description"
+            content="Welcome to Decentral Nation, where we decentralize your business and ensure its future. Request a quote for your project today and let's build the future together!"
           />
-          <meta name="apple-mobile-web-app-title" content="Software Factory" />
-          <meta name="apple-mobile-web-app-status-bar" content="#131416" />
-          <meta name="theme-color" content="#131416" />
-          <meta name="robots" content="index, follow" />
+          <meta property="og:image" content="/logo.png" />
+          <meta name="robots" content="all" />
+          <meta
+            name="keywords"
+            content="decentral nation, decentral, web3, dapp, decentralized application, software factory, build blockchain, blockchain developer, web3 developer, developers"
+          />
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <body>
