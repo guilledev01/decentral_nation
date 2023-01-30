@@ -14,7 +14,7 @@ body {
   padding: 0;
   margin: 0;
   width: 100%;
-  min-height: 100%;
+  min-height: 100vh;
   text-align: center;
   background-color: get-color(dark, 1);
   text-rendering: optimizeSpeed;
@@ -31,6 +31,11 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background-color: get-color(light, 1);
   border-radius: 12px;
+}
+
+.error {
+  margin: 0 auto;
+  z-index: 9999;
 }
 
 header {
@@ -60,11 +65,12 @@ main {
   overflow: hidden;
   width: 100%;
   min-height: 100vh;
+  color: get-color(light, 1);
 }
 
 article {
-  overflow: hidden;
   min-height: 100vh;
+  overflow: hidden;
   width: 100%;
   padding: 128px 64px;
   color: get-color(light, 1);
