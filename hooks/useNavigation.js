@@ -77,7 +77,8 @@ export default function useNavigation() {
   }, [open]);
 
   const handleColor = ({ articleColor }) => {
-    const navColor = window.getComputedStyle(nav.current).backgroundColor;
+    const navColor =
+      nav.current && window.getComputedStyle(nav.current).backgroundColor;
     if (navColor !== articleColor) {
       nav.current.style.backgroundColor = articleColor;
       nav.current.style.borderColor =

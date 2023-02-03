@@ -26,8 +26,16 @@ export default function GlobalLayout({ children }) {
       <Head>
         <title>
           {title ? `Decentral Nation | ${title}` : "Decentral Nation | Welcome"}
-          <meta name="description" content={description} />
         </title>
+        <meta
+          name="description"
+          content={
+            description
+              ? description
+              : "Welcome to Decentral Nation, where we decentralize your business and ensure its future. Request a quote for your project today and let's build the future together!"
+          }
+          key="desc"
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <div className={font.className}>
