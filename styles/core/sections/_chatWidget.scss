@@ -5,9 +5,9 @@
   right: 15px;
   background-color: get-color(dark, 1);
   color: get-color(light, 1);
+  box-shadow: 0px 0px 3px 3px get-color(dark, 2);
   border-radius: 50%;
   transition: 0.2s;
-  box-shadow: 0px 0px 3px 3px get-color(dark, 2);
 
   &:hover {
     background-color: get-color(dark, 2);

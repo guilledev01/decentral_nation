@@ -1,7 +1,9 @@
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import useTranslation from "next-translate/useTranslation";
+import Image from "next/image";
 import { useEffect, useState } from "react";
+import Dapp from "../../assets/imgs/dapps.avif";
 import { FadeEffect } from "../animations";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -12,75 +14,13 @@ export default function Projects() {
   const { t } = useTranslation("home");
   const projects = t("projects", {}, { returnObjects: true });
   const [slide, setSlide] = useState(0);
-  const items = PROJECTS.length - 1;
-
-  const animateSlider = (e) => {
-    const sWrapper = document.querySelector(".slider-wrapper");
-    const slide_date = document.querySelectorAll(".slide-date");
-    const slide_title = document.querySelectorAll(".slide-title");
-    const slide_text = document.querySelectorAll(".slide-text");
-    const slide_more = document.querySelectorAll(".slide-more");
-    const slide_image = document.querySelectorAll(".slide-image img");
-    const sItem = document.querySelectorAll(".slide");
-    const sWidth = sItem[0].offsetWidth;
-
-    gsap.to(sWrapper, {
-      duration: 0.4,
-      x: `-${sWidth * slide}px`,
-    });
-
-    const fromProperties = { autoAlpha: 0, y: "-40" };
-    const toProperties = { autoAlpha: 1, y: "0" };
-    const duration = 0.6;
-
-    gsap.fromTo(
-      slide_image[slide],
-      {
-        autoAlpha: 0,
-        y: "40",
-      },
-      {
-        duration,
-        autoAlpha: 1,
-        y: "0",
-      }
-    );
-    gsap.fromTo(
-      slide_date[slide],
-      {
-        ...fromProperties,
-      },
-      { duration, ...toProperties }
-    );
-    gsap.fromTo(
-      slide_title[slide],
-      {
-        ...fromProperties,
-      },
-      { duration, ...toProperties }
-    );
-    gsap.fromTo(
-      slide_text[slide],
-      {
-        ...fromProperties,
-      },
-      { duration, ...toProperties }
-    );
-    gsap.fromTo(
-      slide_more[slide],
-      {
-        ...fromProperties,
-      },
-      { duration, ...toProperties }
-    );
-  };
 
   useEffect(() => {
     const sWrapper = document.querySelector(".slider-wrapper");
     const sItem = document.querySelectorAll(".slide");
     const sWidth = sItem[0].offsetWidth;
     const sCount = sItem.length;
-    const sTotalWidth = sCount * sWidth;
+    const sTotalWidth = sCount * sWidth + 280;
     sWrapper.style.width = `${sTotalWidth}px`;
 
     const actualSlider = document.getElementById(0);
@@ -88,6 +28,46 @@ export default function Projects() {
   }, []);
 
   useEffect(() => {
+    const animateSlider = (e) => {
+      const sWrapper = document.querySelector(".slider-wrapper");
+      const slide_date = document.querySelectorAll(".slide-date");
+      const slide_title = document.querySelectorAll(".slide-title");
+      const slide_divider = document.querySelectorAll(".slide-divider");
+      const slide_text = document.querySelectorAll(".slide-text");
+      const slide_more = document.querySelectorAll(".slide-more");
+      const slide_image = document.querySelectorAll(".slide-image img");
+      const sItem = document.querySelectorAll(".slide");
+      const sWidth = sItem[0].offsetWidth;
+
+      const duration = 0.6;
+
+      gsap.to(sWrapper, {
+        duration,
+        x: `-${sWidth * slide}px`,
+      });
+
+      const fromProperties = { autoAlpha: 0, y: "-40" };
+      const toProperties = { duration, autoAlpha: 1, y: "0" };
+
+      gsap.fromTo(
+        slide_image[slide],
+        {
+          autoAlpha: 0,
+          y: "40",
+        },
+        {
+          duration,
+          autoAlpha: 1,
+          y: "0",
+        }
+      );
+      gsap.fromTo(slide_date[slide], fromProperties, toProperties);
+      gsap.fromTo(slide_title[slide], fromProperties, toProperties);
+      gsap.fromTo(slide_divider[slide], fromProperties, toProperties);
+      gsap.fromTo(slide_text[slide], fromProperties, toProperties);
+      gsap.fromTo(slide_more[slide], fromProperties, toProperties);
+    };
+
     animateSlider();
   }, [slide]);
 
@@ -101,7 +81,7 @@ export default function Projects() {
           </div>
         </FadeEffect>
       </div>
-      <div className="d-flex col ai-fs jc-c gp-64 pt-64">
+      <div className="d-flex col ai-fs gp-64 pt-64">
         <div className="slider-wrapper d-flex jc-c ai-c">
           {PROJECTS.map((item, id) => {
             return (
@@ -111,29 +91,38 @@ export default function Projects() {
                   onClick={() => (slide !== id ? setSlide(id) : null)}
                   role="button"
                 >
-                  <img src="https://goranvrban.com/codepen/img2.jpg" />
+                  <Image
+                    style={{ objectFit: "cover" }}
+                    src={Dapp}
+                    width={320}
+                    height={320}
+                    alt=""
+                  />
                 </div>
 
                 <div
-                  className={`slide-content d-flex col ai-c jc-c gp-32 p-32 ${
+                  className={`slide-content d-flex col jc-c gp-16 p-16 ${
                     slide === id && "show"
                   }`}
                   id={id}
                 >
-                  <div className="d-flex col ai-c jc-c gp-8">
-                    <h5 className="slide-date">{`${id + 1}-02-23`}</h5>
-                    <h4 className="slide-title">LOREM IPSUM DOLOR SITE MATE</h4>
+                  <div className="d-flex ai-c jc-sb">
+                    <h5 className="slide-date">{`0${id + 1}-02-23`}</h5>
+                    <h5 className="slide-title"> {`Project ${id}`}</h5>
                   </div>
-                  <div className="d-flex col ai-c jc-c gp-8">
-                    <span className="slide-text">
-                      Lorem ipsum dolor sit amet, ad est abhorreant efficiantur,
-                    </span>
-                    <button className="slide-more">READ MORE</button>
-                  </div>
+                  <div className="slide-divider divider"></div>
+                  <span className="slide-text">Project Description</span>
+                  <div className="slide-more">More Info</div>
                 </div>
               </div>
             );
           })}
+          <div
+            className="reset-slider p-32 d-flex ai-c jc-c"
+            onClick={() => setSlide(0)}
+          >
+            Back
+          </div>
         </div>
       </div>
     </article>
