@@ -1,13 +1,22 @@
 import { Kanit } from "@next/font/google";
 import config from "@successtar/react-reveal/globals";
 import { ReCaptchaProvider } from "next-recaptcha-v3";
+import dynamic from "next/dynamic";
 import Head from "next/head";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useLayout } from "../../hooks";
 import { ChatWidget, Cookies, LangWidget } from "../sections";
-import Footer from "./Footer";
-import Header from "./Header";
+
+const Header = dynamic(() => import("./Header"), {
+  loading: () => <></>,
+  ssr: true,
+});
+
+const Footer = dynamic(() => import("./Footer"), {
+  loading: () => <></>,
+  ssr: true,
+});
 
 const font = Kanit({
   weight: "400",

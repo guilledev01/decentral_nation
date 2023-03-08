@@ -21,10 +21,10 @@ specifiers:
   react: 18.2.0
   react-dom: 18.2.0
   react-toastify: 9.1.1
-  react-tsparticles: 2.9.3
+  react-tsparticles: 2.8.0
   sass: 1.58.3
   sharp: 0.31.3
-  tsparticles: 2.9.3
+  tsparticles: 2.8.0
 
 dependencies:
   '@next/font': 13.2.3
@@ -41,9 +41,9 @@ dependencies:
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-toastify: 9.1.1_biqbaboplfbrettd7655fr4n2y
-  react-tsparticles: 2.9.3_react@18.2.0
+  react-tsparticles: 2.8.0_react@18.2.0
   sharp: 0.31.3
-  tsparticles: 2.9.3
+  tsparticles: 2.8.0
 
 devDependencies:
   '@babel/core': 7.21.0
@@ -3492,8 +3492,8 @@ packages:
       react-dom: 18.2.0_react@18.2.0
     dev: false
 
-  /react-tsparticles/2.9.3_react@18.2.0:
-    resolution: {integrity: sha512-QSo5Y0iXcXzOKbOira+kn5Z9Yv0ugk4swcn44HkdublSS8XAmV2QiQSd9T2mdM1tGZ8xVSuqsfdgGWfRC1KKng==}
+  /react-tsparticles/2.8.0_react@18.2.0:
+    resolution: {integrity: sha512-WGvVy8y+D05IMUNiXEytGuJJ23KSBEuodD8FKw/MSK2+DxGEaDwuc07vgqRUyZOA/g+3xPANTHY9Md/j8PPanQ==}
     requiresBuild: true
     peerDependencies:
       react: '>=16'
@@ -4200,8 +4200,8 @@ packages:
       tsparticles-engine: 2.9.3
     dev: false
 
-  /tsparticles/2.9.3:
-    resolution: {integrity: sha512-9NB+zrmR3uaj/k0RZ8Awa4lhpq2PqYFR/jUhia/Z4tKwvNdIR4xkpd4NkkGn/xmqRFeN658xHxOE+yVU+y+XFA==}
+  /tsparticles/2.8.0:
+    resolution: {integrity: sha512-TgIdmPU/leNK68n2dgu+lRsC3At0pbP0xP3SU9gLkMyJxXHlsvtTsFafR2q9PlD1FoAPxkBMBTwspysagCeFdA==}
     dependencies:
       tsparticles-engine: 2.9.3
       tsparticles-interaction-external-trail: 2.9.3

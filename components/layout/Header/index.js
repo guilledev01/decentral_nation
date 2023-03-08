@@ -111,44 +111,12 @@ export default function Header() {
           loaded={particlesLoaded}
           options={{
             autoPlay: true,
-            background: {
-              color: {
-                value: "#000",
-              },
-              image: "",
-              position: "50% 50%",
-              repeat: "no-repeat",
-              size: "cover",
-              opacity: 1,
-            },
-            backgroundMask: {
-              composite: "destination-out",
-              cover: {
-                color: {
-                  value: "#000",
-                },
-                opacity: 1,
-              },
-              enable: false,
-            },
-            defaultThemes: {},
-            delay: 0,
-            fullScreen: {
-              enable: true,
-              zIndex: 1,
-            },
             detectRetina: true,
             duration: 0,
-            fpsLimit: 120,
+            fpsLimit: 30,
             interactivity: {
               detectsOn: "window",
               events: {
-                onDiv: {
-                  selectors: "#repulse-div",
-                  enable: false,
-                  mode: "repulse",
-                  type: "circle",
-                },
                 onHover: {
                   enable: true,
                   mode: "bubble",
@@ -157,10 +125,6 @@ export default function Header() {
                     force: 60,
                     smooth: 10,
                   },
-                },
-                resize: {
-                  delay: 0.5,
-                  enable: true,
                 },
               },
               modes: {
@@ -387,8 +351,8 @@ export default function Header() {
                   width: 1920,
                   height: 1080,
                 },
-                limit: 0,
-                value: 80,
+                limit: 14,
+                value: 50,
               },
               opacity: {
                 random: {
