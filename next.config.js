@@ -5,7 +5,7 @@ const nextTranslate = require("next-translate");
 //   enabled: process.env.ANALYZE === "true",
 // });
 
-const config = nextTranslate({
+const config = {
   experimental: {
     appDir: false,
     fontLoaders: [
@@ -30,6 +30,6 @@ const config = nextTranslate({
     includePaths: [path.join(__dirname, "styles")],
   },
   reactStrictMode: true,
-});
+};
 
-module.exports = config;
+module.exports = nextTranslate(config);

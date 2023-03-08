@@ -1,4 +1,3 @@
-import * as jose from "jose";
 import { useReCaptcha } from "next-recaptcha-v3";
 import useTranslation from "next-translate/useTranslation";
 import Link from "next/link";
@@ -40,11 +39,13 @@ export default function ContactUsPage() {
     const iss = process.env.NEXT_PUBLIC_CORS_ORIGIN_INTERNAL;
     const aud = form.email;
     const alg = "RS256";
-    const privateKey = await jose.importPKCS8(
+    const importPKCS8 = (await import("jose")).importPKCS8;
+    const SignJWT = (await import("jose")).SignJWT;
+    const privateKey = await importPKCS8(
       process.env.NEXT_PUBLIC_RSA_PRIVATE_KEY,
       alg
     );
-    const jwt = await new jose.SignJWT({ ...form, token })
+    const jwt = await new SignJWT({ ...form, token })
       .setProtectedHeader({ alg })
       .setIssuedAt()
       .setIssuer(iss)

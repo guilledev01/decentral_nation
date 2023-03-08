@@ -3,54 +3,6 @@ import { useRouter } from "next/router";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useMatchMedia } from "./index";
 
-// const PATH = [
-//   {
-//     title: "Home",
-//     id: "#home",
-//   },
-//   {
-//     title: "Decentralization",
-//     id: "#decentralization",
-//   },
-//   {
-//     title: "Our Services",
-//     id: "#services",
-//   },
-//   {
-//     title: "About Us",
-//     id: "#team",
-//   },
-//   {
-//     title: "Projetcs Launched",
-//     id: "#projects",
-//   },
-//   {
-//     title: "Request Budget",
-//     id: "#request-budget",
-//     route: "/request-budget",
-//   },
-//   {
-//     title: "Contact Us",
-//     id: "#contact-us",
-//     route: "/contact-us",
-//   },
-//   {
-//     title: "Privacy Policy",
-//     id: "#privacy-policy",
-//     route: "/privacy-policy",
-//   },
-//   {
-//     title: "Legal Warning",
-//     id: "#legal-warning",
-//     route: "/legal-warning",
-//   },
-//   {
-//     title: "Cookies Policy",
-//     id: "#cookies-policy",
-//     route: "/cookies-policy",
-//   },
-// ];
-
 export default function useNavigation() {
   const { t } = useTranslation("common");
   const path = t("path", {}, { returnObjects: true });
@@ -76,7 +28,7 @@ export default function useNavigation() {
     }
   }, [open]);
 
-  const handleColor = ({ articleColor }) => {
+  const handleColor = useCallback(({ articleColor }) => {
     const navColor =
       nav.current && window.getComputedStyle(nav.current).backgroundColor;
     if (navColor !== articleColor) {
@@ -84,7 +36,7 @@ export default function useNavigation() {
       nav.current.style.borderColor =
         articleColor === "rgba(0, 0, 0, 0)" ? articleColor : "white";
     }
-  };
+  }, []);
 
   useEffect(() => {
     const handleNav = (e) => {
