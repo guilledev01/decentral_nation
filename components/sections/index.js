@@ -4,7 +4,7 @@ const About = dynamic(() => import("./About"), {
   loading: () => <></>,
   ssr: true,
 });
-const ChatWidget = dynamic(() => import("./ChatWidget"), {
+const ChatWidget = dynamic(() => import("./chatWidget"), {
   loading: () => <></>,
   ssr: true,
 });

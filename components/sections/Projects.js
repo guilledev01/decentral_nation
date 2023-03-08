@@ -1,12 +1,14 @@
-import { gsap } from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import useTranslation from "next-translate/useTranslation";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import Dapp from "../../assets/imgs/dapps.avif";
+import ProjectImage from "../../assets/imgs/project_01.avif";
+import { openUrl } from "../../utils/base";
 import { FadeEffect } from "../animations";
 
-const PROJECTS = ["", "", "", "", "", "", "", "", ""];
+const PROJECTS = ["planetarylottery.app/", ""];
+
+let gsap;
 
 export default function Projects() {
   const { t } = useTranslation("home");
@@ -15,7 +17,7 @@ export default function Projects() {
 
   useEffect(() => {
     const loadGsap = async () => {
-      const gsap = (await import("gsap")).gsap;
+      gsap = (await import("gsap")).gsap;
       gsap.registerPlugin(ScrollTrigger);
     };
     loadGsap();
@@ -45,32 +47,34 @@ export default function Projects() {
     const sWidth = sItem[0].offsetWidth;
     const duration = 0.3;
 
-    gsap.to(sWrapper, {
-      duration,
-      x: `-${sWidth * slide}px`,
-    });
-
-    const fromProperties = { autoAlpha: 0, y: "-40" };
-    const toProperties = { duration, autoAlpha: 1, y: "0" };
-
-    gsap.fromTo(
-      slide_image[slide],
-      {
-        autoAlpha: 0,
-        y: "40",
-      },
-      {
+    if (gsap) {
+      gsap.to(sWrapper, {
         duration,
-        autoAlpha: 1,
-        y: "0",
-      }
-    );
-    gsap.fromTo(slide_date[slide], fromProperties, toProperties);
-    gsap.fromTo(slide_title[slide], fromProperties, toProperties);
-    gsap.fromTo(slide_divider[slide], fromProperties, toProperties);
-    gsap.fromTo(slide_text[slide], fromProperties, toProperties);
-    gsap.fromTo(slide_more[slide], fromProperties, toProperties);
-  }, [slide]);
+        x: `-${sWidth * slide}px`,
+      });
+
+      const fromProperties = { autoAlpha: 0, y: "-40" };
+      const toProperties = { duration, autoAlpha: 1, y: "0" };
+
+      gsap.fromTo(
+        slide_image[slide],
+        {
+          autoAlpha: 0,
+          y: "40",
+        },
+        {
+          duration,
+          autoAlpha: 1,
+          y: "0",
+        }
+      );
+      gsap.fromTo(slide_date[slide], fromProperties, toProperties);
+      gsap.fromTo(slide_title[slide], fromProperties, toProperties);
+      gsap.fromTo(slide_divider[slide], fromProperties, toProperties);
+      gsap.fromTo(slide_text[slide], fromProperties, toProperties);
+      gsap.fromTo(slide_more[slide], fromProperties, toProperties);
+    }
+  }, [slide, gsap]);
 
   return (
     <article id="projects">
@@ -85,40 +89,44 @@ export default function Projects() {
       <div className="d-flex col ai-fs gp-64 pt-64">
         <div className="slider-wrapper d-flex jc-c ai-c">
           <FadeEffect bottom distance="60px">
-            {PROJECTS.map((item, id) => {
-              return (
-                <div key={id} className="slide d-flex col jc-c ai-c">
-                  <div
-                    className={`slide-image ${slide === id && "show"}`}
-                    onClick={() => (slide !== id ? setSlide(id) : null)}
-                    role="button"
-                  >
-                    <Image
-                      style={{ objectFit: "cover" }}
-                      src={Dapp}
-                      width={320}
-                      height={320}
-                      alt=""
-                    />
-                  </div>
+            <div className="slide d-flex col jc-c ai-c">
+              <div
+                className={`slide-image ${slide === 0 && "show"}`}
+                // onClick={() => (slide !== id ? setSlide(id) : null)}
+                role="button"
+              >
+                <Image
+                  style={{ objectFit: "cover" }}
+                  src={ProjectImage}
+                  width={320}
+                  height={320}
+                  alt=""
+                />
+              </div>
 
-                  <div
-                    className={`slide-content d-flex col jc-c gp-16 p-16 ${
-                      slide === id && "show"
-                    }`}
-                    id={id}
-                  >
-                    <div className="d-flex ai-c jc-sb">
-                      <h5 className="slide-date">{`0${id + 1}-02-23`}</h5>
-                      <h5 className="slide-title"> {`Project ${id}`}</h5>
-                    </div>
-                    <div className="slide-divider divider"></div>
-                    <span className="slide-text">Project Description</span>
-                    <div className="slide-more">More Info</div>
-                  </div>
+              <div
+                className={`slide-content d-flex col jc-c gp-16 p-16 ${
+                  slide === 0 && "show"
+                }`}
+                id={0}
+              >
+                <div className="d-flex ai-c jc-sb">
+                  <h5 className="slide-date">{`0${0 + 1}-02-23`}</h5>
+                  <h5 className="slide-title"> {`Planetary Lottery`}</h5>
                 </div>
-              );
-            })}
+                <div className="slide-divider divider"></div>
+                <span className="slide-text">
+                  Decentralized lottery on polygon network with chainlink
+                  services
+                </span>
+                <div
+                  className="slide-more"
+                  onClick={() => openUrl("planetarylottery.app/")}
+                >
+                  Visit Project
+                </div>
+              </div>
+            </div>
           </FadeEffect>
 
           <div

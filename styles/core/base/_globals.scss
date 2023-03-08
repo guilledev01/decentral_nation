@@ -62,6 +62,7 @@ nav {
 }
 
 main {
+  z-index: 99999;
   overflow: hidden;
   width: 100%;
   min-height: 100vh;
